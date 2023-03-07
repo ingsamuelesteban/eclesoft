@@ -12,8 +12,7 @@ hosts:
     deploy_path: '/var/www/{{hostname}}'
 
 tasks:
-
-  deploy:
+  deploy: 
     - deploy:prepare
     - deploy:vendors
     - artisan:storage:link
@@ -28,7 +27,7 @@ tasks:
 
   build:
     - cd: "{{release_path}}"
-    - run: "npm run build"
+    - run: npm run build
 
 after:
   deploy:failed: deploy:unlock
