@@ -27,7 +27,7 @@
                         <img src="{{ global_asset('storage/img/' .  $parroquia->logo)}}" alt="Logo de la Parroquia">
                     </div>
                 @empty
-                   <p class="font-semibold text-base text-red-700 text-center">Antes de comenzar dirijase al apartado de administracion para conigurar su parroquia.
+                   <p class="font-semibold text-base text-red-700 text-center">Antes de comenzar diríjase al apartado de administración para configurar su parroquia.
                 @endforelse
             </div>
                                     

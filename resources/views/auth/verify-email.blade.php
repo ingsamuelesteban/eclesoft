@@ -12,7 +12,7 @@
 
         @if (session('status') == 'verification-link-sent')
             <div class="mb-4 font-medium text-sm text-green-600">
-                {{ __('Hemos enviado un nuevo correo de confirmacion a la cuenta que colocaste en el registro.') }}
+                {{ __('Hemos enviado un nuevo correo de confirmación a la cuenta que colocaste en el registro.') }}
             </div>
         @endif
 
