@@ -130,6 +130,14 @@ class CrearComunidad extends Component
         'pambiente'=>$datos['pambiente'],
         'tambiente'=>$datos['tambiente']        
     ]);
+
+    //Crear un mensaje antes de redireccionar 
+
+        session()->flash('mensaje', 'Comunidad creada correctamente');
+
+        //Redireccionar
+
+        return redirect()->route('menu.comunidades.index');
     }
 
 
