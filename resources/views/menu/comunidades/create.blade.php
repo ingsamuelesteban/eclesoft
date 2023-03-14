@@ -1,5 +1,5 @@
 <x-app-layout>
-    @include('menu.comunidades.navigation');
+    @include('menu.comunidades.navigation')
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Menú Comunidades de la Parroquia') }}
