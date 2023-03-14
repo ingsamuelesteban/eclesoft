@@ -98,6 +98,12 @@
             <x-responsive-nav-link :href="route('menu.matrimonios.create')" :active="request()->routeIs('menu.matrimonios.create')">
                 {{ __('Matrimonios') }}
             </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('menu.comunidades.create')" :active="request()->routeIs('menu.comunidades.create')">
+                {{ __('Comunidades') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('menu.administracion.index')" :active="request()->routeIs('menu.administracion.index')">
+                {{ __('Administracion') }}
+            </x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->

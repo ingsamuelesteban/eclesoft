@@ -16,15 +16,6 @@
                         {{ __('Crear Usuario') }}
                     </x-nav-link>
                  </div>
-                    
-               
-                <!-- Navigation Links -->
-               
-                
-        
-
-                
-
            
             <!-- Hamburger -->
             <div class="-mr-2 flex items-center sm:hidden">
@@ -41,14 +32,11 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('menu.index')" :active="request()->routeIs('menu.index')">
-                {{ __('Menu') }}
+            <x-responsive-nav-link :href="route('menu.administracion.index')" :active="request()->routeIs('menu.administracion.index')">
+                {{ __('Parroquia') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('menu.bautismos.create')" :active="request()->routeIs('menu.bautismos.create')">
-                {{ __('Bautismos') }}
-            </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('menu.matrimonios.create')" :active="request()->routeIs('menu.matrimonios.create')">
-                {{ __('Matrimonios') }}
+            <x-responsive-nav-link :href="route('menu.administracion.registrar')" :active="request()->routeIs('menu.administracion.registrar')">
+                {{ __('Crear Usuario') }}
             </x-responsive-nav-link>
         </div>
 
