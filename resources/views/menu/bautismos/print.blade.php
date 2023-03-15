@@ -128,7 +128,7 @@ min-height: 100%;">
        <p class="linea">No más información debajo de esta linea</p>
        </div>
 
-        <p style="margin-top: 30%;">El presente documento se expide a petición de la parte interesada en
+        <p style="margin-top: 5px;">El presente documento se expide a petición de la parte interesada en
             <span>{{$parroquia->ciudad}}</span>,
             <span>{{$parroquia->provincia}}</span>,
             a los 
@@ -140,8 +140,8 @@ min-height: 100%;">
         </p>
 
        
-    <div style="margin-top: 10%;
-    margin-bottom:10%;
+    <div style="margin-top: 2px;
+    margin-bottom:2px;
      text-align: center;">
         
             <p style="text-decoration: overline; text-transform:uppercase; color:black" >
