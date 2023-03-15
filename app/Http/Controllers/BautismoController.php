@@ -51,8 +51,8 @@ class BautismoController extends Controller
     {
         $parroquias = Parroquia::all();
         $dian = Carbon::parse($bautismo->fecha_nacimiento)->format('d');
-        $mesn = Carbon::parse($bautismo->fecha_nacimiento)->formatLocalized('%B');
-        $anon = Carbon::parse($bautismo->fecha_nacimiento)->formatLocalized('%Y');
+        $mesn = Carbon::parse($bautismo->fecha_nacimiento)->isoFormat('MMMM');
+        $anon = Carbon::parse($bautismo->fecha_nacimiento)->isoFormat('Y');
         $diab = Carbon::parse($bautismo->fecha_celebracion)->format('d');
         $mesb = Carbon::parse($bautismo->fecha_celebracion)->isoFormat('MMMM');
         $añob = Carbon::parse($bautismo->fecha_celebracion)->isoFormat('Y');
