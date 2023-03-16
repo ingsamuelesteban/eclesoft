@@ -163,7 +163,7 @@ font-size: 10px;
     <p>{{$parroquia->calle. ', ' . $parroquia->ciudad.', 
     República Dominicana'}} <br> 
     <span class="d-flex justify-content-center">
-    Tel.: {{$parroquia->telefonop}}</span></p>
+    RNC.: {{$parroquia->rnc}}, Tel.: {{$parroquia->telefonop}}, Correo.: {{$parroquia->correo}}</span></p>
 </footer>
 </div>
 
