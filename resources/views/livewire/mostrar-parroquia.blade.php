@@ -9,9 +9,9 @@
                 <p class="text-sm text-gray-600 font-bold">Vicario: {{ $parroquia->vicario}}</p>
                 <p class="text-sm text-gray-600 font-bold">Diocesis: {{ $parroquia->diocesis}}</p>
                 <p class="text-sm text-gray-600 font-bold">Obispo: {{ $parroquia->obispo}}</p>
-                <p class="text-sm text-gray-600 font-bold">Obispo: {{ $parroquia->telefonop}}</p>
-                <p class="text-sm text-gray-600 font-bold">Obispo: {{ $parroquia->rnc}}</p>
-                <p class="text-sm text-gray-600 font-bold">Obispo: {{ $parroquia->correo}}</p>
+                <p class="text-sm text-gray-600 font-bold">Telefono: {{ $parroquia->telefonop}}</p>
+                <p class="text-sm text-gray-600 font-bold">RNC: {{ $parroquia->rnc}}</p>
+                <p class="text-sm text-gray-600 font-bold">Correo: {{ $parroquia->correo}}</p>
                 <p class="text-sm text-gray-600 font-bold">Calle: {{ $parroquia->calle}}</p>
                 <p class="text-sm text-gray-600 font-bold">Ciudad: {{ $parroquia->ciudad}}</p>
                 <p class="text-sm text-gray-600 font-bold">Provincia: {{ $parroquia->provincia}}</p>

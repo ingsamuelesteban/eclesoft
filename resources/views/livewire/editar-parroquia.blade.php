@@ -164,7 +164,7 @@
             <div class="my-5 w-52">
                 <x-input-label  :value="__('Logo Actual')" />
 
-                <img src="{{ asset('storage/img/' . $logo) }}" alt="{{ 'Logo Actual' }}">
+                <img src="{{ global_asset('storage/img/' . $logo) }}" alt="{{ 'Logo Actual' }}">
             </div>
 
             <div class="my-5 w-52">

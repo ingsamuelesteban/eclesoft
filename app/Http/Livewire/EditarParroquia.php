@@ -91,10 +91,10 @@ class EditarParroquia extends Component
         $parroquia->save();
 
         //Mensaje 
-        session()->flash('message', 'Datos modificados');
+        session()->flash('mensaje', 'Datos modificados');
 
         //Redireccionar
-        return redirect()->route('menu.administracion.create');
+        return redirect()->route('menu.administracion.index');
 
     }
     public function render()
