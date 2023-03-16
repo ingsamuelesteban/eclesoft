@@ -30,7 +30,7 @@
     </div>
 
 
-    <div class="grid grid-cols-2">
+    <div class="grid grid-cols-3">
         <div>
             <x-input-label for="parroquia" :value="__('Nombre')" />
 
@@ -51,6 +51,16 @@
             wire:model="telefonop" 
             :value="old('telefonop')" placeholder="Telefono sin Guiones" />
             @error('telefonop')
+            <livewire:mostrar-alertas :message="$message" />
+        @enderror
+        </div>
+        <div>
+            <x-input-label for="rnc" :value="__('rnc')" />
+
+            <x-text-input id="rnc" class="block mt-1 w-full" type="text" 
+            wire:model="rnc" 
+            :value="old('rnc')" placeholder="RNC" />
+            @error('rnc')
             <livewire:mostrar-alertas :message="$message" />
         @enderror
         </div>
@@ -128,6 +138,20 @@
 
         </div>
 
+<div class="grid grid-cols-2">
+
+        <div>
+                <x-input-label for="correo" :value="__('correo')" />
+
+                
+                <x-text-input id="correo" class="block mt-1 w-full" type="text" 
+                wire:model="correo" 
+                :value="old('correo')" placeholder="Ej. paroquia@parroquia.com"/>
+
+                @error('correo')
+                <livewire:mostrar-alertas :message="$message" />
+            @enderror 
+        </div>
         <div>
             <x-input-label for="logo" :value="__('Logo')" />
 
@@ -145,6 +169,9 @@
             @error('logo')
                 <livewire:mostrar-alertas :message="$message" />
             @enderror
+        </div>
+
+
         </div>
         
 

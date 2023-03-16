@@ -14,11 +14,13 @@ class Parroquia extends Model
         'obispo',
         'parroquia',
         'telefonop',
+        'rnc',
         'parroco',
         'vicario',
         'calle',
         'ciudad',
         'provincia',
+        'correo',
         'logo',
     ];
 }

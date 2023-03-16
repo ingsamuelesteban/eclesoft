@@ -12,11 +12,13 @@ class EditarParroquia extends Component
     public $obispo;
     public $parroquia;
     public $telefonop;
+    public $rnc;
     public $parroco;
     public $vicario;
     public $calle;
     public $ciudad;
     public $provincia;
+    public $correo;
     public $parroquia_id;
     public $logo;
     public $logo_nuevo;
@@ -29,11 +31,13 @@ class EditarParroquia extends Component
         'obispo' => 'required|string',
         'parroquia' => 'required|string',
         'telefonop' => 'required|string',
+        'rnc' => 'required|string',
         'parroco' => 'required|string',
         'vicario' => 'string',
         'calle' => 'required|string',
         'ciudad' => 'required|string',
         'provincia' => 'required|string',
+        'correo' => 'required|string',
         'logo_nuevo' => 'nullable|image|max:1024',
     ];
 
@@ -44,11 +48,13 @@ class EditarParroquia extends Component
         $this->obispo = $parroquia->obispo;
         $this->parroquia = $parroquia->parroquia;
         $this->telefonop = $parroquia->telefonop;
+        $this->rnc = $parroquia->rnc;
         $this->parroco = $parroquia->parroco;
         $this->vicario = $parroquia->vicario;
         $this->calle = $parroquia->calle;
         $this->ciudad = $parroquia->ciudad;
         $this->provincia = $parroquia->provincia;
+        $this->correo = $parroquia->correo;
         $this->logo = $parroquia->logo;
     }
 
@@ -72,11 +78,13 @@ class EditarParroquia extends Component
         $parroquia->obispo = $datos['obispo'];
         $parroquia->parroquia=$datos['parroquia'];
         $parroquia->telefonop=$datos['telefonop'];
+        $parroquia->rnc=$datos['rnc'];
         $parroquia->parroco=$datos['parroco'];
         $parroquia->vicario=$datos['vicario'];
         $parroquia->calle=$datos['calle'];
         $parroquia->ciudad=$datos['ciudad'];
         $parroquia->provincia=$datos['provincia'];
+        $parroquia->correo=$datos['correo'];
         $parroquia->logo = $datos['logo'] ?? $parroquia->logo;
 
         //Guardar
