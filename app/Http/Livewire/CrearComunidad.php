@@ -50,8 +50,8 @@ class CrearComunidad extends Component
 
         'nombre_comunidad'=>'required|string',
         'ubicacion'=>'required|string',
-        'coordinador'=>'required|string',
-        'telefonoc'=>'required|string|min:10|max:10',
+        'coordinador'=>'',
+        'telefonoc'=>'',
         'pfamiliar'=>'',
         'tfamiliar'=>'',
         'pjuvenil'=>'',
