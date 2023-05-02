@@ -157,7 +157,7 @@
 
     <div class="grid grid-cols-2">
 
-        <div class="grid grid-cols-2">
+        <div >
 
             <div>
             <x-text-input id="nombre_padre" class="block mt-1 w-full" type="text" wire:model="nombre_padre" :value="old('nombre_padre')" placeholder="Nombre del Padre"/>
@@ -166,20 +166,20 @@
                 <livewire:mostrar-alertas :message="$message" />
             @enderror
 
-        </div>
-        <div>
+            </div>
+            <div>
             <x-text-input id="cedula_padre" class="block mt-1 w-full" type="text" wire:model="cedula_padre" :value="old('cedula_padre')" placeholder="Cédula con guiones"/>
 
 
             @error('cedula_padre')
             <livewire:mostrar-alertas :message="$message" />
-        @enderror
+            @enderror
 
-        </div>
+            </div>
        
-    </div>
+        </div>
         
-        <div >
+        <div class="grid grid-cols-2">
            
 
             <x-text-input id="padres" class="block mt-1 w-full" type="text" wire:model="nombre_madre" :value="old('nombre_madre')" placeholder="Nombre de la Madre"/>
