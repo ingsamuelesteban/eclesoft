@@ -155,7 +155,6 @@
 
 <x-input-label for="padres" :value="__('Datos de los Padres')" />
 
-<x-input-label for="padres" :value="__('Datos de los Padres')" />
 
 <div class="grid grid-cols-2">
     
@@ -169,7 +168,7 @@
     </div>
 
     <div>
-        <x-text-input id="cedula_padre" class="block mt-1 w-full" type="text" wire:model="cedula_padre" :value="old('cedula_padre')" placeholder="Cédula sin guiones"/>
+        <x-text-input id="cedula_padre" class="block mt-1 w-full" type="text" wire:model="cedula_padre" :value="old('cedula_padre')" placeholder="Cédula del padre con guiones"/>
 
 
         @error('cedula_padre')
@@ -194,7 +193,7 @@
 
         </div>
         <div>
-            <x-text-input id="cedula_madre" class="block mt-1 w-full" type="text" wire:model="cedula_madre" :value="old('cedula_madre')" placeholder="Cédula sin guiones"/>
+            <x-text-input id="cedula_madre" class="block mt-1 w-full" type="text" wire:model="cedula_madre" :value="old('cedula_madre')" placeholder="Cédula de la madre con guiones"/>
 
             @error('cedula_madre')
                 <livewire:mostrar-alertas :message="$message" />
