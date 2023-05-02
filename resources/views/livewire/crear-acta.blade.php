@@ -155,51 +155,53 @@
 
 <x-input-label for="padres" :value="__('Datos de los Padres')" />
 
+<x-input-label for="padres" :value="__('Datos de los Padres')" />
+
+<div class="grid grid-cols-2">
+    
+    <div >
+        <x-text-input id="padres" class="block mt-1 w-full" type="text" wire:model="nombre_padre" :value="old('nombre_padre')" placeholder="Nombre del Padre"/>
+
+        @error('nombre_padre')
+            <livewire:mostrar-alertas :message="$message" />
+        @enderror
+
+    </div>
+
+    <div>
+        <x-text-input id="cedula_padre" class="block mt-1 w-full" type="text" wire:model="cedula_padre" :value="old('cedula_padre')" placeholder="Cédula sin guiones"/>
+
+
+        @error('cedula_padre')
+        <livewire:mostrar-alertas :message="$message" />
+    @enderror
+ 
+
+    </div>
+
+</div>
+
+    
+
     <div class="grid grid-cols-2">
 
-        <div >
-
             <div>
-            <x-text-input id="nombre_padre" class="block mt-1 w-full" type="text" wire:model="nombre_padre" :value="old('nombre_padre')" placeholder="Nombre del Padre"/>
+                <x-text-input id="nombre_madre" class="block mt-1 w-full" type="text" wire:model="nombre_madre" :value="old('nombre_madre')" placeholder="Nombre de la Madre"/>
 
-            @error('nombre_padre')
-                <livewire:mostrar-alertas :message="$message" />
-            @enderror
-
-            </div>
-            <div>
-            <x-text-input id="cedula_padre" class="block mt-1 w-full" type="text" wire:model="cedula_padre" :value="old('cedula_padre')" placeholder="Cédula con guiones"/>
-
-
-            @error('cedula_padre')
-            <livewire:mostrar-alertas :message="$message" />
-            @enderror
-
-            </div>
-       
-        </div>
-        
-        <div class="grid grid-cols-2">
-           
-
-            <x-text-input id="padres" class="block mt-1 w-full" type="text" wire:model="nombre_madre" :value="old('nombre_madre')" placeholder="Nombre de la Madre"/>
-
-            @error('nombre_madre')
-                <livewire:mostrar-alertas :message="$message" />
-            @enderror
+                @error('nombre_madre')
+                    <livewire:mostrar-alertas :message="$message" />
+                @enderror
 
         </div>
-
         <div>
-
-            <x-text-input id="cedula_madre" class="block mt-1 w-full" type="text" wire:model="cedula_madre" :value="old('cedula_madre')" placeholder="Cédula con guiones"/>
+            <x-text-input id="cedula_madre" class="block mt-1 w-full" type="text" wire:model="cedula_madre" :value="old('cedula_madre')" placeholder="Cédula sin guiones"/>
 
             @error('cedula_madre')
                 <livewire:mostrar-alertas :message="$message" />
             @enderror
 
         </div>
-
+       
     </div>
 
 
