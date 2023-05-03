@@ -47,7 +47,7 @@
             <x-input-label for="parroquia" :value="__('Parroquia o capilla')" />
 
             <select wire:model="parroquia" id="parroquia" class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full">
-            <option value="">-- Seleccione --</option>
+        
                 @foreach ($comunidades as $comunidad)
                     <option value="{{ $comunidad->nombre_comunidad}}">{{$comunidad->nombre_comunidad}}</option>
                 @endforeach
@@ -63,7 +63,7 @@
             <x-input-label for="ub_parroquia" :value="__('Lugar')" />
 
             <select wire:model="ub_parroquia" id="ub_parroquia" class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full">
-                <option value="">-- Seleccione --</option>
+        
                 @foreach ($comunidades as $comunidad)
                     <option value="{{ $comunidad->ubicacion}}">{{$comunidad->ubicacion}}</option>
                 @endforeach
