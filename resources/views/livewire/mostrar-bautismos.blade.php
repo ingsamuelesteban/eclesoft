@@ -4,7 +4,7 @@
         @forelse ($bautismos as $bautismo)
         <div class="p-6 bg-white border-b border-gray-200 md:flex md:justify-between md:items-center">
                 <div class="space-y-3">
-                    <a href="#" class="text-xl font-bold">
+                    <a href="{{ route('menu.bautismos.show', $bautismo->id)}}" class="text-xl font-bold">
                         {{ $bautismo->nombre}}
                     </a>
                     <p class="text-sm text-indigo-600 font-bold">Padre: <span class="text-sm text-gray-600 font-bold">{{ $bautismo->nombre_padre}}</span></p>
