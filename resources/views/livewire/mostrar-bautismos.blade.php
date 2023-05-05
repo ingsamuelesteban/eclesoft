@@ -7,10 +7,10 @@
                     <a href="#" class="text-xl font-bold">
                         {{ $bautismo->nombre}}
                     </a>
-                    <p class="text-sm text-gray-600 font-bold">Madre: {{ $bautismo->nombre_madre}}</p>
-                    <p class="text-sm text-gray-600 font-bold">Cedula: {{ $bautismo->cedula_madre}}</p>
-                    <p class="text-sm text-gray-600 font-bold">Padre: {{ $bautismo->nombre_padre}}</p>
-                    <p class="text-sm text-gray-600 font-bold">Cedula: {{ $bautismo->cedula_padre}}</p>
+                    <p class="text-sm text-indigo-600 font-bold">Padre: <span class="text-sm text-gray-600 font-bold">{{ $bautismo->nombre_padre}}</span></p>
+                    <p class="text-sm text-indigo-600 font-bold">Madre:<span class="text-sm text-gray-600 font-bold"> {{ $bautismo->nombre_madre}}</span></p>
+                    <p class="text-sm text-gray-600 font-bold">Padrino: {{ $bautismo->nombre_padrino}}</p>
+                    <p class="text-sm text-gray-600 font-bold">Madrina: {{ $bautismo->nombre_madrina}}</p>
                 </div> 
 
                 <div class="flex flex-col md:flex-row items-stretch gap-3  mt-5 md:mt-0">
