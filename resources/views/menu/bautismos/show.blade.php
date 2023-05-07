@@ -39,7 +39,7 @@
                                     <span class="normal-case font-normal">{{ $bautismo->ub_parroquia}}</span>
                                 </p>
                                 <p class="font-bold text-sm uppercase text-gray-800 my-3">Fecha:
-                                    <span class="normal-case font-normal">{{ $bautismo->fecha_celebracion->format('L')}}</span>
+                                    <span class="normal-case font-normal">{{ $bautismo->fecha_celebracion->ftoFormattedDateString()}}</span>
                                 </p>
                                 <p class="font-bold text-sm uppercase text-gray-800 my-3">Celebrante:
                                     <span class="normal-case font-normal">{{ $bautismo->celebrante}}</span>
@@ -59,7 +59,7 @@
                                     <span class="normal-case font-normal">{{ $bautismo->lugar_nacimiento}}</span>
                                 </p>
                                 <p class="font-bold text-sm uppercase text-gray-800 my-3">Fecha de Nacimiento:
-                                    <span class="normal-case font-normal">{{ $bautismo->fecha_nacimiento->format('L')}}</span>
+                                    <span class="normal-case font-normal">{{ $bautismo->fecha_nacimiento->toFormattedDateString()}}</span>
                                 </p>
                             </div>
                         </div>
