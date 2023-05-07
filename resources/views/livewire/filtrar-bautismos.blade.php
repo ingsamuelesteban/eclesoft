@@ -3,7 +3,7 @@
 
     <div class="max-w-7xl mx-auto">
         <form wire:submit.prevent="leerDatosFormulario">
-            <div class="md:grid md:grid-cols-3 gap-5">
+            <div class="md:grid md:grid-cols-4 gap-5">
                 <div class="mb-5">
                     <label 
                         class="block mb-1 text-sm text-gray-700 uppercase font-bold "
@@ -37,6 +37,16 @@
                     placeholder="Cedula con guiones"
                     class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full"
                     wire:model="cedulaPadre"
+                />
+                </div>
+
+                <div class="mb-5">
+                    <label class="block mb-1 text-sm text-gray-700 uppercase font-bold" for="cedula_padre">Fecha de Nacimiento</label>
+                    <input 
+                    id="fecha_nacimiento"
+                    type="date"
+                    class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full"
+                    wire:model="fechaNacimiento"
                 />
                 </div>
             </div>

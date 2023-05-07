@@ -9,10 +9,11 @@ class FiltrarBautismos extends Component
     public $nombre;
     public $cedulaMadre;
     public $cedulaPadre;
+    public $fechaNacimiento;
 
     public function leerDatosFormulario()
     {
-        $this->emit('criteriosBusqueda', $this->nombre, $this->cedulaMadre, $this->cedulaPadre );
+        $this->emit('criteriosBusqueda', $this->nombre, $this->cedulaMadre, $this->cedulaPadre, $this->fechaNacimiento);
     }
 
     public function render()
