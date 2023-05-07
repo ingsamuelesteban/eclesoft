@@ -11,12 +11,14 @@ class MostrarBautismos extends Component
     public $nombre;
     public $cedulaMadre;
     public $cedulaPadre;
+    public $fechaNacimiento;
 
-  public function buscar($nombre, $cedulaMadre, $cedulaPadre)
+  public function buscar($nombre, $cedulaMadre, $cedulaPadre, $fechaNacimiento)
   {
     $this->nombre = $nombre;
     $this->cedulaMadre = $cedulaMadre;
     $this->cedulaPadre = $cedulaPadre;
+    $this->fechaNacimiento = $fechaNacimiento;
   
   }
 
@@ -38,6 +40,9 @@ class MostrarBautismos extends Component
         })
         ->when($this->cedulaPadre, function($query) {
           $query->where('cedula_padre', $this->cedulaPadre);
+        })
+        ->when($this->fechaNacimiento, function($query) {
+          $query->where('fecha_nacimiento', $this->fechaNacimiento);
         })
         ->paginate(10);
 
