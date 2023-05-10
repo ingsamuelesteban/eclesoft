@@ -56,9 +56,9 @@ class BautismoController extends Controller
         $diab = Carbon::parse($bautismo->fecha_celebracion)->format('d');
         $mesb = Carbon::parse($bautismo->fecha_celebracion)->isoFormat('MMMM');
         $añob = Carbon::parse($bautismo->fecha_celebracion)->isoFormat('Y');
-        $diac = Carbon::now()->isoFormat('DD');
-        $mesc = Carbon::now()->isoFormat('MMMM');
-        $anoc = Carbon::now()->isoFormat('Y');
+        $diac = Carbon::now('America/La_Paz')->isoFormat('DD');
+        $mesc = Carbon::now('America/La_Paz')->isoFormat('MMMM');
+        $anoc = Carbon::now('America/La_Paz')->isoFormat('Y');
     
 
         $pdf = PDF::loadView('menu.bautismos.print', ['bautismo' => $bautismo, 'parroquia' => $parroquias,  'dian' => $dian, 'mesn' => $mesn, 'anon' => $anon, 'diab' => $diab, 'mesb' => $mesb, 'anob' => $añob, 'diac' => $diac, 'mesc' => $mesc, 'anoc' => $anoc ]);
