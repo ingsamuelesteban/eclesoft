@@ -53,7 +53,13 @@
                                     <span class="normal-case font-normal">{{ $bautismo->nombre}}</span>
                                 </p>
                                 <p class="font-bold text-sm uppercase text-gray-800 my-3">Genero:
-                                    <span class="normal-case font-normal">{{ $bautismo->genero}}</span>
+                                    <span class="normal-case font-normal">       
+                                        @if ($bautismo->genero==1)
+                                        Masculino
+                                     @else
+                                      Femenino   
+                                     @endif
+                                    </span>
                                 </p>
                                 <p class="font-bold text-sm uppercase text-gray-800 my-3">Lugar de Nacimiento:
                                     <span class="normal-case font-normal">{{ $bautismo->lugar_nacimiento}}</span>
