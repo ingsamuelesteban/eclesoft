@@ -4,9 +4,12 @@ namespace App\Http\Livewire;
 
 use App\Models\Bautismos;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class MostrarBautismos extends Component
 {
+
+  use WithPagination;
  
     public $nombre;
     public $cedulaMadre;
@@ -44,7 +47,7 @@ class MostrarBautismos extends Component
         ->when($this->fechaNacimiento, function($query) {
           $query->where('fecha_nacimiento', $this->fechaNacimiento);
         })
-        ->paginate(10);
+        ->orderBy('nombre')->paginate(10);
 
         return view('livewire.mostrar-bautismos', [
           'bautismos' => $bautismos 
