@@ -297,7 +297,7 @@
         </div>
 
         <div>
-            <x-text-input id="padrinos" class="block mt-1 w-full" type="text" wire:model="nombre_padrino" :value="old('nombre_padrino')" placeholder="Nombre del Padrino"/>
+            <x-text-input id="nombre_padrino" class="block mt-1 w-full" type="text" wire:model="nombre_padrino" :value="old('nombre_padrino')" placeholder="Nombre del Padrino"/>
 
             @error('nombre_padrino')
             <livewire:mostrar-alertas :message="$message" />
