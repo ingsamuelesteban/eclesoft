@@ -88,7 +88,10 @@
             <x-input-label for="celebrante_name" :value="__('celebrante')" />
     
             <x-text-input id="celebrante_name" class="block mt-1 w-full" type="text" wire:model="celebrante_name" :value="old('celebrante_name')" placeholder="Ej. Rev. P. Juan Perez"/>
-    
+            
+            @error('celebrante_name')
+            <livewire:mostrar-alertas :message="$message" />
+            @enderror
         </div>
 
 
