@@ -146,7 +146,7 @@ min-height: 100%;">
         
             <p style="text-decoration: overline; text-transform:uppercase; color:black" >
             
-                Párroco o Vicario
+                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;Párroco o Vicario Parroquial&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
             </p>
        
     </div> 
