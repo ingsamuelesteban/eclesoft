@@ -71,7 +71,13 @@ min-height: 100%;">
         </p>
 
         <p>
-            Fue <span class="text-uppercase font-weight-bold">bautizado</span> el día 
+            Fue         
+            @if ($bautismo->genero==1)
+                <span class="text-uppercase font-weight-bold">bautizado</span>
+            @else
+                <span class="text-uppercase font-weight-bold">bautizada</span> 
+            @endif
+             el día 
             <span class="text-decoration-underline">
                 {{$diab}}</span>
             del mes de 
