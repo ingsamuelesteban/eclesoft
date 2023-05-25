@@ -40,6 +40,54 @@
         </div>
     </div>
 
+    <h2 class="block text-md text-gray-700 font-bold uppercase mb-2 text-center mt-2">datos de la celebración</h2>
+
+    <div class="grid grid-cols-4">
+        <div>
+            <x-input-label for="parroquia" :value="__('Parroquia o capilla')" />
+
+            <x-text-input id="parroquia" class="block mt-1 w-full" type="text" wire:model="parroquia" :value="old('parroquia')" placeholder="Ej. Santa Cruz"/>
+
+            @error('parroquia')
+            <livewire:mostrar-alertas :message="$message" />
+        @enderror
+
+        </div>
+
+        <div>
+            <x-input-label for="ub_parroquia" :value="__('Lugar')" />
+
+            <x-text-input id="ub_parroquia" class="block mt-1 w-full" type="text" wire:model="ub_parroquia" :value="old('ub_parroquia')" placeholder="Ej. Bani"/>
+
+            @error('ub_parroquia')
+            <livewire:mostrar-alertas :message="$message" />
+        @enderror
+        </div>
+
+        <div>
+            <x-input-label for="celebrante_name" :value="__('celebrante')" />
+    
+            <x-text-input id="celebrante_name" class="block mt-1 w-full" type="text" wire:model="celebrante_name" :value="old('celebrante_name')" placeholder="Ej. Santa Cruz"/>
+
+            @error('celebrante_name')
+            <livewire:mostrar-alertas :message="$message" />
+        @enderror
+    
+        </div>
+
+        <div>
+            <x-input-label for="fecha_celebracion" :value="__('Fecha')" />
+    
+            <x-text-input id="fecha_celebracion" class="block mt-1 w-full" type="date" wire:model="fecha_celebracion" :value="old('fecha_celebracion')" />
+
+            @error('fecha_celebracion')
+            <livewire:mostrar-alertas :message="$message" />
+        @enderror
+    
+        </div>
+
+    </div>
+
 
     <h2 class="block text-md text-gray-700 font-bold uppercase mb-2 text-center">datos del bautizado</h2>
 
@@ -146,33 +194,8 @@
             </div>
            
         </div>
-    
 
-        <div>
-            <x-input-label for="padrinos" :value="__('Datos de los padrinos')" />
-
-        </div>
-            <div class="grid grid-cols-2">
-                <div>
-                <x-text-input id="padrinos" class="block mt-1 w-full" type="text" wire:model="nombre_madrina" :value="old('nombre_madrina')" placeholder="Nombre de la Madrina"/>
-
-                @error('nombre_madrina')
-                <livewire:mostrar-alertas :message="$message" />
-            @enderror
-            </div>
-
-            <div>
-                <x-text-input id="padrinos" class="block mt-1 w-full" type="text" wire:model="nombre_padrino" :value="old('nombre_padrino')" placeholder="Nombre del Padrino"/>
-    
-                @error('nombre_padrino')
-                <livewire:mostrar-alertas :message="$message" />
-            @enderror
-    
-            </div>
-
-        </div>
-
-    <h2 class="block text-md text-gray-700 font-bold uppercase mb-2 text-center mt-2">Datos del libro de nacimineto</h2>
+        <h2 class="block text-md text-gray-700 font-bold uppercase mb-2 text-center mt-2">Datos del libro de nacimineto</h2>
 
     <div class="grid grid-cols-3">
         <div>
@@ -248,53 +271,34 @@
         
     </div>
 
-    <h2 class="block text-md text-gray-700 font-bold uppercase mb-2 text-center mt-2">datos de la celebración</h2>
+    
 
-    <div class="grid grid-cols-4">
         <div>
-            <x-input-label for="parroquia" :value="__('Parroquia o capilla')" />
+            <x-input-label for="padrinos" :value="__('Datos de los padrinos')" />
 
-            <x-text-input id="parroquia" class="block mt-1 w-full" type="text" wire:model="parroquia" :value="old('parroquia')" placeholder="Ej. Santa Cruz"/>
+        </div>
+            <div class="grid grid-cols-2">
+                <div>
+                <x-text-input id="padrinos" class="block mt-1 w-full" type="text" wire:model="nombre_madrina" :value="old('nombre_madrina')" placeholder="Nombre de la Madrina"/>
 
-            @error('parroquia')
-            <livewire:mostrar-alertas :message="$message" />
-        @enderror
+                @error('nombre_madrina')
+                <livewire:mostrar-alertas :message="$message" />
+            @enderror
+            </div>
+
+            <div>
+                <x-text-input id="padrinos" class="block mt-1 w-full" type="text" wire:model="nombre_padrino" :value="old('nombre_padrino')" placeholder="Nombre del Padrino"/>
+    
+                @error('nombre_padrino')
+                <livewire:mostrar-alertas :message="$message" />
+            @enderror
+    
+            </div>
 
         </div>
 
-        <div>
-            <x-input-label for="ub_parroquia" :value="__('Lugar')" />
-
-            <x-text-input id="ub_parroquia" class="block mt-1 w-full" type="text" wire:model="ub_parroquia" :value="old('ub_parroquia')" placeholder="Ej. Bani"/>
-
-            @error('ub_parroquia')
-            <livewire:mostrar-alertas :message="$message" />
-        @enderror
-        </div>
-
-        <div>
-            <x-input-label for="celebrante_name" :value="__('celebrante')" />
     
-            <x-text-input id="celebrante_name" class="block mt-1 w-full" type="text" wire:model="celebrante_name" :value="old('celebrante_name')" placeholder="Ej. Santa Cruz"/>
-
-            @error('celebrante_name')
-            <livewire:mostrar-alertas :message="$message" />
-        @enderror
-    
-        </div>
-
-        <div>
-            <x-input-label for="fecha_celebracion" :value="__('Fecha')" />
-    
-            <x-text-input id="fecha_celebracion" class="block mt-1 w-full" type="date" wire:model="fecha_celebracion" :value="old('fecha_celebracion')" />
-
-            @error('fecha_celebracion')
-            <livewire:mostrar-alertas :message="$message" />
-        @enderror
-    
-        </div>
-
-    </div>
+ 
 
     <div>
         <x-input-label for="notas" :value="__('notas al margen')" />
