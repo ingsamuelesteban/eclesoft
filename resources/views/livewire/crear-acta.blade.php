@@ -207,7 +207,7 @@
     </div>
 
 
-    <h2 class="block text-md text-gray-700 font-bold uppercase mb-2 text-center mt-2">Datos del libro de nacimineto</h2>
+    <h2 class="block text-md text-gray-700 font-bold uppercase mb-2 text-center mt-2">Datos del libro de nacimiento</h2>
 
     <div class="grid grid-cols-3">
         <div>
