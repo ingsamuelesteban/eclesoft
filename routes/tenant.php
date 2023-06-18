@@ -114,6 +114,7 @@ Route::middleware('auth')->group(function () {
     //Rutas matrimonio 
     
     Route::get('/matrimonios/create', [MatrimonioController::class, 'create'] )->middleware(['auth', 'verified'])->name('menu.matrimonios.create');
+    Route::get('/matrimonios/index', [MatrimonioController::class, 'index'] )->middleware(['auth', 'verified'])->name('menu.matrimonios.index');
     
     //Rutas Comunidades 
     
