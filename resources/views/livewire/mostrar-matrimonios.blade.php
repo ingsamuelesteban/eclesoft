@@ -1,10 +1,10 @@
 <div>
-    <livewire:filtrar-bautismos/>  
+    <livewire:filtrar-matrimonios/>  
   <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
       @forelse ($matrimonios as $matrimonio)
       <div class="p-6 bg-white border-b border-gray-200 md:flex md:justify-between md:items-center">
               <div class="space-y-3">
-                  <a href="#" class="text-xl font-bold">
+                  <a href="{{ route('menu.matrimonios.show', $matrimonio->id)}}" class="text-xl font-bold">
                       {{ $matrimonio->nombre_esposo}} y {{ $matrimonio->nombre_esposa}}
                   </a>
                   <p class="text-sm text-indigo-600 font-bold">Documento Esposo: <span class="text-sm text-gray-600 font-bold">{{ $matrimonio->documento_esposo}}</span></p>
@@ -14,11 +14,11 @@
               </div> 
 
               <div class="flex flex-col md:flex-row items-stretch gap-3  mt-5 md:mt-0">
-                  <a href="{{ route('menu.bautismos.print', $matrimonio->id)}}" class="bg-slate-800 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center " target="_blank">
+                  <a href="{{ route('menu.matrimonios.print', $matrimonio->id)}}" class="bg-slate-800 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center " target="_blank">
                       Imprimir
                   </a>
 
-                  <a href="{{ route('menu.bautismos.edit', $matrimonio->id)}}" class="bg-blue-800 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center ">
+                  <a href="{{ route('menu.matrimonios.edit', $matrimonio->id)}}" class="bg-blue-800 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center ">
                       Abrir
                   </a>
 

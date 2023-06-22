@@ -104,7 +104,7 @@ public function editarMatrimonio()
 
     session()->flash('mensaje', 'El Acta se modificó Correctamente');
 
-        return redirect()->route('menu.matrimonios.index');
+        return redirect()->route('menu.matrimonios.create');
 }
 
     public function render()
