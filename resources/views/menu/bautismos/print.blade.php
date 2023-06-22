@@ -40,7 +40,7 @@ min-height: 100%;">
 
         <p class="text-base text-center text-uppercase fw-bold ">{{$bautismo->nombre}}</p>
         <hr>
-        <p>Que nació en <span class="text-decoration-underline text-capitalize ">{{$bautismo->lugar_nacimiento}}</span> 
+        <p>Que nació en <span class="text-decoration-underline text-uppercase ">{{$bautismo->lugar_nacimiento}}</span> 
             el día <span class="text-decoration-underline">{{ $dian }}</span> del mes de <span class="text-decoration-underline text-capitalize">
         {{$mesn}}</span>
         del año
@@ -65,9 +65,9 @@ min-height: 100%;">
         del año
         <span class="text-decoration-underline">{{$bautismo->año}}</span>
         de la
-        <span class="text-decoration-underline text-capitalize">{{$bautismo->circunscripcion}}</span>
+        <span class="text-decoration-underline text-uppercase">{{$bautismo->circunscripcion}}</span>
         Circunscripción del Estado Civil de 
-        <span class="text-decoration-underline text-capitalize">{{$bautismo->oficialia}}.</span>
+        <span class="text-decoration-underline text-uppercase">{{$bautismo->oficialia}}.</span>
         </p>
 
         <p>

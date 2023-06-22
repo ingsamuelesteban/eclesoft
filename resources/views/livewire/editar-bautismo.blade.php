@@ -8,7 +8,9 @@
 
             <x-text-input id="libro_bautismo" class="block mt-1 w-full" type="text" 
             wire:model="libro_bautismo" 
-            :value="old('libro_bautismo')" placeholder="No. Libro"/>
+            :value="old('libro_bautismo')" placeholder="No. Libro"
+            autofocus
+            />
 
             @error('libro_bautismo')
             <livewire:mostrar-alertas :message="$message" />
