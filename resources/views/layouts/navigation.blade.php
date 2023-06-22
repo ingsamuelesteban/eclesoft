@@ -30,7 +30,7 @@
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('menu.comunidades.create')" :active="request()->routeIs('menu.matrimonios.create')">
+                    <x-nav-link :href="route('menu.comunidades.create')" :active="request()->routeIs('menu.comunidades.create')">
                         {{ __('Comunidades') }}
                     </x-nav-link>
                 </div>
