@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Matrimonios;
 use Illuminate\Http\Request;
 
 class MatrimonioController extends Controller
@@ -43,9 +44,9 @@ class MatrimonioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Matrimonios $matrimonio)
     {
-        //
+        return view('menu.matrimonios.show', ['matrimonio'=> $matrimonio]);
     }
 
     /**
@@ -54,9 +55,11 @@ class MatrimonioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Matrimonios $matrimonio)
     {
-        //
+        return view('menu.matrimonios.edit', [
+            'matrimonio' => $matrimonio
+        ]);
     }
 
     /**

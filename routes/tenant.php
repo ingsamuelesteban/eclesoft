@@ -111,11 +111,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/bautismos/{bautismo}/edit', [BautismoController::class, 'edit'] )->middleware(['auth', 'verified'])->name('menu.bautismos.edit');
     Route::get('/bautismos/{bautismo}', [BautismoController::class, 'show'] )->middleware(['auth', 'verified'])->name('menu.bautismos.show');
     Route::get('/bautismos/{bautismo}/print', [BautismoController::class, 'pdf'] )->middleware(['auth', 'verified'])->name('menu.bautismos.print');
+    
     //Rutas matrimonio 
     
     Route::get('/matrimonios/create', [MatrimonioController::class, 'create'] )->middleware(['auth', 'verified'])->name('menu.matrimonios.create');
     Route::get('/matrimonios/index', [MatrimonioController::class, 'index'] )->middleware(['auth', 'verified'])->name('menu.matrimonios.index');
-    
+    Route::get('/matrimonios/{matrimonio}/edit', [MatrimonioController::class, 'edit'] )->middleware(['auth', 'verified'])->name('menu.matrimonios.edit');
+    Route::get('/matrimonios/{matrimonio}', [MatrimonioController::class, 'show'] )->middleware(['auth', 'verified'])->name('menu.matrimonios.show');
+    Route::get('/matrimonios/{matrimonio}/print', [MatrimonioController::class, 'pdf'] )->middleware(['auth', 'verified'])->name('menu.matrimonios.print');
+   
     //Rutas Comunidades 
     
     Route::get('/comunidades/create',[ComunidadesController::class, 'create'])->middleware(['auth', 'verified'])->name('menu.comunidades.create');

@@ -54,7 +54,7 @@ class MostrarMatrimonios extends Component
         })
         ->when($this->fecha_celebracion, function($query) {
             $query->where('fecha_celebracion', $this->fecha_celebracion);
-          })->orderBy('fecha_celebracion')->paginate(1)
+          })->orderBy('fecha_celebracion')->paginate(10)
         ;
 
         return view('livewire.mostrar-matrimonios', [
