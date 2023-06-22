@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Matrimonios;
+use App\Models\Parroquia;
+use Barryvdh\DomPDF\Facade\Pdf;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class MatrimonioController extends Controller
@@ -83,5 +86,21 @@ class MatrimonioController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function pdf(Matrimonios $matrimonio)
+    {
+        $parroquias = Parroquia::all();
+        $diac = Carbon::now('America/La_Paz')->isoFormat('D');
+        $mesc = Carbon::now()->isoFormat('MMMM');
+        $anoc = Carbon::now()->isoFormat('Y');
+    
+
+        $pdf = PDF::loadView('menu.matrimonios.print', ['matrimonio' => $matrimonio, 'parroquia' => $parroquias, 'diac' => $diac, 'mesc' => $mesc, 'anoc' => $anoc ]);
+        $pdf->setPaper('letter', 'portrait');
+       return $pdf->stream();
+
+      // return view('menu.bautismos.print',['bautismo' => $bautismo, 'parroquia' => $parroquias, 'dian' => $dian, 'mesn' => $mesn, 'anon' => $anon, 'diab' => $diab, 'mesb' => $mesb, 'anob' => $añob, 'diac' => $diac, 'mesc' => $mesc, 'anoc' => $anoc]);
+        
     }
 }
