@@ -42,8 +42,8 @@
 
         <h2 class="block text-md text-gray-700 font-bold uppercase mb-2 text-center mt-2">datos de la celebración</h2>
 
-    <div class="grid grid-cols-4">
-        <div>
+    <div class="grid grid-cols-2">
+       {{-- <div>
             <x-input-label for="parroquia" :value="__('Parroquia o Capilla')" />
 
             <select wire:model="parroquia" id="parroquia" class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full">
@@ -83,6 +83,7 @@
         @enderror
     
         </div>
+        --}}
 
         <div>
             <x-input-label for="celebrante_name" :value="__('celebrante')" />
