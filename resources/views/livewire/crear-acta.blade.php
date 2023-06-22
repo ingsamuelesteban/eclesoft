@@ -73,6 +73,7 @@
             <livewire:mostrar-alertas :message="$message" />
         @enderror
         </div>
+        --}}
                 <div>
             <x-input-label for="fecha_celebracion" :value="__('Fecha')" />
     
@@ -83,7 +84,7 @@
         @enderror
     
         </div>
-        --}}
+        
 
         <div>
             <x-input-label for="celebrante_name" :value="__('celebrante')" />
