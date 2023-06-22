@@ -26,7 +26,7 @@ min-height: 100%;">
         <h2 class="text-sm-center text-uppercase fw-bold  fs-6">{{ $parroquia->diocesis}}</h2>
 
         <p>
-            <img class="rounded-circle" src="{{ public_path('storage/img/' . $parroquia->logo) }}" alt="{{'Logo de la Parroquia'}}" width="100px" height="100px">
+            <img class="rounded-circle" src="{{ global_asset('storage/img/' . $parroquia->logo) }}" alt="{{'Logo de la Parroquia'}}" width="100px" height="100px">
         </p>
         
         <h2 class=" text-center text-uppercase fw-bold mb-4 fs-6">Certficado de Matrimonio</h2>
@@ -137,10 +137,10 @@ right: 0px;
 height: 50px;
 font-size: 10px;
 " class="text-center">
-    <p>{{$parroquia->calle. ', ' . $parroquia->ciudad.', 
+ <p>{{$parroquia->calle. ', ' . $parroquia->ciudad.', 
     República Dominicana'}} <br> 
     <span class="d-flex justify-content-center">
-    Tel.: {{$parroquia->telefonop}}</span></p>
+    RNC.: {{$parroquia->rnc}}, Tel.: {{$parroquia->telefonop}}, Correo.: {{$parroquia->correo}}</span></p>
 </footer>
 </div>
 
