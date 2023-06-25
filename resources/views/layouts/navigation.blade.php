@@ -24,7 +24,7 @@
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('menu.matrimonios.create')" :active="request()->routeIs('menu.matrimonios.create')">
+                    <x-nav-link :href="route('menu.matrimonios.create')" :active="request()->routeIs('menu.matrimonios.create', 'menu.matrimonios.index', 'menu.matrimonios.show', 'menu.matrimonios.edit')">
                         {{ __('Matrimonios') }}
                     </x-nav-link>
                 </div>
@@ -95,7 +95,7 @@
             <x-responsive-nav-link :href="route('menu.bautismos.create')" :active="request()->routeIs('menu.bautismos.create')">
                 {{ __('Bautismos') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('menu.matrimonios.create')" :active="request()->routeIs('menu.matrimonios.create')">
+            <x-responsive-nav-link :href="route('menu.matrimonios.create')" :active="request()->routeIs('menu.matrimonios.create', 'menu.matrimonios.index', 'menu.matrimonios.show', 'menu.matrimonios.edit')">
                 {{ __('Matrimonios') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('menu.comunidades.create')" :active="request()->routeIs('menu.comunidades.create')">

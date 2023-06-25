@@ -7,12 +7,12 @@
         </x-slot>
 
         <div class="mb-4 text-sm text-gray-600">
-            {{ __('Gracias por registrarte! Es necesario confirmar tu cuenta antes de continuar, revisa tu email y presiona sobre el enlace de confirmación. Si no has recibido ningun correo, presiona el boton a continuación.') }}
+            {{ __('Gracias por registrarte! Es necesario confirmar tu cuenta antes de continuar, presiona el boton a continuación.') }}
         </div>
 
         @if (session('status') == 'verification-link-sent')
             <div class="mb-4 font-medium text-sm text-green-600">
-                {{ __('Hemos enviado un nuevo correo de confirmación a la cuenta que colocaste en el registro.') }}
+                {{ __('Hemos enviado un correo de confirmación a la cuenta que colocaste en el registro,r evisa tu email y presiona sobre el enlace de confirmación..') }}
             </div>
         @endif
 
@@ -22,7 +22,7 @@
 
                 <div>
                     <x-primary-button>
-                        {{ __('Reenviar Email de confirmación') }}
+                        {{ __('Enviar Email de confirmación') }}
                     </x-primary-button>
                 </div>
             </form>

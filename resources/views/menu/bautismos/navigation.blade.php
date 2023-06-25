@@ -40,7 +40,7 @@
             <x-responsive-nav-link :href="route('menu.bautismos.create')" :active="request()->routeIs('menu.bautismos.create')">
                 {{ __('Registrar Acta') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('menu.bautismos.index')" :active="request()->routeIs('menu.bautismos.index')">
+            <x-responsive-nav-link :href="route('menu.bautismos.index')" :active="request()->routeIs('menu.bautismos.index', 'menu.bautismos.edit',  'menu.bautismos.show')">
                 {{ __('Buscar Acta') }}
             </x-responsive-nav-link>
         </div>

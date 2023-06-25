@@ -51,7 +51,7 @@ class EditarBautismo extends Component
         'no_libro' => 'required',
         'folio' => 'required',
         'no_declaracion' => 'required|string',
-        'año' => 'required|int',
+        'año' => 'required|string',
         'circunscripcion' => 'required|string',
         'oficialia' => 'required|string',
         'parroquia' => 'required',
