@@ -15,7 +15,7 @@
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('menu.matrimonios.index')" :active="request()->routeIs('menu.matrimonios.index')">
+                    <x-nav-link :href="route('menu.matrimonios.index')" :active="request()->routeIs('menu.matrimonios.index', 'menu.matrimonios.show', 'menu.matrimonios.edit')">
                         {{ __('Buscar Acta') }}
                     </x-nav-link>
             </div>
