@@ -45,7 +45,7 @@ min-height: 100%;">
         
 
         <p class="text-center">
-             <span class="text-uppercase fw-bold text-decoration-underline">{{$matrimonio->nombre_esposo}}</span>, documento de identidad 
+             <span class="text-uppercase fw-bold text-decoration-underline">{{$matrimonio->nombre_esposo}}</span>, documento de identidad.: 
             <span class="text-decoration-underline fw-bold">
                 {{$matrimonio->documento_esposo}}</span>
         </p>
@@ -56,7 +56,7 @@ min-height: 100%;">
 
         <p class="text-center">
          <span class="text-uppercase fw-bold text-decoration-underline">{{$matrimonio->nombre_esposa}}</span>,
-            documento de identidad
+            documento de identidad.:
             <span class="text-decoration-underline fw-bold">{{$matrimonio->documento_esposa}}</span>
         </p>
 
@@ -64,11 +64,11 @@ min-height: 100%;">
             Siendo sus testigos:
             <br><br>
             Padrino:
-            <span class="text-decoration-underline text-uppercase fw-bold">{{$matrimonio->nombre_padrino}}</span>, documento de identidad
+            <span class="text-decoration-underline text-uppercase fw-bold">{{$matrimonio->nombre_padrino}}</span>, documento de identidad.:
             <span class="text-decoration-underline fw-bold">{{$matrimonio->documento_padrino}}</span><br>
             Madrina:
             <span class="text-decoration-underline text-uppercase fw-bold">{{$matrimonio->nombre_madrina}}</span>,
-            documento de identidad
+            documento de identidad.:
             <span class="text-decoration-underline fw-bold">{{$matrimonio->documento_madrina}}</span><br><br>
 
 
