@@ -67,7 +67,7 @@
 
     </div>
 
-    <div class="grid grid-cols-3">
+    <div class="grid grid-cols-4">
         <div>
             <x-input-label for="calle" :value="__('Calle y No.')" />
 
@@ -99,6 +99,17 @@
             wire:model="provincia" 
             :value="old('provincia')" placeholder="Ej. San Cristobal" />
             @error('provincia')
+            <livewire:mostrar-alertas :message="$message" />
+        @enderror
+        </div>
+
+        <div>
+            <x-input-label for="circunscripcion" :value="__('circunscripcion')" />
+
+            <x-text-input id="circunscripcion" class="block mt-1 w-full" type="text" 
+            wire:model="circunscripcion" 
+            :value="old('circunscripcion')" placeholder="Ej. 1ra Circunscripción de Baní" />
+            @error('circunscripcion')
             <livewire:mostrar-alertas :message="$message" />
         @enderror
         </div>
