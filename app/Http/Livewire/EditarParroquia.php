@@ -18,6 +18,7 @@ class EditarParroquia extends Component
     public $calle;
     public $ciudad;
     public $provincia;
+    public $circunscripcion;
     public $correo;
     public $parroquia_id;
     public $logo;
@@ -37,6 +38,7 @@ class EditarParroquia extends Component
         'calle' => 'required|string',
         'ciudad' => 'required|string',
         'provincia' => 'required|string',
+        'circunscripcion' => 'required|string',
         'correo' => 'required|string',
         'logo_nuevo' => 'nullable|image|max:1024',
     ];
@@ -54,6 +56,7 @@ class EditarParroquia extends Component
         $this->calle = $parroquia->calle;
         $this->ciudad = $parroquia->ciudad;
         $this->provincia = $parroquia->provincia;
+        $this->circunscripcion = $parroquia->circunscripcion;
         $this->correo = $parroquia->correo;
         $this->logo = $parroquia->logo;
     }
@@ -84,6 +87,7 @@ class EditarParroquia extends Component
         $parroquia->calle=$datos['calle'];
         $parroquia->ciudad=$datos['ciudad'];
         $parroquia->provincia=$datos['provincia'];
+        $parroquia->circunscripcion=$datos['circunscripcion'];
         $parroquia->correo=$datos['correo'];
         $parroquia->logo = $datos['logo'] ?? $parroquia->logo;
 
