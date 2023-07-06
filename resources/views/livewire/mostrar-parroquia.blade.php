@@ -15,6 +15,7 @@
                 <p class="text-sm text-gray-600 font-bold">Calle: {{ $parroquia->calle}}</p>
                 <p class="text-sm text-gray-600 font-bold">Ciudad: {{ $parroquia->ciudad}}</p>
                 <p class="text-sm text-gray-600 font-bold">Provincia: {{ $parroquia->provincia}}</p>
+                <p class="text-sm text-gray-600 font-bold">Provincia: {{ $parroquia->circunscripcion}}</p>
             </div> 
 
             <div class="flex flex-col md:flex-row items-stretch gap-3  mt-5 md:mt-0">
