@@ -20,24 +20,24 @@
                 </div>
 
                 <div class="mb-5">
-                    <label class="block mb-1 text-sm text-gray-700 uppercase font-bold" for="cedula_madre">Cedula Madre</label>
+                    <label class="block mb-1 text-sm text-gray-700 uppercase font-bold" for="nombre_madre">Nombre Madre</label>
                     <input 
-                        id="cedula_madre"
+                        id="nombre_madre"
                         type="text"
-                        placeholder="Cedula con guiones"
+                        placeholder="Nombre completo"
                         class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full"
-                        wire:model="cedulaMadre"
+                        wire:model="nombreMadre"
                     />
                 </div>
 
                 <div class="mb-5">
-                    <label class="block mb-1 text-sm text-gray-700 uppercase font-bold" for="cedula_padre">Cedula del Padre</label>
+                    <label class="block mb-1 text-sm text-gray-700 uppercase font-bold" for="nombre_padre">Nombre del Padre</label>
                     <input 
-                    id="cedula_padre"
+                    id="nombre_padre"
                     type="text"
-                    placeholder="Cedula con guiones"
+                    placeholder="Nombre Completo"
                     class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full"
-                    wire:model="cedulaPadre"
+                    wire:model="nombrePadre"
                 />
                 </div>
 
