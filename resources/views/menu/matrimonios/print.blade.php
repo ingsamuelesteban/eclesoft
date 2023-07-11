@@ -75,6 +75,13 @@ min-height: 100%;">
             Transcrita el Acta en los Registros del Estado Civil de la {{$parroquia->circunscripcion}}, el dia
             <span class="text-decoration-underline">{{Carbon\Carbon::parse($matrimonio->fecha_transcripcion)->isoFormat('DD')}}</span> del mes de <span class="text-decoration-underline">{{Carbon\Carbon::parse($matrimonio->fecha_transcripcion)->isoFormat('MMMM')}}</span> del año <span class="text-decoration-underline">{{Carbon\Carbon::parse($matrimonio->fecha_transcripcion)->isoFormat('Y')}}</span> <span class="fw-bold">({{Carbon\Carbon::parse($matrimonio->fecha_transcripcion)->isoFormat('L')}})</span>, Libro <span class="text-decoration-underline fw-bold">{{$matrimonio->no_libro}}</span>, Folio <span class="text-decoration-underline fw-bold">{{$matrimonio->folio}}</span>, Acta No. <span class="text-decoration-underline fw-bold">{{$matrimonio->no_transcripcion}}</span>
         </p>
+        <p>
+            Notas al margen: 
+            <span class="text-decoration-underline">
+                {{$matrimonio->notas}}
+
+            </span>
+        </p>
        <style>
         p.linea{
             display: inline-block;

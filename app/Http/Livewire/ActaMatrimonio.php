@@ -27,6 +27,7 @@ class ActaMatrimonio extends Component
         public $no_libro;
         public $folio;
         public $no_transcripcion;
+        public $notas;
 
     protected $rules = [
         'libro_matrimonio' => 'required|string',
@@ -46,6 +47,7 @@ class ActaMatrimonio extends Component
         'no_libro' => 'required|string',
         'folio' => 'required|string',
         'no_transcripcion' => 'required|string',
+        'notas' => 'string|nullable',
     ];
 
     public function crearMatrimonio(){
@@ -72,6 +74,7 @@ class ActaMatrimonio extends Component
             'no_libro' => $datos['no_libro'],
             'folio' => $datos['folio'],
             'no_transcripcion' => $datos['no_transcripcion'],
+            'notas' =>$datos['notas'],
         ]);
 
                 //Crear un mensaje antes de redireccionar 

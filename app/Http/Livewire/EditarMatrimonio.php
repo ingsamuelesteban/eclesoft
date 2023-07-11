@@ -27,6 +27,7 @@ class EditarMatrimonio extends Component
     public $no_libro;
     public $folio;
     public $no_transcripcion;
+    public $notas;
 
 protected $rules = [
     'libro_matrimonio' => 'required|string',
@@ -46,6 +47,7 @@ protected $rules = [
     'no_libro' => 'required|string',
     'folio' => 'required|string',
     'no_transcripcion' => 'required|string',
+    'notas' => 'string|nullable',
 ];
 
 public function mount(Matrimonios $matrimonio)
@@ -68,6 +70,7 @@ public function mount(Matrimonios $matrimonio)
     $this->no_libro = $matrimonio->no_libro;
     $this->folio = $matrimonio->folio;
     $this->no_transcripcion = $matrimonio->no_transcripcion;
+    $this->notas = $matrimonio->notas;
 }
 
 public function editarMatrimonio()
@@ -95,6 +98,7 @@ public function editarMatrimonio()
     $matrimonio->no_libro = $datos['no_libro'];
     $matrimonio->folio = $datos['folio'];
     $matrimonio->no_transcripcion = $datos['no_transcripcion'];
+    $matrimonio->notas = $datos['notas'];
 
     //Guardar las modificaciones
 

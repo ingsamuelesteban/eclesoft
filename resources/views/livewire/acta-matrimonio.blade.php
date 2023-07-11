@@ -230,6 +230,13 @@
 
     </div>
 
+    <div>
+        <x-input-label for="notas" :value="__('notas al margen')" />
+
+        <textarea class="block mt-1 w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" wire:model="notas" id="notas" cols="30" rows="4" :value="old('notas')">...</textarea>
+
+    </div>
+
 
     <x-primary-button class="w-full justify-center">
         {{ __('Guardar') }}
