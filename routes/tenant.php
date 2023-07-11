@@ -125,6 +125,16 @@ Route::middleware('auth')->group(function () {
     Route::get('/comunidades/create',[ComunidadesController::class, 'create'])->middleware(['auth', 'verified'])->name('menu.comunidades.create');
     Route::get('/comunidades/index', [ComunidadesController::class, 'index'])->middleware(['auth', 'verified'])->name('menu.comunidades.index');
     
+    //Rutas Certificaciones
+
+    Route::get('/certificaciones/index', [CertificacionesController::class, 'index'])->middleware(['auth', 'verified'])->name('menu.certificaciones.index');
+
+    //Rutas NoBautizado
+
+    Route::get('/nobautizado/index',[NoBautizadoController::class, 'index'])->middleware(['auth', 'verified'])->name('menu.nobautizado.index');
+    Route::get('/nobautizado/create',[NoBautizadoController::class, 'create'])->middleware(['auth', 'verified'])->name('menu.nobautizado.create');
+    
+
     //Rutas Administracion 
     Route::get('/administracion/index', [AdministracionController::class, 'index'])->middleware(['auth', 'verified'])->name('menu.administracion.index');
     Route::get('/administracion/create', [AdministracionController::class, 'create'])->middleware(['auth', 'verified'])->name('menu.administracion.create');
