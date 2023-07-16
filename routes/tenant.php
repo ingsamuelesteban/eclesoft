@@ -26,7 +26,7 @@ use App\Http\Controllers\BautismoController;
 use App\Http\Controllers\CertificacionesController;
 use App\Http\Controllers\ComunidadesController;
 use App\Http\Controllers\MatrimonioController;
-
+use App\Http\Controllers\NoBautizadoController;
 
 /*
 |--------------------------------------------------------------------------
