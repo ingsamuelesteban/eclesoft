@@ -1,5 +1,5 @@
 
-<form class="md:w-full space-y-5" wire:submit.prevent='crearActa'>
+<form class="md:w-full space-y-5" wire:submit.prevent='guardarNoBautizado'>
 
     <div class="grid grid-cols-3">
     <div>
@@ -9,7 +9,7 @@
         <x-text-input id="nombre" class="block mt-1 w-full" type="text" 
         wire:model="nombre" 
         :value="old('nombre')" placeholder="Primer y Segundo Nombre"
-        maxlength="20"/>
+        maxlength="20" autofocus/>
 
         @error('nombre')
             <livewire:mostrar-alertas :message="$message" />
@@ -126,39 +126,39 @@
 
     <div class=" border-dashed border-2 border-indigo-200 ...">
         
-            <x-input-label for="docpadre" :value="__('cédulas')" />
+        <x-input-label for="docpadre" :value="__('cédulas')" />
+     <div class="grid grid-cols-2">
+
          <div class="grid grid-cols-2">
+        <div class="my-2">
+        <x-input-label for="docpadre" :value="__('Padre.:')" />
 
-             <div class="grid grid-cols-2">
-            <div class="my-2">
-            <x-input-label for="docpadre" :value="__('Padre.:')" />
-
-            </div>
-            <div>  
-            <x-text-input id="docpadre" class="block mt-1 w-full" type="file" 
-            wire:model="docpadre" />
-            
-            @error('docpadre')
-                <livewire:mostrar-alertas :message="$message" />
-            @enderror
-            </div>
         </div>
-
-        <div class="grid grid-cols-2">
-            <div class="my-2">
-                <x-input-label for="docmadre" :value="__('Madre.:')" />
-    
-            </div>
-            <div>  
-                <x-text-input id="docmadre" class="block mt-1 w-full" type="file" 
-                wire:model="docmadre" />
-                
-                @error('docmadre')
-                    <livewire:mostrar-alertas :message="$message" />
-                @enderror
-            </div>
+        <div>  
+        <x-text-input id="docpadre" class="block mt-1 w-full" type="file" 
+        wire:model="docpadre" />
+        
+        @error('docpadre')
+            <livewire:mostrar-alertas :message="$message" />
+        @enderror
         </div>
     </div>
+
+    <div class="grid grid-cols-2">
+        <div class="my-2">
+            <x-input-label for="docmadre" :value="__('Madre.:')" />
+
+        </div>
+        <div>  
+            <x-text-input id="docmadre" class="block mt-1 w-full" type="file" 
+            wire:model="docmadre" />
+            
+            @error('docmadre')
+                <livewire:mostrar-alertas :message="$message" />
+            @enderror
+        </div>
+    </div>
+</div>
 </div>
     
 
@@ -170,9 +170,40 @@
 
     </div>
 
-    <x-primary-button class="w-full justify-center">
+    <x-primary-button class="w-full justify-center" wire:click="$emit('mostrarAlerta')">
         {{ __('Guardar') }}
     </x-primary-button>
     
 
 </form>
+
+@push('scripts')
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    Livewire.on('mostrarAlerta'=>{
+    Swal.fire({
+    title: '¿Eliminar Registro?',
+    text: "Un registro eliminado, no se puede recuperar!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Sí, Eliminar!',
+    cancelButtonText: 'Cancelar'
+    }).then((result) => {
+    if (result.isConfirmed) {
+
+        //Eliminar desde base de datos
+        Livewire.emit('eliminarBautismo', bautismoId)
+        Swal.fire(
+        'Se eliminó el resgistro',
+        'Eliminado Correctamente.',
+        'success'
+        )
+    }
+    })
+    })
+</script>
+
+@endpush

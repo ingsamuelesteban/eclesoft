@@ -133,7 +133,10 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/nobautizado/index',[NoBautizadoController::class, 'index'])->middleware(['auth', 'verified'])->name('menu.nobautizado.index');
     Route::get('/nobautizado/create',[NoBautizadoController::class, 'create'])->middleware(['auth', 'verified'])->name('menu.nobautizado.create');
-    
+    Route::get('/nobautizado/{noBautizado}/edit', [NoBautizadoController::class, 'edit'] )->middleware(['auth', 'verified'])->name('menu.nobautizado.edit');
+    Route::get('/nobautizado/{noBautizado}', [NoBautizadoController::class, 'show'] )->middleware(['auth', 'verified'])->name('menu.nobautizado.show');
+    Route::get('/nobautizado/{noBautizado}/print', [NoBautizadoController::class, 'pdf'] )->middleware(['auth', 'verified'])->name('menu.nobautizado.print');
+
 
     //Rutas Administracion 
     Route::get('/administracion/index', [AdministracionController::class, 'index'])->middleware(['auth', 'verified'])->name('menu.administracion.index');

@@ -27,7 +27,6 @@ class EditarNoBautizado extends Component
     public $docmadre_nuevo;
     public $docpadre_nuevo;
     public $noBautizado_id;
-    
 
     use WithFileUploads;
 
@@ -59,7 +58,8 @@ class EditarNoBautizado extends Component
         $this->hospital = $noBautizado ->hospital;
         $this->escuela = $noBautizado ->escuela;
         $this->docmadre = $noBautizado ->docmadre;
-        $this->docpadre = $noBautizado ->docpadre;  
+        $this->docpadre = $noBautizado ->docpadre; 
+        $this->notas = $noBautizado ->notas;   
     }
 
     public function editarNoBautizado()
@@ -94,11 +94,11 @@ class EditarNoBautizado extends Component
         $noBautizado->cedula_padre = $datos['cedula_padre'];
         $noBautizado->nombre_madre = $datos['nombre_madre'];
         $noBautizado->cedula_madre = $datos['cedula_madre'];
-        $noBautizado->hospital = $datos['hospital'];
-        $noBautizado->escuela = $datos['escuela'];
-        $noBautizado->docpadre = $datos['docpadre'];
-        $noBautizado->docmadre = $datos['docmadre'];
-
+        $noBautizado->hospital = $datos['hospital'] ?? $noBautizado->hospital;
+        $noBautizado->escuela = $datos['escuela'] ?? $noBautizado->escuela;
+        $noBautizado->docpadre = $datos['docpadre'] ?? $noBautizado->docpadre;
+        $noBautizado->docmadre = $datos['docmadre'] ?? $noBautizado->docmadre;
+        $noBautizado->notas = $datos['notas'];
         $noBautizado->save();
 
         //Mensaje
