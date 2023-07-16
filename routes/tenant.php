@@ -23,6 +23,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\AdministracionController;
 use App\Http\Controllers\BautismoController;
+use App\Http\Controllers\CertificacionesController;
 use App\Http\Controllers\ComunidadesController;
 use App\Http\Controllers\MatrimonioController;
 
