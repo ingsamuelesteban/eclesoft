@@ -35,11 +35,11 @@
                     </x-nav-link>
                 </div>
 
-                 <!-- <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('menu.certificaciones.index')" :active="request()->routeIs('menu.certificaciones.index', 'menu.nobautizado.create')">
+                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('menu.certificaciones.index')" :active="request()->routeIs('menu.certificaciones.index', 'menu.nobautizado.create', 'menu.nobautizado.index', 'menu.nobautizado.edit',  'menu.nobautizado.show')">
                         {{ __('Certificaciones') }}
                     </x-nav-link>
-                </div>-->
+                </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('menu.administracion.index')" :active="request()->routeIs('menu.administracion.index')">
@@ -107,9 +107,9 @@
                 {{ __('Comunidades') }}
             </x-responsive-nav-link>
 
-          <!--   <x-responsive-nav-link :href="route('menu.certificaciones.index')" :active="request()->routeIs('menu.certificaciones.index', 'menu.nobautizado.create')">
+          <x-responsive-nav-link :href="route('menu.certificaciones.index')" :active="request()->routeIs('menu.certificaciones.index', 'menu.nobautizado.create', 'menu.nobautizado.index', 'menu.nobautizado.edit',  'menu.nobautizado.show')">
                 {{ __('Certificaciones') }}
-            </x-responsive-nav-link>-->
+            </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('menu.administracion.index')" :active="request()->routeIs('menu.administracion.index')">
                 {{ __('Administracion') }}
             </x-responsive-nav-link>
