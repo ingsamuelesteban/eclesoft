@@ -18,7 +18,7 @@
 
             <div class="flex flex-col md:flex-col items-center">
                 <div class="my-1 w-74">
-                    <img src="{{ global_asset('img/e.png')}}" alt="{{'Logo de la Aplicacion'}}">
+                    <img src="{{ global_asset('img/e2.png')}}" alt="{{'Logo de la Aplicacion'}}">
             </div>
                 <a href="{{ route('login')}}" class="bg-blue-800 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center justify-center ">Iniciar Sesion</a>
                 
