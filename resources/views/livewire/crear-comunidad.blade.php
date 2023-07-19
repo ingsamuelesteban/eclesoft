@@ -523,7 +523,7 @@
 
     <div class="grid grid-cols-2">
         <h3 class="block text-sm text-gray-700 font-bold uppercase  text-center">15. Pastoral del Ecumenismo</h3>
-        <h3 class="block text-sm text-gray-700 font-bold uppercase  text-center">14. Pastoral del Medio Ambiente</h3>
+        <h3 class="block text-sm text-gray-700 font-bold uppercase  text-center">16. Pastoral del Medio Ambiente</h3>
     </div>
 
     <div class="grid grid-cols-2">

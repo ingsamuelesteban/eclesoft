@@ -91,7 +91,7 @@
        
     </div>
 
-    <x-input-label for="hospital" :value="__('Dcoumentos recibidos')" />
+    <x-input-label for="hospital" :value="__('Documentos recibidos')" />
     <div class="grid grid-cols-2 border-dashed border-2 border-indigo-200 ...">
         <div class="grid grid-cols-2">
             <div class="my-2">
