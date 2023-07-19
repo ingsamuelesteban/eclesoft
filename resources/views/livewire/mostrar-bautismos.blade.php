@@ -31,9 +31,11 @@
         </div>
         @empty
         <p class="p-3 text-center text-sm text-gray-600">No hay registros almacenados...</p>
-        <a href="{{ route('menu.nobautizado.create')}}" class="bg-blue-800 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center ">
-            Crear Acta de No Bautizado
-        </a>
+        <div class="flex gap-3  mt-5 md:mt-0 justify-center">
+            <a href="{{ route('menu.nobautizado.create')}}" class="bg-blue-800 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center justify-center ">
+                Crear Acta de No Bautizado
+            </a>
+            </div>
         @endforelse
     </div>
 
