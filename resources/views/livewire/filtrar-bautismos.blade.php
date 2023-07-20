@@ -24,7 +24,7 @@
                     <input 
                         id="nombre_madre"
                         type="text"
-                        placeholder="Nombre completo"
+                        placeholder="Nombre Completo o Parcial"
                         class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full"
                         wire:model="nombreMadre"
                     />
@@ -35,7 +35,7 @@
                     <input 
                     id="nombre_padre"
                     type="text"
-                    placeholder="Nombre Completo"
+                    placeholder="Nombre Completo o Parcial"
                     class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full"
                     wire:model="nombrePadre"
                 />
