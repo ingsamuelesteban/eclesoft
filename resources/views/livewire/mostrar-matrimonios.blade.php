@@ -19,7 +19,7 @@
                   </a>
 
                   <a href="{{ route('menu.matrimonios.edit', $matrimonio->id)}}" class="bg-blue-800 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center ">
-                      Abrir
+                      Editar
                   </a>
 
                   <button 
