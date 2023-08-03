@@ -9,7 +9,7 @@
         <x-text-input id="nombre" class="block mt-1 w-full" type="text" 
         wire:model="nombre" 
         :value="old('nombre')" placeholder="Primer y Segundo Nombre"
-        maxlength="20" autofocus/>
+        maxlength="35" autofocus/>
 
         @error('nombre')
             <livewire:mostrar-alertas :message="$message" />
