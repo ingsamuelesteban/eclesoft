@@ -47,7 +47,7 @@ class MostrarBautismos extends Component
         ->when($this->fechaNacimiento, function($query) {
           $query->where('fecha_nacimiento', $this->fechaNacimiento);
         })
-        ->orderBy('nombre')->paginate(10);
+        ->orderBy('fecha_celebracion')->paginate(10);
 
         return view('livewire.mostrar-bautismos', [
           'bautismos' => $bautismos 

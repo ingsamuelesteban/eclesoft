@@ -20,17 +20,6 @@
                 </div>
 
                 <div class="mb-5">
-                    <label class="block mb-1 text-sm text-gray-700 uppercase font-bold" for="nombre_madre">Nombre Madre</label>
-                    <input 
-                        id="nombre_madre"
-                        type="text"
-                        placeholder="Nombre Completo o Parcial"
-                        class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full"
-                        wire:model="nombreMadre"
-                    />
-                </div>
-
-                <div class="mb-5">
                     <label class="block mb-1 text-sm text-gray-700 uppercase font-bold" for="nombre_padre">Nombre del Padre</label>
                     <input 
                     id="nombre_padre"
@@ -42,7 +31,20 @@
                 </div>
 
                 <div class="mb-5">
-                    <label class="block mb-1 text-sm text-gray-700 uppercase font-bold" for="cedula_padre">Fecha de Nacimiento</label>
+                    <label class="block mb-1 text-sm text-gray-700 uppercase font-bold" for="nombre_madre">Nombre Madre</label>
+                    <input 
+                        id="nombre_madre"
+                        type="text"
+                        placeholder="Nombre Completo o Parcial"
+                        class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full"
+                        wire:model="nombreMadre"
+                    />
+                </div>
+
+
+
+                <div class="mb-5">
+                    <label class="block mb-1 text-sm text-gray-700 uppercase font-bold" for="fecha_nacimiento">Fecha de Nacimiento</label>
                     <input 
                     id="fecha_nacimiento"
                     type="date"
