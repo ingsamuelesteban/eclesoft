@@ -9,7 +9,7 @@
         <x-text-input id="nombre" class="block mt-1 w-full" type="text" 
         wire:model="nombre" 
         :value="old('nombre')" placeholder="Primer y Segundo Nombre"
-        maxlength="35" autofocus/>
+        maxlength="20" autofocus/>
 
         @error('nombre')
             <livewire:mostrar-alertas :message="$message" />
@@ -95,70 +95,195 @@
     <div class="grid grid-cols-2 border-dashed border-2 border-indigo-200 ...">
         <div class="grid grid-cols-2">
             <div class="my-2">
-            <x-input-label for="hospital" :value="__('Hospital o del Alcalde')" />
+
+            <x-input-label for="hospital" :value="__('Hospital o del Alcalde.:')" />
 
             </div>
-            <div>  
+
+            <div
+                x-data="{ isUploading1: false, progress: 0 }"
+                x-on:livewire-upload-start="isUploading1 = true"
+                x-on:livewire-upload-finish="isUploading1 = false"
+                x-on:livewire-upload-error="isUploading1 = false"
+                x-on:livewire-upload-progress="progress = $event.detail.progress"
+            >  
+
             <x-text-input id="hospital" class="block mt-1 w-full" type="file" 
             wire:model="hospital_nuevo" />
+
+            <div wire:loading wire:target="hospital_nuevo">Subiendo...</div>
+
+            <div x-show="isUploading1" class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+
+                
+                <div class="bg-blue-600 h-2.5 rounded-full" style="transition: width 1s":style="`width: ${progress}%;`">
+                </div>
+            </div>
             
             @error('hospital_nuevo')
                 <livewire:mostrar-alertas :message="$message" />
             @enderror
             </div>
+        
+        
+            @if ($hospital)
+            <a  
+            href="{{global_asset('storage/img/' . $hospital)}}"
+            target="_blank"
+            class="bg-blue-400 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center"
+            >
+                    Descargar Doc. Hospital o Alcalde
+            </a>
+            @else
+            <a href="#"
+                 class="bg-gray-400 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center"
+                >
+                    Descargar Doc. Hospital o Alcalde
+                </a>
+        @endif
         </div>
+    
+    
 
         <div class="grid grid-cols-2">
             <div class="my-2">
-                <x-input-label for="escuela" :value="__('Escuela')" />
+                <x-input-label for="escuela" :value="__('Escuela.:')" />
     
             </div>
-            <div>  
+            <div
+            x-data="{ isUploading2: false, progress: 0 }"
+            x-on:livewire-upload-start="isUploading2 = true"
+            x-on:livewire-upload-finish="isUploading2 = false"
+            x-on:livewire-upload-error="isUploading2 = false"
+            x-on:livewire-upload-progress="progress = $event.detail.progress"
+        >  
                 <x-text-input id="escuela" class="block mt-1 w-full" type="file" 
                 wire:model="escuela_nuevo" />
+
+                <div wire:loading wire:target="escuela_nuevo">Subiendo...</div>
+
+            <div x-show="isUploading2" class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+
+                
+                <div class="bg-blue-600 h-2.5 rounded-full" style="transition: width 1s":style="`width: ${progress}%;`"></div>
+            </div>
                 
                 @error('escuela_nuevo')
                     <livewire:mostrar-alertas :message="$message" />
                 @enderror
             </div>
+            @if ($escuela)
+            <a href="{{global_asset('storage/img/' . $escuela)}}"
+            target="_blank"
+            class="bg-blue-400 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center"
+            >
+                Descargar Doc. de la Escuela
+            </a>
+            @else
+            <a href="#"
+                 class="bg-gray-400 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center"
+                >
+                    Descargar Doc. de la Escuela
+                </a>
+            @endif
         </div>
     </div>
 
+    
+
     <div class=" border-dashed border-2 border-indigo-200 ...">
         
-            <x-input-label for="docpadre" :value="__('cédulas')" />
-         <div class="grid grid-cols-2">
+        <x-input-label for="docpadre" :value="__('cédulas')" />
+     <div class="grid grid-cols-2">
 
-             <div class="grid grid-cols-2">
-            <div class="my-2">
-            <x-input-label for="docpadre" :value="__('Padre.:')" />
+        <div class="grid grid-cols-2">
+        <div class="my-2">
+        <x-input-label for="docpadre" :value="__('Padre.:')" />
 
-            </div>
-            <div>  
-            <x-text-input id="docpadre" class="block mt-1 w-full" type="file" 
-            wire:model="docpadre_nuevo" />
-            
-            @error('docpadre_nuevo')
-                <livewire:mostrar-alertas :message="$message" />
-            @enderror
-            </div>
         </div>
+
+        <div x-data="{ isUploading6: false, progress: 0 }"
+        x-on:livewire-upload-start="isUploading6 = true"
+        x-on:livewire-upload-finish="isUploading6 = false"
+        x-on:livewire-upload-error="isUploading6 = false"
+        x-on:livewire-upload-progress="progress = $event.detail.progress"> 
+
+        <x-text-input id="docpadre" class="block mt-1 w-full" type="file" 
+        wire:model="docpadre_nuevo" />
+
+        <div wire:loading wire:target="docpadre_nuevo">Subiendo...</div>
+
+                <div x-show="isUploading6" class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                
+                    <div class="bg-blue-600 h-2.5 rounded-full my-2" style="transition: width 1s":style="`width: ${progress}%;`"></div>
+                </div>
+        
+        @error('docpadre_nuevo')
+            <livewire:mostrar-alertas :message="$message" />
+        @enderror
+            </div>
+            @if ($docpadre)
+            
+            <a href="{{global_asset('storage/img/' . $docpadre)}}"
+            target="_blank"
+            class="bg-blue-400 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center"
+            >
+                    Descargar Cedula del Padre
+            </a>
+            @else
+            <a href="#"
+                 class="bg-gray-400 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center"
+                >
+                    Descargar Cedula del Padre
+                </a>
+            @endif
+        </div>
+
 
         <div class="grid grid-cols-2">
             <div class="my-2">
                 <x-input-label for="docmadre" :value="__('Madre.:')" />
     
             </div>
-            <div>  
+            <div
+            x-data="{ isUploading4: false, progress: 0 }"
+            x-on:livewire-upload-start="isUploading4 = true"
+            x-on:livewire-upload-finish="isUploading4 = false"
+            x-on:livewire-upload-error="isUploading4 = false"
+            x-on:livewire-upload-progress="progress = $event.detail.progress"
+        >     
                 <x-text-input id="docmadre" class="block mt-1 w-full" type="file" 
                 wire:model="docmadre_nuevo" />
+
+                <div wire:loading wire:target="docmadre_nuevo">Subiendo...</div>
+
+                <div x-show="isUploading4" class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+    
+                    
+                    <div class="bg-blue-600 h-2.5 rounded-full" style="transition: width 1s":style="`width: ${progress}%;`">
+                    </div>
+                </div>
                 
                 @error('docmadre_nuevo')
                     <livewire:mostrar-alertas :message="$message" />
                 @enderror
             </div>
+            @if ($docmadre)
+            <a href="{{global_asset('storage/img/' . $docmadre)}}"
+            target="_blank"
+             class="bg-blue-400 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center"
+            >
+                    Descargar Cedula de la Madre
+            </a>
+            @else
+            <a href="#"
+                 class="bg-gray-400 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center"
+                >
+                    Descargar Cedula de la Madre
+                </a>
+            @endif
+            </div>
         </div>
-    </div>
 </div>
     
 
@@ -170,9 +295,11 @@
 
     </div>
 
+    <div wire:loading.remove>
+        
     <x-primary-button class="w-full justify-center">
         {{ __('Guardar Cambios') }}
     </x-primary-button>
     
-
+    </div>
 </form>

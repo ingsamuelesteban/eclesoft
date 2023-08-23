@@ -91,21 +91,37 @@
        
     </div>
 
-    <x-input-label for="hospital" :value="__('Documentos recibidos')" />
+    <x-input-label for="hospital" :value="__('Dcoumentos recibidos')" />
     <div class="grid grid-cols-2 border-dashed border-2 border-indigo-200 ...">
         <div class="grid grid-cols-2">
             <div class="my-2">
             <x-input-label for="hospital" :value="__('Hospital o del Alcalde')" />
 
             </div>
-            <div>  
+            <div
+                x-data="{ isUploading1: false, progress: 0 }"
+                x-on:livewire-upload-start="isUploading1 = true"
+                x-on:livewire-upload-finish="isUploading1 = false"
+                x-on:livewire-upload-error="isUploading1 = false"
+                x-on:livewire-upload-progress="progress = $event.detail.progress"
+            >  
             <x-text-input id="hospital" class="block mt-1 w-full" type="file" 
             wire:model="hospital" />
+
+            <div wire:loading wire:target="hospital">Subiendo...</div>
+
+            <div x-show="isUploading1" class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+
+                
+                <div class="bg-blue-600 h-2.5 rounded-full" style="transition: width 1s":style="`width: ${progress}%;`"></div>
+            </div>
+           
             
             @error('hospital')
                 <livewire:mostrar-alertas :message="$message" />
             @enderror
             </div>
+            
         </div>
 
         <div class="grid grid-cols-2">
@@ -113,9 +129,20 @@
                 <x-input-label for="escuela" :value="__('Escuela')" />
     
             </div>
-            <div>  
+            <div x-data="{ isUploading2: false, progress: 0 }"
+            x-on:livewire-upload-start="isUploading2 = true"
+            x-on:livewire-upload-finish="isUploading2 = false"
+            x-on:livewire-upload-error="isUploading2 = false"
+            x-on:livewire-upload-progress="progress = $event.detail.progress">  
                 <x-text-input id="escuela" class="block mt-1 w-full" type="file" 
                 wire:model="escuela" />
+
+                <div wire:loading wire:target="escuela">Subiendo...</div>
+
+                <div x-show="isUploading2" class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                
+                    <div class="bg-blue-600 h-2.5 rounded-full my-2" style="transition: width 1s":style="`width: ${progress}%;`"></div>
+                </div>
                 
                 @error('escuela')
                     <livewire:mostrar-alertas :message="$message" />
@@ -134,9 +161,21 @@
         <x-input-label for="docpadre" :value="__('Padre.:')" />
 
         </div>
-        <div>  
+
+        <div x-data="{ isUploading3: false, progress: 0 }"
+        x-on:livewire-upload-start="isUploading3 = true"
+        x-on:livewire-upload-finish="isUploading3 = false"
+        x-on:livewire-upload-error="isUploading3 = false"
+        x-on:livewire-upload-progress="progress = $event.detail.progress"> 
         <x-text-input id="docpadre" class="block mt-1 w-full" type="file" 
         wire:model="docpadre" />
+
+        <div wire:loading wire:target="docpadre">Subiendo...</div>
+
+                <div x-show="isUploading3" class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                
+                    <div class="bg-blue-600 h-2.5 rounded-full my-2" style="transition: width 1s":style="`width: ${progress}%;`"></div>
+                </div>
         
         @error('docpadre')
             <livewire:mostrar-alertas :message="$message" />
@@ -149,9 +188,20 @@
             <x-input-label for="docmadre" :value="__('Madre.:')" />
 
         </div>
-        <div>  
+        <div x-data="{ isUploading4: false, progress: 0 }"
+        x-on:livewire-upload-start="isUploading4 = true"
+        x-on:livewire-upload-finish="isUploading4 = false"
+        x-on:livewire-upload-error="isUploading4 = false"
+        x-on:livewire-upload-progress="progress = $event.detail.progress"> 
             <x-text-input id="docmadre" class="block mt-1 w-full" type="file" 
             wire:model="docmadre" />
+
+            <div wire:loading wire:target="docmadre">Subiendo...</div>
+
+                <div x-show="isUploading4" class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                
+                    <div class="bg-blue-600 h-2.5 rounded-full my-2" style="transition: width 1s":style="`width: ${progress}%;`"></div>
+                </div>
             
             @error('docmadre')
                 <livewire:mostrar-alertas :message="$message" />
@@ -170,9 +220,11 @@
 
     </div>
 
+    <div wire:loading.remove>
     <x-primary-button class="w-full justify-center" wire:click="$emit('mostrarAlerta')">
         {{ __('Guardar') }}
     </x-primary-button>
+    </div>
     
 
 </form>

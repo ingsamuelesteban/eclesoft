@@ -52,21 +52,25 @@ class CrearNoBautizado extends Component
             //Alamcenar documentos
 
             if($this->hospital){
-            $hospital = $this->hospital->store('public/img');
-            $datos['hospital'] = str_replace('public/img/', '', $hospital);
-            }
-            if($this->escuela){
-            $escuela = $this->escuela->store('public/img');
-            $datos['escuela'] = str_replace('public/img/', '', $escuela);
-            }
-            if($this->docpadre){
-            $docpadre = $this->docpadre->store('public/img');
-            $datos['docpadre'] = str_replace('public/img/', '', $docpadre);
-            }
-            if($this->docmadre){
-            $docmadre = $this->docmadre->store('public/img');
-            $datos['docmadre'] = str_replace('public/img/', '', $docmadre);
-            }
+                $filename = $this->hospital->getClientOriginalName();
+                $hospital = $this->hospital->storeAs('public/img', $filename);
+                $datos['hospital'] = str_replace('public/img/', '', $hospital);
+                }
+                if($this->escuela){
+                $filename = $this->escuela->getClientOriginalName();
+                $escuela = $this->escuela->storeAs('public/img', $filename);
+                $datos['escuela'] = str_replace('public/img/', '', $escuela);
+                }
+                if($this->docpadre){
+                $filename = $this->docpadre->getClientOriginalName();
+                $docpadre = $this->docpadre->storeAs('public/img', $filename);
+                $datos['docpadre'] = str_replace('public/img/', '', $docpadre);
+                }
+                if($this->docmadre){
+                $filename = $this->docmadre->getClientOriginalName();
+                $docmadre = $this->docmadre->storeAs('public/img', $filename);
+                $datos['docmadre'] = str_replace('public/img/', '', $docmadre);
+                }
             NoBautizado::create([
                 'nombre'=>$datos['nombre'],
                 'genero'=>$datos['genero'],
