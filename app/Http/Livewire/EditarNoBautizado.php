@@ -27,6 +27,7 @@ class EditarNoBautizado extends Component
     public $docmadre_nuevo;
     public $docpadre_nuevo;
     public $noBautizado_id;
+    public $filename;
 
     use WithFileUploads;
 
@@ -68,16 +69,23 @@ class EditarNoBautizado extends Component
 
         //Si hay documentos nuevos
         if($this->hospital_nuevo){
-            $hospital = $this->hospital_nuevo->store('public/img');
+            $filename = $this->hospital_nuevo->getClientOriginalName();
+            $hospital = $this->hospital_nuevo->storeAs('public/img', $filename);
             $datos['hospital'] = str_replace('public/img/', '' , $hospital);
         }
-        if($this->escuela_nuevo){ $escuela = $this->escuela_nuevo->store('public/img');
+        if($this->escuela_nuevo){
+            $filename = $this->escuela_nuevo->getClientOriginalName(); 
+            $escuela = $this->escuela_nuevo->storeAs('public/img', $filename);
             $datos['escuela'] = str_replace('public/img/', '' , $escuela);
         }
-        if($this->docmadre_nuevo){ $docmadre = $this->docmadre_nuevo->store('public/img');
+        if($this->docmadre_nuevo){
+            $filename = $this->docmadre_nuevo->getClientOriginalName();
+            $docmadre = $this->docmadre_nuevo->storeAs('public/img', $filename);
             $datos['docmadre'] = str_replace('public/img/', '' , $docmadre);
         }
-        if($this->docpadre_nuevo){ $docpadre = $this->docpadre_nuevo->store('public/img');
+        if($this->docpadre_nuevo){
+            $filename = $this->docpadre_nuevo->getClientOriginalName();
+            $docpadre = $this->docpadre_nuevo->storeAs('public/img', $filename);
             $datos['docpadre'] = str_replace('public/img/', '' , $docpadre);
         }
 
@@ -113,4 +121,11 @@ class EditarNoBautizado extends Component
     {
         return view('livewire.editar-no-bautizado');
     }
+    public function export($filename)
+    {
+     
+         return response()->download($filename);
+    }
+    
+
 }

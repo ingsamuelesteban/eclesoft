@@ -63,6 +63,78 @@
                             </p>
                         </div>
                     </div>
+
+                    <div class=" border-dashed border-2 border-indigo-200 ... text-center my-5">
+                        <h2 class="block text-md text-gray-700 font-bold uppercase mb-2 text-center mt-2">Documentos Cargados</h2>
+                        <div class="grid grid-cols-4">   
+                        <div class="my-2">
+                            @if ($noBautizado->hospital)
+                            <a href="{{global_asset('storage/img/' . $noBautizado->hospital)}}"
+                            target="_blank"
+                             class="bg-blue-400 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center"
+                            >
+                                Descargar Doc. Hospital o Alcalde
+                            </a>
+                            @else
+                            <a href="#"
+                                 class="bg-gray-400 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center"
+                                >
+                                Descargar Doc. Hospital o Alcalde
+                                </a>
+                            @endif
+                            </div>
+                          
+                            <div class="my-2">
+                                @if ($noBautizado->escuela)
+                                <a href="{{global_asset('storage/img/' . $noBautizado->escuela)}}"
+                                target="_blank"
+                                 class="bg-blue-400 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center"
+                                >
+                                    Descargar Doc. de la Escuela
+                                </a>
+                                @else
+                                <a href="#"
+                                     class="bg-gray-400 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center"
+                                    >
+                                        Descargar Doc. de la Escuela
+                                    </a>
+                            @endif
+                            </div>
+                            <div class="my-2">
+                                @if ($noBautizado->docpadre)
+                                <a href="{{global_asset('storage/img/' . $noBautizado->docpadre)}}"
+                                target="_blank"
+                                 class="bg-blue-400 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center"
+                                >
+                                    Descargar Cedula del Padre
+                                </a>
+                                @else
+                                <a href="#"
+                                     class="bg-gray-400 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center"
+                                    >
+                                        Descargar Cedula del Padre
+                                    </a>
+                            @endif
+                            </div>
+                            <div class="my-2">
+                                @if ($noBautizado->docmadre)
+                                <a href="{{global_asset('storage/img/' . $noBautizado->docmadre)}}"
+                                target="_blank"
+                                 class="bg-blue-400 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center"
+                                >
+                                    Descargar Cedula de la Madre
+                                </a>
+                                @else
+                                <a href="#"
+                                     class="bg-gray-400 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center"
+                                    >
+                                        Descargar Cedula de la Madre
+                                    </a>
+                            @endif
+                            </div>
+                        </div>
+                    </div>
+                    
                     <div class="flex flex-col md:flex-row items-stretch gap-3  mt-5 md:mt-0">
                         <a href="{{ route('menu.nobautizado.print', $noBautizado->id)}}" class="bg-slate-800 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center " target="_blank">
                             Imprimir
