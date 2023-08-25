@@ -75,7 +75,7 @@ min-height: 100%;">
             Madrina:
             <span class="text-decoration-underline text-uppercase fw-bold">&nbsp;&nbsp;{{$matrimonio->nombre_madrina}}&nbsp;&nbsp;</span>,
             documento de identidad.:
-            <span class="text-decoration-underline fw-bold">{&nbsp;&nbsp;{$matrimonio->documento_madrina}}</span>&nbsp;&nbsp;<br><br>
+            <span class="text-decoration-underline fw-bold">&nbsp;&nbsp;{{$matrimonio->documento_madrina}}</span>&nbsp;&nbsp;<br><br>
 
 
             Transcrita el Acta en los Registros del Estado Civil de la {{$parroquia->circunscripcion}}, el dia
@@ -84,7 +84,7 @@ min-height: 100%;">
             @else
             <span class="text-decoration-underline">&nbsp;&nbsp;{{Carbon\Carbon::parse($matrimonio->fecha_transcripcion)->isoFormat('DD')}}&nbsp;&nbsp;</span> del mes de <span class="text-decoration-underline">&nbsp;&nbsp;{{Carbon\Carbon::parse($matrimonio->fecha_transcripcion)->isoFormat('MMMM')}}&nbsp;&nbsp;</span> del año <span class="text-decoration-underline">&nbsp;&nbsp;{{Carbon\Carbon::parse($matrimonio->fecha_transcripcion)->isoFormat('Y')}}&nbsp;&nbsp;</span> <span class="fw-bold">({{Carbon\Carbon::parse($matrimonio->fecha_transcripcion)->isoFormat('L')}})</span> 
             @endif
-            , Libro <span class="text-decoration-underline fw-bold">&nbsp;&nbsp;{{$matrimonio->no_libro}}<&nbsp;&nbsp;/span>, Folio <span class="text-decoration-underline fw-bold">&nbsp;&nbsp;{{$matrimonio->folio}}&nbsp;&nbsp;</span>, Acta No. <span class="text-decoration-underline fw-bold">&nbsp;&nbsp;{{$matrimonio->no_transcripcion}}&nbsp;&nbsp;</span>
+            , Libro <span class="text-decoration-underline fw-bold">&nbsp;&nbsp;{{$matrimonio->no_libro}}&nbsp;&nbsp;</span>, Folio <span class="text-decoration-underline fw-bold">&nbsp;&nbsp;{{$matrimonio->folio}}&nbsp;&nbsp;</span>, Acta No. <span class="text-decoration-underline fw-bold">&nbsp;&nbsp;{{$matrimonio->no_transcripcion}}&nbsp;&nbsp;</span>
         </p>
         <p>
             Notas al margen: 
