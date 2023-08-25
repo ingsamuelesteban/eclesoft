@@ -94,9 +94,11 @@ class MatrimonioController extends Controller
         $diac = Carbon::now('America/La_Paz')->isoFormat('D');
         $mesc = Carbon::now()->isoFormat('MMMM');
         $anoc = Carbon::now()->isoFormat('Y');
+        $fechac = Carbon::parse($matrimonio->fecha_celebracion)->isoFormat('L');
+        $fechat = Carbon::parse($matrimonio->fecha_transcripcion)->isoFormat('L');
     
 
-        $pdf = PDF::loadView('menu.matrimonios.print', ['matrimonio' => $matrimonio, 'parroquia' => $parroquias, 'diac' => $diac, 'mesc' => $mesc, 'anoc' => $anoc ]);
+        $pdf = PDF::loadView('menu.matrimonios.print', ['matrimonio' => $matrimonio, 'parroquia' => $parroquias, 'diac' => $diac, 'mesc' => $mesc, 'anoc' => $anoc, 'fechac' => $fechac, 'fechat' => $fechat  ]);
         $pdf->setPaper('letter', 'portrait');
        return $pdf->stream();
 

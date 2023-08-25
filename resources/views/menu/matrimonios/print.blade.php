@@ -33,10 +33,16 @@ min-height: 100%;">
 
         <div class="fs-6 mb-2">
             <p> Quien Suscribe:
-            <span class="text-decoration-underline">{{$parroquia->parroco}}</span> </p>
+            <span class="text-decoration-underline">&nbsp;&nbsp;{{$parroquia->parroco}}&nbsp;&nbsp;</span> </p>
         </div>
 
-        <p><span class="text-uppercase fw-bold"> Certifica: </span> Que en los registros de esta Parroquia, se encuentra inscrito en el Libro No.<span class="text-decoration-underline fw-bold ">{{$matrimonio->libro_matrimonio}}</span> de registros de <span class="text-uppercase fw-bold">matrimonio </span>, Folio No. <span class="text-decoration-underline fw-bold">{{ $matrimonio->folio_matrimonio }}</span>, Acta No. <span class="text-decoration-underline fw-bold">{{ $matrimonio->no_matrimonio }}</span>, el matrimonio celebrado en fecha <span class="text-decoration-underline fw-bold">({{Carbon\Carbon::parse($matrimonio->fecha_celebracion)->isoFormat('L')}})</span>, por el <span class="text-decoration-underline text-uppercase fw-bold"> {{$matrimonio->celebrante_name}}</span>
+        <p><span class="text-uppercase fw-bold"> Certifica: </span> Que en los registros de esta Parroquia, se encuentra inscrito en el Libro No.<span class="text-decoration-underline fw-bold ">&nbsp;&nbsp;{{$matrimonio->libro_matrimonio}}&nbsp;&nbsp;</span> de registros de <span class="text-uppercase fw-bold">matrimonio </span>, Folio No. <span class="text-decoration-underline fw-bold">&nbsp;&nbsp;{{ $matrimonio->folio_matrimonio }}&nbsp;&nbsp;</span>, Acta No. <span class="text-decoration-underline fw-bold">&nbsp;&nbsp;{{ $matrimonio->no_matrimonio }}&nbsp;&nbsp;</span>, el matrimonio celebrado en fecha           
+            @if ($fechac == '11/11/1111')
+            <span class="text-decoration-underline fw-bold">&nbsp;&nbsp;(----)&nbsp;&nbsp;</span>, 
+            @else
+            <span class="text-decoration-underline fw-bold">&nbsp;&nbsp;({{Carbon\Carbon::parse($matrimonio->fecha_celebracion)->isoFormat('L')}})&nbsp;&nbsp;</span>, 
+            @endif
+             por el <span class="text-decoration-underline text-uppercase fw-bold">&nbsp;&nbsp; {{$matrimonio->celebrante_name}}&nbsp;&nbsp;</span>
         </p>
 
         <p class="text-uppercase fw-bold">
@@ -45,9 +51,9 @@ min-height: 100%;">
         
 
         <p class="text-center">
-             <span class="text-uppercase fw-bold text-decoration-underline">{{$matrimonio->nombre_esposo}}</span>, documento de identidad.: 
-            <span class="text-decoration-underline fw-bold">
-                {{$matrimonio->documento_esposo}}</span>
+             <span class="text-uppercase fw-bold text-decoration-underline">&nbsp;&nbsp;{{$matrimonio->nombre_esposo}}&nbsp;&nbsp;</span>, documento de identidad.: 
+            <span class="text-decoration-underline fw-bold">&nbsp;&nbsp;
+                {{$matrimonio->documento_esposo}}&nbsp;&nbsp;</span>
         </p>
 
         <p class="text-center text-uppercase fw-bold">
@@ -55,30 +61,35 @@ min-height: 100%;">
         </p>
 
         <p class="text-center">
-         <span class="text-uppercase fw-bold text-decoration-underline">{{$matrimonio->nombre_esposa}}</span>,
+         <span class="text-uppercase fw-bold text-decoration-underline">&nbsp;&nbsp;{{$matrimonio->nombre_esposa}}&nbsp;&nbsp;</span>,
             documento de identidad.:
-            <span class="text-decoration-underline fw-bold">{{$matrimonio->documento_esposa}}</span>
+            <span class="text-decoration-underline fw-bold">&nbsp;&nbsp;{{$matrimonio->documento_esposa}}&nbsp;&nbsp;</span>
         </p>
 
         <p>
             Siendo sus testigos:
             <br><br>
             Padrino:
-            <span class="text-decoration-underline text-uppercase fw-bold">{{$matrimonio->nombre_padrino}}</span>, documento de identidad.:
-            <span class="text-decoration-underline fw-bold">{{$matrimonio->documento_padrino}}</span><br>
+            <span class="text-decoration-underline text-uppercase fw-bold">&nbsp;&nbsp;{{$matrimonio->nombre_padrino}}&nbsp;&nbsp;</span>, documento de identidad.:
+            <span class="text-decoration-underline fw-bold">&nbsp;&nbsp;{{$matrimonio->documento_padrino}}</span>&nbsp;&nbsp;<br>
             Madrina:
-            <span class="text-decoration-underline text-uppercase fw-bold">{{$matrimonio->nombre_madrina}}</span>,
+            <span class="text-decoration-underline text-uppercase fw-bold">&nbsp;&nbsp;{{$matrimonio->nombre_madrina}}&nbsp;&nbsp;</span>,
             documento de identidad.:
-            <span class="text-decoration-underline fw-bold">{{$matrimonio->documento_madrina}}</span><br><br>
+            <span class="text-decoration-underline fw-bold">{&nbsp;&nbsp;{$matrimonio->documento_madrina}}</span>&nbsp;&nbsp;<br><br>
 
 
             Transcrita el Acta en los Registros del Estado Civil de la {{$parroquia->circunscripcion}}, el dia
-            <span class="text-decoration-underline">{{Carbon\Carbon::parse($matrimonio->fecha_transcripcion)->isoFormat('DD')}}</span> del mes de <span class="text-decoration-underline">{{Carbon\Carbon::parse($matrimonio->fecha_transcripcion)->isoFormat('MMMM')}}</span> del año <span class="text-decoration-underline">{{Carbon\Carbon::parse($matrimonio->fecha_transcripcion)->isoFormat('Y')}}</span> <span class="fw-bold">({{Carbon\Carbon::parse($matrimonio->fecha_transcripcion)->isoFormat('L')}})</span>, Libro <span class="text-decoration-underline fw-bold">{{$matrimonio->no_libro}}</span>, Folio <span class="text-decoration-underline fw-bold">{{$matrimonio->folio}}</span>, Acta No. <span class="text-decoration-underline fw-bold">{{$matrimonio->no_transcripcion}}</span>
+            @if ($fechat == '11/11/1111')
+            <span class="text-decoration-underline">&nbsp;&nbsp;--&nbsp;&nbsp;</span> del mes de <span class="text-decoration-underline">&nbsp;&nbsp;--&nbsp;&nbsp;</span> del año <span class="text-decoration-underline">&nbsp;&nbsp;--&nbsp;&nbsp;</span> <span class="fw-bold">(----)</span>  
+            @else
+            <span class="text-decoration-underline">&nbsp;&nbsp;{{Carbon\Carbon::parse($matrimonio->fecha_transcripcion)->isoFormat('DD')}}&nbsp;&nbsp;</span> del mes de <span class="text-decoration-underline">&nbsp;&nbsp;{{Carbon\Carbon::parse($matrimonio->fecha_transcripcion)->isoFormat('MMMM')}}&nbsp;&nbsp;</span> del año <span class="text-decoration-underline">&nbsp;&nbsp;{{Carbon\Carbon::parse($matrimonio->fecha_transcripcion)->isoFormat('Y')}}&nbsp;&nbsp;</span> <span class="fw-bold">({{Carbon\Carbon::parse($matrimonio->fecha_transcripcion)->isoFormat('L')}})</span> 
+            @endif
+            , Libro <span class="text-decoration-underline fw-bold">&nbsp;&nbsp;{{$matrimonio->no_libro}}<&nbsp;&nbsp;/span>, Folio <span class="text-decoration-underline fw-bold">&nbsp;&nbsp;{{$matrimonio->folio}}&nbsp;&nbsp;</span>, Acta No. <span class="text-decoration-underline fw-bold">&nbsp;&nbsp;{{$matrimonio->no_transcripcion}}&nbsp;&nbsp;</span>
         </p>
         <p>
             Notas al margen: 
             <span class="text-decoration-underline">
-                {{$matrimonio->notas}}
+                &nbsp;&nbsp;{{$matrimonio->notas}}&nbsp;&nbsp;
 
             </span>
         </p>
@@ -116,11 +127,11 @@ min-height: 100%;">
             <span>{{$parroquia->ciudad}}</span>,
             <span>{{$parroquia->provincia}}</span>,
             a los 
-            <span class="text-decoration-underline fw-bold">{{$diac}}</span>
+            <span class="text-decoration-underline fw-bold">&nbsp;&nbsp;{{$diac}}&nbsp;&nbsp;</span>
             dias del Mes de 
-            <span class="text-decoration-underline fw-bold text-capitalize">{{$mesc}}</span>
+            <span class="text-decoration-underline fw-bold text-capitalize">&nbsp;&nbsp;{{$mesc}}&nbsp;&nbsp;</span>
             del Año 
-            <span class="text-decoration-underline fw-bold">{{$anoc}}</span>.
+            <span class="text-decoration-underline fw-bold">&nbsp;&nbsp;{{$anoc}}&nbsp;&nbsp;</span>.
         </p>
 
        
