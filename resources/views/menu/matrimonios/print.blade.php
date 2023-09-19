@@ -29,7 +29,7 @@ min-height: 100%;">
             <img class="rounded-circle" src="{{ global_asset('storage/img/' . $parroquia->logo) }}" alt="{{'Logo de la Parroquia'}}" width="100px" height="100px">
         </p>
         
-        <h2 class=" text-center text-uppercase fw-bold mb-4 fs-6">Certficado de Matrimonio</h2>
+        <h2 class=" text-center text-uppercase fw-bold mb-4 fs-6">Certificado de Matrimonio</h2>
 
         <div class="fs-6 mb-2">
             <p> Quien Suscribe:
@@ -71,11 +71,11 @@ min-height: 100%;">
             <br><br>
             Padrino:
             <span class="text-decoration-underline text-uppercase fw-bold">&nbsp;&nbsp;{{$matrimonio->nombre_padrino}}&nbsp;&nbsp;</span>, documento de identidad.:
-            <span class="text-decoration-underline fw-bold">&nbsp;&nbsp;{{$matrimonio->documento_padrino}}</span>&nbsp;&nbsp;<br>
+            <span class="text-decoration-underline fw-bold">&nbsp;&nbsp;{{$matrimonio->documento_padrino}}&nbsp;&nbsp;</span><br>
             Madrina:
             <span class="text-decoration-underline text-uppercase fw-bold">&nbsp;&nbsp;{{$matrimonio->nombre_madrina}}&nbsp;&nbsp;</span>,
             documento de identidad.:
-            <span class="text-decoration-underline fw-bold">&nbsp;&nbsp;{{$matrimonio->documento_madrina}}</span>&nbsp;&nbsp;<br><br>
+            <span class="text-decoration-underline fw-bold">&nbsp;&nbsp;{{$matrimonio->documento_madrina}}&nbsp;&nbsp;</span><br><br>
 
 
             Transcrita el Acta en los Registros del Estado Civil de la {{$parroquia->circunscripcion}}, el dia
@@ -120,7 +120,7 @@ min-height: 100%;">
        </style>
 
        <div class="flex text-center">
-       <p class="linea">No más información debajo de esta linea</p>
+       <p class="linea">No más información debajo de esta línea</p>
        </div>
 
         <p style="margin-top: 10%;">El presente documento se expide a petición de la parte interesada en
