@@ -12,11 +12,13 @@ class Parroquia extends Component
     public $obispo;
     public $parroquia;
     public $telefonop;
+    public $rnc;
     public $parroco;
     public $vicario;
     public $calle;
     public $ciudad;
     public $provincia;
+    public $correo;
     public $logo;
 
     use WithFileUploads;
@@ -26,11 +28,13 @@ class Parroquia extends Component
         'obispo'=>'required|string',
         'parroquia'=>'required|string',
         'telefonop'=>'required|string',
+        'rnc'=>'required|string',
         'parroco'=>'required|string',
         'vicario'=>'required|string',
         'calle' => 'required|string',
         'ciudad' => 'required|string',
         'provincia' => 'required|string',
+        'correo'=>'required|string',
         'logo' => 'required|image|max:1024'
     ];
 
@@ -46,11 +50,13 @@ class Parroquia extends Component
             'obispo'=>$datos['obispo'],
             'parroquia'=>$datos['parroquia'],
             'telefonop'=>$datos['telefonop'],
+            'rnc'=>$datos['rnc'],
             'parroco'=>$datos['parroco'],
             'vicario'=>$datos['vicario'],
             'calle'=>$datos['calle'],
             'ciudad'=>$datos['ciudad'],
             'provincia'=>$datos['provincia'],
+            'correo'=>$datos['correo'],
             'logo'=> $nombre_logo,
 
         ]);

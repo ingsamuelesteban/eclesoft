@@ -86,7 +86,7 @@ class EditarParroquia extends Component
         session()->flash('message', 'Datos modificados');
 
         //Redireccionar
-        return redirect()->route('menu.administracion.create');
+        return redirect()->route('menu.administracion.index');
 
     }
     public function render()

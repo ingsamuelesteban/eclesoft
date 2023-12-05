@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Models\Bautismos;
 use App\Models\Comunidades;
+use App\Models\Parroquia;
 use App\Models\User;
 use App\Models\Users;
 use App\Providers\RouteServiceProvider;
@@ -39,6 +40,8 @@ class CrearActa extends Component
     public $fecha_celebracion;
     public $notas;
     public $comunidades;
+    public $parroquias;
+    public $ubicacion;
 
     protected $rules = [
         
@@ -55,11 +58,11 @@ class CrearActa extends Component
         'no_libro' => 'required',
         'folio' => 'required',
         'no_declaracion' => 'required|string',
-        'año' => 'required|int',
+        'año' => 'required|string',
         'circunscripcion' => 'required|string',
         'oficialia' => 'required|string',
-        'parroquia' => 'required',
-        'ub_parroquia' => 'required|string',
+        //'parroquia' => 'required',
+        //'ub_parroquia' => 'required|string',
         'celebrante_name' => 'required|string',
         'fecha_celebracion' => 'required',
         'notas' => 'nullable|string',
@@ -71,6 +74,8 @@ class CrearActa extends Component
 
     public function crearActa(){
         $datos = $this->validate();
+        $parroquias = DB::table('parroquias')->value('parroquia');
+        $ubicacion = DB::table('parroquias')->value('ciudad');
 
         // Guardar 
 
@@ -94,8 +99,8 @@ class CrearActa extends Component
             'año'=> $datos['año'],
             'circunscripcion'=> $datos['circunscripcion'],
             'oficialia'=> $datos['oficialia'],
-            'parroquia'=> $datos['parroquia'],
-            'ub_parroquia'=> $datos['ub_parroquia'],
+            'parroquia'=> $parroquias,
+            'ub_parroquia'=> $ubicacion,
             'celebrante'=> $datos['celebrante_name'],
             'fecha_celebracion'=> $datos['fecha_celebracion'],
             'notas' => $datos['notas'],
@@ -114,14 +119,12 @@ class CrearActa extends Component
     {
         //Consultar BD para autopoblar select
 
-        $comunidades = DB::table('comunidades')->get(['nombre_comunidad', 'ubicacion']);
+      //  $comunidades = DB::table('comunidades')->get(['nombre_comunidad', 'ubicacion']);
     
        
         
 
-        return view('livewire.crear-acta', [
-           $this->comunidades = $comunidades
-        ]);
+        return view('livewire.crear-acta');
         
 
     }

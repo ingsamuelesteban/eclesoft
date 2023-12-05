@@ -8,7 +8,7 @@
 
             <x-text-input id="libro_bautismo" class="block mt-1 w-full" type="text" 
             wire:model="libro_bautismo" 
-            :value="old('libro_bautismo')" placeholder="No. Libro"/>
+            :value="old('libro_bautismo')" placeholder="No. Libro" autofocus/>
 
             @error('libro_bautismo')
             <livewire:mostrar-alertas :message="$message" />
@@ -163,7 +163,7 @@
             </div>
 
             <div>
-                <x-text-input id="padrinos" class="block mt-1 w-full" type="text" wire:model="nombre_padrino" :value="old('nombre_padrino')" placeholder="Nombre del Padrino"/>
+                <x-text-input id="nombre_padrino" class="block mt-1 w-full" type="text" wire:model="nombre_padrino" :value="old('nombre_padrino')" placeholder="Nombre del Padrino"/>
     
                 @error('nombre_padrino')
                 <livewire:mostrar-alertas :message="$message" />
@@ -251,8 +251,8 @@
 
     <h2 class="block text-md text-gray-700 font-bold uppercase mb-2 text-center mt-2">datos de la celebración</h2>
 
-    <div class="grid grid-cols-4">
-        <div>
+    <div class="grid grid-cols-2">
+{{--       <div>
             <x-input-label for="parroquia" :value="__('Parroquia o capilla')" />
 
             <select wire:model="parroquia" id="parroquia" class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full">
@@ -282,12 +282,15 @@
             <livewire:mostrar-alertas :message="$message" />
         @enderror
         </div>
-
+--}} 
         <div>
             <x-input-label for="celebrante_name" :value="__('celebrante')" />
     
             <x-text-input id="celebrante_name" class="block mt-1 w-full" type="text" wire:model="celebrante_name" :value="old('celebrante_name')" placeholder="Ej. Rev. P. Juan Perez"/>
     
+            @error('celebrante_name')
+            <livewire:mostrar-alertas :message="$message" />
+        @enderror
         </div>
 
         <div>
@@ -306,7 +309,7 @@
     <div>
         <x-input-label for="notas" :value="__('notas al margen')" />
 
-        <textarea class="block mt-1 w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" wire:model="notas" id="notas" cols="30" rows="4" :value="old('notas')">...</textarea>
+        <textarea class="block mt-1 w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" wire:model="notas" id="notas" cols="30" rows="4"  :value="old('notas')">--Sin Notas al margen...--</textarea>
 
     </div>
 

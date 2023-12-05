@@ -2,6 +2,12 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Models\Bautismos;
+use App\Models\Matrimonios;
+use App\Models\Parroquia;
+use Barryvdh\DomPDF\Facade\Pdf;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class MatrimonioController extends Controller
@@ -13,7 +19,7 @@ class MatrimonioController extends Controller
      */
     public function index()
     {
-        //return view('menu.matrimonios.index');
+        return view('menu.matrimonios.index');
     }
 
     /**
@@ -43,9 +49,9 @@ class MatrimonioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Matrimonios $matrimonio)
     {
-        //
+        return view('menu.matrimonios.show', ['matrimonio'=> $matrimonio]);
     }
 
     /**
@@ -54,9 +60,11 @@ class MatrimonioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Matrimonios $matrimonio)
     {
-        //
+        return view('menu.matrimonios.edit', [
+            'matrimonio' => $matrimonio
+        ]);
     }
 
     /**
@@ -81,4 +89,24 @@ class MatrimonioController extends Controller
     {
         //
     }
+
+    public function pdf(Matrimonios $matrimonio)
+    {
+        $parroquias = Parroquia::all();
+        $diac = Carbon::now('America/La_Paz')->isoFormat('D');
+        $mesc = Carbon::now()->isoFormat('MMMM');
+        $anoc = Carbon::now()->isoFormat('Y');
+        $fechac = Carbon::parse($matrimonio->fecha_celebracion)->isoFormat('L');
+        $fechat = Carbon::parse($matrimonio->fecha_transcripcion)->isoFormat('L');
+    
+
+        $pdf = PDF::loadView('menu.matrimonios.print', ['matrimonio' => $matrimonio, 'parroquia' => $parroquias, 'diac' => $diac, 'mesc' => $mesc, 'anoc' => $anoc, 'fechac' => $fechac, 'fechat' => $fechat ]);
+        $pdf->setPaper('letter', 'portrait');
+       return $pdf->stream();
+
+      // return view('menu.bautismos.print',['bautismo' => $bautismo, 'parroquia' => $parroquias, 'dian' => $dian, 'mesn' => $mesn, 'anon' => $anon, 'diab' => $diab, 'mesb' => $mesb, 'anob' => $añob, 'diac' => $diac, 'mesc' => $mesc, 'anoc' => $anoc]);
+        
+    }
+
+    
 }

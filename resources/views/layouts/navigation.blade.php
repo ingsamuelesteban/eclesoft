@@ -18,20 +18,26 @@
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('menu.bautismos.create')" :active="request()->routeIs('menu.bautismos.create')">
+                    <x-nav-link :href="route('menu.bautismos.create')" :active="request()->routeIs('menu.bautismos.create','menu.bautismos.index', 'menu.bautismos.edit',  'menu.bautismos.show')">
                         {{ __('Bautismos') }}
                     </x-nav-link>
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('menu.matrimonios.create')" :active="request()->routeIs('menu.matrimonios.create')">
+                    <x-nav-link :href="route('menu.matrimonios.create')" :active="request()->routeIs('menu.matrimonios.create', 'menu.matrimonios.index', 'menu.matrimonios.show', 'menu.matrimonios.edit')">
                         {{ __('Matrimonios') }}
                     </x-nav-link>
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('menu.comunidades.create')" :active="request()->routeIs('menu.matrimonios.create')">
+                    <x-nav-link :href="route('menu.comunidades.create')" :active="request()->routeIs('menu.comunidades.create')">
                         {{ __('Comunidades') }}
+                    </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('menu.certificaciones.index')" :active="request()->routeIs('menu.certificaciones.index', 'menu.nobautizado.create', 'menu.nobautizado.index', 'menu.nobautizado.edit',  'menu.nobautizado.show')">
+                        {{ __('Certificaciones') }}
                     </x-nav-link>
                 </div>
 
@@ -92,11 +98,20 @@
             <x-responsive-nav-link :href="route('menu.index')" :active="request()->routeIs('menu.index')">
                 {{ __('Menu') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('menu.bautismos.create')" :active="request()->routeIs('menu.bautismos.create')">
+            <x-responsive-nav-link :href="route('menu.bautismos.create')" :active="request()->routeIs('menu.bautismos.create','menu.bautismos.index', 'menu.bautismos.edit',  'menu.bautismos.show')">
                 {{ __('Bautismos') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('menu.matrimonios.create')" :active="request()->routeIs('menu.matrimonios.create')">
+            <x-responsive-nav-link :href="route('menu.matrimonios.create')" :active="request()->routeIs('menu.matrimonios.create', 'menu.matrimonios.index', 'menu.matrimonios.show', 'menu.matrimonios.edit')">
                 {{ __('Matrimonios') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('menu.comunidades.create')" :active="request()->routeIs('menu.comunidades.create')">
+                {{ __('Comunidades') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('menu.certificaciones.index')" :active="request()->routeIs('menu.certificaciones.index', 'menu.nobautizado.create', 'menu.nobautizado.index', 'menu.nobautizado.edit',  'menu.nobautizado.show')">
+                {{ __('Certificaciones') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('menu.administracion.index')" :active="request()->routeIs('menu.administracion.index')">
+                {{ __('Administracion') }}
             </x-responsive-nav-link>
         </div>
 

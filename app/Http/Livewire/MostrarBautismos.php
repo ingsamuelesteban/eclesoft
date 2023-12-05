@@ -4,9 +4,14 @@ namespace App\Http\Livewire;
 
 use App\Models\Bautismos;
 use Livewire\Component;
+use Illuminate\Support\Facades\DB;
+use Livewire\WithPagination;
+
 
 class MostrarBautismos extends Component
 {
+
+  use WithPagination;
  
     public $nombre;
     public $cedulaMadre;
@@ -30,6 +35,9 @@ class MostrarBautismos extends Component
 
     public function render()
     {
+
+   
+    
         $bautismos = Bautismos::when($this->nombre, function($query) {
           $query->where('nombre', 'LIKE', "%" . $this->nombre . "%");
         })
@@ -38,8 +46,8 @@ class MostrarBautismos extends Component
         })
         ->when($this->cedulaPadre, function($query) {
           $query->where('cedula_padre', $this->cedulaPadre);
-        })
-        ->paginate(10);
+        })->orderBy('nombre')->paginate(1)
+        ;
 
         return view('livewire.mostrar-bautismos', [
           'bautismos' => $bautismos 

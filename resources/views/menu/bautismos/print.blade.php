@@ -26,75 +26,102 @@ min-height: 100%;">
         <h2 class="text-sm-center text-uppercase fw-bold  fs-6">{{ $parroquia->diocesis}}</h2>
 
         <p>
-            <img class="rounded-circle" src="{{ public_path('storage/img/' . $parroquia->logo) }}" alt="{{'Logo de la Parroquia'}}" width="100px" height="100px">
+            <img class="rounded-circle" src="{{ global_asset('storage/img/' . $parroquia->logo) }}" alt="{{'Logo de la Parroquia'}}" width="100px" height="100px">
         </p>
         
         <h2 class=" text-center text-uppercase font-bold mb-4 fs-6">Certficado de Bautismo</h2>
 
         <div class="fs-6 mb-2">
             <p> Quien Suscribe:
-            <span class="text-decoration-underline">{{$parroquia->parroco}}</span> </p>
+            <span class="text-decoration-underline">&nbsp;&nbsp;{{$parroquia->parroco}}&nbsp;&nbsp;</span> </p>
         </div>
 
         <p class="text-center text-base">Certifica que:</p>
 
         <p class="text-base text-center text-uppercase fw-bold ">{{$bautismo->nombre}}</p>
         <hr>
-        <p>Que nació en <span class="text-decoration-underline text-capitalize ">{{$bautismo->lugar_nacimiento}}</span> 
-            el día <span class="text-decoration-underline">{{ $dian }}</span> del mes de <span class="text-decoration-underline text-capitalize">
-        {{$mesn}}</span>
+        @if ($fechan == '11/11/1111')
+
+        <p>Que nació en <span class="text-decoration-underline text-uppercase ">&nbsp;&nbsp;{{$bautismo->lugar_nacimiento}}&nbsp;&nbsp;</span> 
+            el día <span class="text-decoration-underline">&nbsp;&nbsp;--&nbsp;&nbsp;</span> del mes de <span class="text-decoration-underline text-capitalize">
+        &nbsp;&nbsp;--&nbsp;&nbsp;</span>
         del año
-        <span class="text-decoration-underline text-uppercase">
-            {{$anon}}</span>
+        <span class="text-decoration-underline text-uppercase">&nbsp;&nbsp;
+            ----&nbsp;&nbsp;</span>
+        @else
+        <p>Que nació en <span class="text-decoration-underline text-uppercase ">&nbsp;&nbsp;{{$bautismo->lugar_nacimiento}}&nbsp;&nbsp;</span> 
+            el día <span class="text-decoration-underline">&nbsp;&nbsp;{{ $dian }}&nbsp;&nbsp;</span> del mes de <span class="text-decoration-underline text-capitalize">
+        &nbsp;&nbsp;{{$mesn}}&nbsp;&nbsp;</span>
+        del año<span class="text-decoration-underline text-uppercase">&nbsp;&nbsp;
+            {{$anon}}&nbsp;&nbsp;</span>
+        @endif
+
+
         @if ($bautismo->genero==1)
            hijo 
         @else
          hija   
         @endif
         del señor
-        <span class="text-decoration-underline text-uppercase fw-bold">
-            {{$bautismo->nombre_padre}}</span>
+        <span class="text-decoration-underline text-uppercase fw-bold">&nbsp;&nbsp;
+            {{$bautismo->nombre_padre}}&nbsp;&nbsp;</span>
         y de la señora
-        <span class="text-decoration-underline text-uppercase fw-bold">{{$bautismo->nombre_madre}}</span>
+        <span class="text-decoration-underline text-uppercase fw-bold">&nbsp;&nbsp;{{$bautismo->nombre_madre}}&nbsp;&nbsp;</span>
         según consta en el Libro de Registro de Nacimiento No.
-        <span class="text-decoration-underline">{{$bautismo->no_libro}}</span>
+        <span class="text-decoration-underline">&nbsp;&nbsp;{{$bautismo->no_libro}}&nbsp;&nbsp;</span>
         Folio
-        <span class="text-decoration-underline">{{$bautismo->folio}}</span>
+        <span class="text-decoration-underline">&nbsp;&nbsp;{{$bautismo->folio}}&nbsp;&nbsp;</span>
         Declaración No.
-        <span class="text-decoration-underline">{{$bautismo->no_declaracion}}</span>
+        <span class="text-decoration-underline">&nbsp;&nbsp;{{$bautismo->no_declaracion}}&nbsp;&nbsp;</span>
         del año
-        <span class="text-decoration-underline">{{$bautismo->año}}</span>
+        <span class="text-decoration-underline">&nbsp;&nbsp;{{$bautismo->año}}&nbsp;&nbsp;</span>
         de la
-        <span class="text-decoration-underline text-capitalize">{{$bautismo->circunscripcion}}</span>
+        <span class="text-decoration-underline text-uppercase">&nbsp;&nbsp;{{$bautismo->circunscripcion}}&nbsp;&nbsp;</span>
         Circunscripción del Estado Civil de 
-        <span class="text-decoration-underline text-capitalize">{{$bautismo->oficialia}}.</span>
+        <span class="text-decoration-underline text-uppercase">&nbsp;&nbsp;{{$bautismo->oficialia}}.&nbsp;&nbsp;</span>
         </p>
 
         <p>
-            Fue <span class="text-uppercase font-weight-bold">bautizado</span> el día 
-            <span class="text-decoration-underline">
-                {{$diab}}</span>
+            Fue         
+            @if ($bautismo->genero==1)
+                <span class="text-uppercase font-weight-bold">bautizado</span>
+            @else
+                <span class="text-uppercase font-weight-bold">bautizada</span> 
+            @endif
+
+            @if ($fechac == '11/11/1111')
+            el día 
+            <span class="text-decoration-underline">&nbsp;&nbsp;--&nbsp;&nbsp;</span>
             del mes de 
-            <span class="text-decoration-underline text-capitalize">{{$mesb}}</span>
+            <span class="text-decoration-underline text-capitalize">&nbsp;&nbsp;--&nbsp;&nbsp;</span>
             del año
-            <span class="text-decoration-underline">{{$anob}}</span>
+            <span class="text-decoration-underline">&nbsp;&nbsp;----&nbsp;&nbsp;</span>
+            @else
+            el día 
+            <span class="text-decoration-underline">&nbsp;&nbsp;{{$diab}}&nbsp;&nbsp;</span>
+            del mes de 
+            <span class="text-decoration-underline text-capitalize">&nbsp;&nbsp;{{$mesb}}&nbsp;&nbsp;</span>
+            del año
+            <span class="text-decoration-underline">&nbsp;&nbsp;{{$anob}}&nbsp;&nbsp;</span>
+            @endif
+            
             siendo ministro del Sacramento: <br>
-            <span class="text-decoration-underline text-uppercase fw-bold">{{$bautismo->celebrante}}</span>.<br><br>
+            <span class="text-decoration-underline text-uppercase fw-bold">&nbsp;&nbsp;{{$bautismo->celebrante}}&nbsp;&nbsp;</span>.<br><br>
             Padrino:
-            <span class="text-decoration-underline text-uppercase fw-bold">{{$bautismo->nombre_padrino}}</span><br>
+            <span class="text-decoration-underline text-uppercase fw-bold">&nbsp;&nbsp;{{$bautismo->nombre_padrino}}&nbsp;&nbsp;</span><br>
             Madrina:
-            <span class="text-decoration-underline text-uppercase fw-bold">{{$bautismo->nombre_madrina}}</span><br><br>
+            <span class="text-decoration-underline text-uppercase fw-bold">&nbsp;&nbsp;{{$bautismo->nombre_madrina}}&nbsp;&nbsp;</span><br><br>
             Según consta en el Libro de Bautismo No.
-            <span class="text-decoration-underline">{{$bautismo->libro_bautismo}}</span> 
+            <span class="text-decoration-underline">&nbsp;&nbsp;{{$bautismo->libro_bautismo}}&nbsp;&nbsp;</span> 
             Folio
-            <span class="text-decoration-underline">{{$bautismo->folio_bautismo}}</span> 
+            <span class="text-decoration-underline">&nbsp;&nbsp;{{$bautismo->folio_bautismo}}&nbsp;&nbsp;</span> 
             acta No.
-            <span class="text-decoration-underline">{{$bautismo->no_bautismo}}</span>
+            <span class="text-decoration-underline">&nbsp;&nbsp;{{$bautismo->no_bautismo}}&nbsp;&nbsp;</span>
         </p>
         <p>
             Notas al margen: 
-            <span class="text-decoration-underline">
-                {{$bautismo->notas}}
+            <span class="text-decoration-underline">&nbsp;&nbsp;
+                {{$bautismo->notas}}&nbsp;&nbsp;
 
             </span>
         </p>
@@ -128,25 +155,25 @@ min-height: 100%;">
        <p class="linea">No más información debajo de esta linea</p>
        </div>
 
-        <p style="margin-top: 30%;">El presente documento se expide a petición de la parte interesada en
+        <p style="margin-top: 10%;">El presente documento se expide a petición de la parte interesada en
             <span>{{$parroquia->ciudad}}</span>,
             <span>{{$parroquia->provincia}}</span>,
             a los 
-            <span class="text-decoration-underline fw-bold">{{$diac}}</span>
+            <span class="text-decoration-underline fw-bold">&nbsp;&nbsp;{{$diac}}&nbsp;&nbsp;</span>
             dias del Mes de 
-            <span class="text-decoration-underline fw-bold text-capitalize">{{$mesc}}</span>
+            <span class="text-decoration-underline fw-bold text-capitalize">&nbsp;&nbsp;{{$mesc}}&nbsp;&nbsp;</span>
             del Año 
-            <span class="text-decoration-underline fw-bold">{{$anoc}}</span>.
+            <span class="text-decoration-underline fw-bold">&nbsp;&nbsp;{{$anoc}}&nbsp;&nbsp;</span>.
         </p>
 
        
     <div style="margin-top: 10%;
-    margin-bottom:10%;
+    margin-bottom:5%;
      text-align: center;">
         
             <p style="text-decoration: overline; text-transform:uppercase; color:black" >
             
-                Párroco o Vicario
+                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;Párroco o Vicario Parroquial&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
             </p>
        
     </div> 
@@ -163,7 +190,7 @@ font-size: 10px;
     <p>{{$parroquia->calle. ', ' . $parroquia->ciudad.', 
     República Dominicana'}} <br> 
     <span class="d-flex justify-content-center">
-    Tel.: {{$parroquia->telefonop}}</span></p>
+    RNC.: {{$parroquia->rnc}}, Tel.: {{$parroquia->telefonop}}, Correo.: {{$parroquia->correo}}</span></p>
 </footer>
 </div>
 
