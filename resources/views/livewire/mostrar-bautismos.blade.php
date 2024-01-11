@@ -18,8 +18,8 @@
                         Imprimir
                     </a>
 
-                    <a href="{{ route('menu.bautismos.edit', $bautismo->id)}}" class="bg-blue-800 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center ">
-                        Editar
+                    <a href="{{ route('menu.bautismos.show', $bautismo->id)}}"  class="bg-blue-800 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center ">
+                        Abrir
                     </a>
 
                     <button 
