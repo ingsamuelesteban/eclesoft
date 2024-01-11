@@ -112,7 +112,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/bautismos/{bautismo}/edit', [BautismoController::class, 'edit'] )->middleware(['auth', 'verified'])->name('menu.bautismos.edit');
     Route::get('/bautismos/{bautismo}', [BautismoController::class, 'show'] )->middleware(['auth', 'verified'])->name('menu.bautismos.show');
     Route::get('/bautismos/{bautismo}/print', [BautismoController::class, 'pdf'] )->middleware(['auth', 'verified'])->name('menu.bautismos.print');
-    
+    Route::get('/bautismos/{bautismo}/decreto', [BautismoController::class, 'decreto'] )->middleware(['auth', 'verified'])->name('menu.bautismos.decreto');
+
     //Rutas matrimonio 
     
     Route::get('/matrimonios/create', [MatrimonioController::class, 'create'] )->middleware(['auth', 'verified'])->name('menu.matrimonios.create');
@@ -145,7 +146,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/administracion/{parroquia}edit', [AdministracionController::class, 'edit'] )->middleware(['auth', 'verified'])->name('menu.administracion.edit');
     Route::get('/administracion/register', [AdministracionController::class, 'register'])->middleware(['auth', 'verified']
     )->name('menu.administracion.registrar');
-    
+
+        //Rutas Decretos
+        
 
     require __DIR__.'/auth.php';
 

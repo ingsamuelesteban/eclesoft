@@ -194,6 +194,11 @@
 
             </div>
         </div>
+        <div class="flex justify-center space-x-3">
+            <x-input-label for="color_borde" :value="__('Color del Borde')" />
+            <x-text-input id="color_borde" type="color" wire:model="color_borde" />
+        
+        </div>
 
         <x-primary-button class="w-full justify-center">
             {{ __('Guardar Cambios') }}

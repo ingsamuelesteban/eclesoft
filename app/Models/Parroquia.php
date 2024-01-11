@@ -23,5 +23,6 @@ class Parroquia extends Model
         'correo',
         'logo',
         'circunscripcion',
+        'color_borde',
     ];
 }

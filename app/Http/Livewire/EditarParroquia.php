@@ -23,6 +23,7 @@ class EditarParroquia extends Component
     public $parroquia_id;
     public $logo;
     public $logo_nuevo;
+    public $color_borde;
 
     use WithFileUploads;
 
@@ -41,6 +42,7 @@ class EditarParroquia extends Component
         'circunscripcion' => 'required|string',
         'correo' => 'required|string',
         'logo_nuevo' => 'nullable|image|max:1024',
+        'color_borde' => '',
     ];
 
     public function mount(Parroquia $parroquia)
@@ -59,6 +61,7 @@ class EditarParroquia extends Component
         $this->circunscripcion = $parroquia->circunscripcion;
         $this->correo = $parroquia->correo;
         $this->logo = $parroquia->logo;
+        $this->color_borde = $parroquia->color_borde;
     }
 
     public function editarParroquia()
@@ -90,6 +93,7 @@ class EditarParroquia extends Component
         $parroquia->circunscripcion=$datos['circunscripcion'];
         $parroquia->correo=$datos['correo'];
         $parroquia->logo = $datos['logo'] ?? $parroquia->logo;
+        $parroquia->color_borde= $datos['color_borde'];
 
         //Guardar
         $parroquia->save();
