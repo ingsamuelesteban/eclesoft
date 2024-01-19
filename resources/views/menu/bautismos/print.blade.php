@@ -38,8 +38,7 @@ min-height: 100%;">
 
         <p class="text-center text-base">Certifica que:</p>
 
-        <p class="text-base text-center text-uppercase fw-bold ">{{$bautismo->nombre}}</p>
-        <hr>
+        <p class="text-base text-center text-uppercase fw-bold ">**** {{$bautismo->nombre}} ****</p>
 
         @if ($fechan == '11/11/1111')
 
