@@ -38,7 +38,7 @@ min-height: 100%;">
 
         <p class="text-center text-base">Certifica que:</p>
 
-        <p class="text-base text-center text-uppercase fw-bold text-decoration-underline ">&nbsp;&nbsp;&nbsp;&nbsp;{{ $noBautizado->nombre }}&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        <p class="text-base text-center text-uppercase fw-bold">**** {{ $noBautizado->nombre }} ****</p>
     
         <p>Que nació el día <span class="text-decoration-underline ">&nbsp;&nbsp;{{ $dian }}&nbsp;&nbsp;</span> del mes de <span class="text-decoration-underline text-capitalize">
             &nbsp;&nbsp;{{$mesn}}&nbsp;&nbsp;</span>
