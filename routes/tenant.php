@@ -148,6 +148,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/administracion/register', [AdministracionController::class, 'register'])->middleware(['auth', 'verified']
     )->name('menu.administracion.registrar');
 
+    //Rutas Decreto
+    Route::get('/decretos/index', [DecretosController::class, 'index'])->middleware(['auth', 'verified'])->name('menu.decretos.index');
+    Route::get('/decretos/{decreto}', [DecretosController::class, 'show'] )->middleware(['auth', 'verified'])->name('menu.decretos.show');
+    Route::get('/decretos/{decreto}/edit', [DecretosController::class, 'edit'] )->middleware(['auth', 'verified'])->name('menu.decretos.edit');
+    Route::get('/decretos/{decreto}/print', [DecretosController::class, 'pdf'] )->middleware(['auth', 'verified'])->name('menu.decretos.print');
+
     require __DIR__.'/auth.php';
 
 });

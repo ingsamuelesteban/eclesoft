@@ -20,6 +20,7 @@ class EditarParroquia extends Component
     public $parroquia_id;
     public $logo;
     public $logo_nuevo;
+    public $color_borde;
 
     use WithFileUploads;
 
@@ -35,6 +36,11 @@ class EditarParroquia extends Component
         'ciudad' => 'required|string',
         'provincia' => 'required|string',
         'logo_nuevo' => 'nullable|image|max:1024',
+        'color_borde' => '',
+
+     
+        
+      
     ];
 
     public function mount(Parroquia $parroquia)
@@ -50,11 +56,14 @@ class EditarParroquia extends Component
         $this->ciudad = $parroquia->ciudad;
         $this->provincia = $parroquia->provincia;
         $this->logo = $parroquia->logo;
+        $this->color_borde = $parroquia->color_borde;
     }
 
     public function editarParroquia()
     {
+        
         $datos = $this->validate();
+        
 
         //Si hay un logo nuevo
         if($this->logo_nuevo) {
@@ -66,7 +75,7 @@ class EditarParroquia extends Component
 
         $parroquia = Parroquia::find($this->parroquia_id);
 
-
+ 
         //Asignar los valores
         $parroquia->diocesis = $datos['diocesis'];
         $parroquia->obispo = $datos['obispo'];
@@ -78,9 +87,11 @@ class EditarParroquia extends Component
         $parroquia->ciudad=$datos['ciudad'];
         $parroquia->provincia=$datos['provincia'];
         $parroquia->logo = $datos['logo'] ?? $parroquia->logo;
+        $parroquia->color_borde= $datos['color_borde'];
 
         //Guardar
-        $parroquia->save();
+
+       $parroquia->save();
 
         //Mensaje 
         session()->flash('message', 'Datos modificados');

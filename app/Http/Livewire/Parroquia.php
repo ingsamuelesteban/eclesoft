@@ -20,6 +20,7 @@ class Parroquia extends Component
     public $provincia;
     public $correo;
     public $logo;
+    public $color_borde;
 
     use WithFileUploads;
 
@@ -35,7 +36,8 @@ class Parroquia extends Component
         'ciudad' => 'required|string',
         'provincia' => 'required|string',
         'correo'=>'required|string',
-        'logo' => 'required|image|max:1024'
+        'logo' => 'required|image|max:1024',
+        'color_borde' => '',
     ];
 
     public function crearParroquia(){
@@ -58,6 +60,7 @@ class Parroquia extends Component
             'provincia'=>$datos['provincia'],
             'correo'=>$datos['correo'],
             'logo'=> $nombre_logo,
+            'color_borde' => $datos['color_borde'],
 
         ]);
         //Mensaje 

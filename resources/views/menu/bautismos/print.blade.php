@@ -11,22 +11,23 @@
     <title>Impresión</title>
     
 </head>
-<body style="border-top: 4px double black;
-border-right: 4px double black;
-border-left: 4px double black;
-border-bottom: 4px double black;
+@foreach ($parroquia as $parroquia )
+<body style="border-top: 6px double {{$parroquia->color_borde}};
+border-right: 6px double {{$parroquia->color_borde}};
+border-left: 6px double {{$parroquia->color_borde}};
+border-bottom: 6px double {{$parroquia->color_borde}};
 !important
 min-height: 100%;">
     <div 
     style="
     margin-left:2%;
     margin-right:2%;">
-    @foreach ($parroquia as $parroquia )
+
         <h1 class=" text-uppercase text-center fw-bold fs-5">{{$parroquia->parroquia}}</h1>
         <h2 class="text-sm-center text-uppercase fw-bold  fs-6">{{ $parroquia->diocesis}}</h2>
 
         <p>
-            <img class="rounded-circle" src="{{ global_asset('storage/img/' . $parroquia->logo) }}" alt="{{'Logo de la Parroquia'}}" width="100px" height="100px">
+            <img class="rounded-circle" src="{{ public_path('storage/img/' . $parroquia->logo) }}" alt="{{'Logo de la Parroquia'}}" width="100px" height="100px">
         </p>
         
         <h2 class=" text-center text-uppercase font-bold mb-4 fs-6">Certficado de Bautismo</h2>
@@ -38,8 +39,8 @@ min-height: 100%;">
 
         <p class="text-center text-base">Certifica que:</p>
 
-        <p class="text-base text-center text-uppercase fw-bold ">{{$bautismo->nombre}}</p>
-        <hr>
+        <p class="text-base text-center text-uppercase fw-bold ">**** {{$bautismo->nombre}} ****</p>
+       
         @if ($fechan == '11/11/1111')
 
         <p>Que nació en <span class="text-decoration-underline text-uppercase ">&nbsp;&nbsp;{{$bautismo->lugar_nacimiento}}&nbsp;&nbsp;</span> 

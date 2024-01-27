@@ -1,8 +1,9 @@
 <x-app-layout>
     @include('menu.bautismos.navigation');
+    @include('menu.decretos.navigation');
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Decretos') }}
+            {{ __('Menú Bautismos') }}
         </h2>
     </x-slot>
 

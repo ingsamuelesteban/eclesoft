@@ -1,6 +1,6 @@
-<form class="md:w-full space-y-5" wire:submit.prevent='guardarDecreto'>
+<form class="md:w-full space-y-5" wire:submit.prevent='editarDecreto'>
 
-    <h2 class="block text-md text-gray-700 font-bold uppercase  text-center mt-2">solicitud de decreto</h2>
+    <h2 class="block text-md text-gray-700 font-bold uppercase  text-center mt-2">editar decreto</h2>
 
     <p class="text-center">Favor solo completar los datos que desea corregir.</p>
 
@@ -271,7 +271,7 @@
    
 
     <x-primary-button class="w-full justify-center">
-        {{ __('Guardar') }}
+        {{ __('Guardar Cambios') }}
     </x-primary-button>
     
 

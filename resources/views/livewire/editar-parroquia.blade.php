@@ -138,7 +138,7 @@
             <div class="my-5 w-52">
                 <x-input-label  :value="__('Logo Actual')" />
 
-                <img src="{{ asset('storage/img/' . $logo) }}" alt="{{ 'Logo Actual' }}">
+                <img src="{{ global_asset('storage/img/' . $logo) }}" alt="{{ 'Logo Actual' }}">
             </div>
 
             <div class="my-5 w-52">
@@ -157,9 +157,23 @@
 
         </div>
 
+
+<div class="flex justify-center space-x-3">
+    <x-input-label for="color_borde" :value="__('Color del Borde')" />
+    <x-text-input id="color_borde" type="color" wire:model="color_borde" />
+
+</div>
+
+
+
+ 
+
+
         <x-primary-button class="w-full justify-center">
             {{ __('Guardar Cambios') }}
         </x-primary-button>
         
     
  </form>
+
+ 

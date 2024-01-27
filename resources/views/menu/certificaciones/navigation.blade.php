@@ -13,6 +13,8 @@
                         {{ __('No Bautizado') }}
                     </x-nav-link>
                 </div>
+
+
            
 
             <!-- Hamburger -->
@@ -34,6 +36,8 @@
                 {{ __('No Bautizado') }}
             </x-responsive-nav-link>
         </div>
+    
+
 
     </div>
 </nav>

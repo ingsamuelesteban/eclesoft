@@ -18,7 +18,13 @@
                     <x-nav-link :href="route('menu.bautismos.index')" :active="request()->routeIs('menu.bautismos.index', 'menu.bautismos.edit',  'menu.bautismos.show')">
                         {{ __('Buscar Acta') }}
                     </x-nav-link>
-            </div>
+                 </div>
+
+                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('menu.decretos.index')" :active="request()->routeIs('menu.decretos.index', 'menu.decretos.edit',  'menu.decretos.show')">
+                        {{ __('Decretos') }}
+                    </x-nav-link>
+                 </div>
 
            
 

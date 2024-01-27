@@ -9,10 +9,16 @@
                 <p class="text-sm text-gray-600 font-bold">Vicario: {{ $parroquia->vicario}}</p>
                 <p class="text-sm text-gray-600 font-bold">Diocesis: {{ $parroquia->diocesis}}</p>
                 <p class="text-sm text-gray-600 font-bold">Obispo: {{ $parroquia->obispo}}</p>
+                <p class="text-sm text-gray-600 font-bold">Telefono: {{ $parroquia->telefonop}}</p>
+                <p class="text-sm text-gray-600 font-bold">RNC: {{ $parroquia->rnc}}</p>
+                <p class="text-sm text-gray-600 font-bold">Correo: {{ $parroquia->correo}}</p>
                 <p class="text-sm text-gray-600 font-bold">Calle: {{ $parroquia->calle}}</p>
                 <p class="text-sm text-gray-600 font-bold">Ciudad: {{ $parroquia->ciudad}}</p>
                 <p class="text-sm text-gray-600 font-bold">Provincia: {{ $parroquia->provincia}}</p>
+                <p class="text-sm text-gray-600 font-bold">Circunscripción: {{ $parroquia->circunscripcion}}</p>
+                <p class="text-sm text-gray-600 font-bold">Color del borde del timbrado: <input type="color" value= {{$parroquia->color_borde}} disabled></p>
             </div> 
+ 
 
             <div class="flex flex-col md:flex-row items-stretch gap-3  mt-5 md:mt-0">
                
