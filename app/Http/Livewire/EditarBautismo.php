@@ -137,7 +137,7 @@ class EditarBautismo extends Component
 
         session()->flash('mensaje', 'El Acta se modificó Correctamente');
 
-        return redirect()->route('menu.bautismos.index');
+        return redirect()->route('menu.bautismos.show', ['bautismo' => $bautismo]);
 
 
     }

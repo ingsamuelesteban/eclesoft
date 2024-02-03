@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Models\Bautismos;
 use App\Models\Matrimonios;
 use App\Models\Parroquia;
 use Barryvdh\DomPDF\Facade\Pdf;
@@ -98,11 +100,18 @@ class MatrimonioController extends Controller
         $fechat = Carbon::parse($matrimonio->fecha_transcripcion)->isoFormat('L');
     
 
-        $pdf = PDF::loadView('menu.matrimonios.print', ['matrimonio' => $matrimonio, 'parroquia' => $parroquias, 'diac' => $diac, 'mesc' => $mesc, 'anoc' => $anoc, 'fechac' => $fechac, 'fechat' => $fechat  ]);
+        $pdf = PDF::loadView('menu.matrimonios.print', ['matrimonio' => $matrimonio, 'parroquia' => $parroquias, 'diac' => $diac, 'mesc' => $mesc, 'anoc' => $anoc, 'fechac' => $fechac, 'fechat' => $fechat ]);
         $pdf->setPaper('letter', 'portrait');
        return $pdf->stream();
 
       // return view('menu.bautismos.print',['bautismo' => $bautismo, 'parroquia' => $parroquias, 'dian' => $dian, 'mesn' => $mesn, 'anon' => $anon, 'diab' => $diab, 'mesb' => $mesb, 'anob' => $añob, 'diac' => $diac, 'mesc' => $mesc, 'anoc' => $anoc]);
         
     }
+
+    public function decreto(Matrimonios $matrimonio)
+    {
+        return view('menu.matrimonios.decreto', ['matrimonio'=> $matrimonio]);
+    }
+
+    
 }

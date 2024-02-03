@@ -99,7 +99,7 @@ class CrearDecreto extends Component
             'nombre_madrina_civil'=> $datos['nombre_madrina_civil'],
             'nombre_padrino_civil'=> $datos['nombre_padrino_civil'],
         ]);
-        return redirect()->route('menu.bautismos.create');
+        return redirect()->route('menu.decretos.index');
     }
 
     public function render()

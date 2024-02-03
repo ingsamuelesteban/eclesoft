@@ -1,9 +1,9 @@
 <x-app-layout>
-    @include('menu.bautismos.navigation');
-    @include('menu.decretos.navigation');
+    @include('menu.matrimonios.navigation');
+    @include('menu.decretosm.navigation');
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Menú Bautismos') }}
+            {{ __('Decretos de Matrimonios') }}
         </h2>
     </x-slot>
 
@@ -17,8 +17,8 @@
                   </div>
                 @endif
                     <div class="md:flex md:justify-center p-5">
-                        <livewire:crear-decreto
-                        :bautismo="$bautismo"/>
+                        <livewire:crear-decretom
+                        :matrimonio="$matrimonio"/>
                     </div>
 
                 </div>

@@ -18,7 +18,13 @@
                     <x-nav-link :href="route('menu.matrimonios.index')" :active="request()->routeIs('menu.matrimonios.index', 'menu.matrimonios.show', 'menu.matrimonios.edit')">
                         {{ __('Buscar Acta') }}
                     </x-nav-link>
-            </div>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('menu.decretosm.index')" :active="request()->routeIs('menu.decretosm.index', 'menu.decretosm.edit',  'menu.decretosm.show', 'menu.matrimonios.decreto')">
+                        {{ __('Decretos') }}
+                    </x-nav-link>
+                 </div>
 
            
 
@@ -40,8 +46,11 @@
             <x-responsive-nav-link :href="route('menu.matrimonios.create')" :active="request()->routeIs('menu.matrimonios.create')">
                 {{ __('Registrar Acta') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('menu.matrimonios.index')" :active="request()->routeIs('menu.matrimonios.index', 'menu.matrimonios.show', 'menu.matrimonios.edit')">
+            <x-responsive-nav-link :href="route('menu.matrimonios.index')" :active="request()->routeIs('menu.matrimonios.index')">
                 {{ __('Buscar Acta') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('menu.decretosm.index')" :active="request()->routeIs('menu.decretosm.index', 'menu.decretosm.edit',  'menu.decretosm.show', 'menu.matrimonios.decreto')">
+                {{ __('Decretos') }}
             </x-responsive-nav-link>
         </div>
 

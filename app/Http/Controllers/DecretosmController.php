@@ -2,23 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Bautismos;
-use App\Models\Decretos;
+use App\Models\Decretosm;
 use App\Models\Parroquia;
-use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
 
-class DecretosController extends Controller
+class DecretosmController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Decretosm $decretosm)
     {
-        return view('menu.decretos.index');
+        return view('menu.decretosm.index', ['decretosm' => $decretosm]);
     }
 
     /**
@@ -26,11 +25,9 @@ class DecretosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Bautismos $bautismo)
+    public function create()
     {
-        return view('menu.decretos.create', [
-            'bautismo' => $bautismo
-        ]);
+        //
     }
 
     /**
@@ -50,10 +47,9 @@ class DecretosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Decretos $decreto)
+    public function show(Decretosm $decretom)
     {
-        return view('menu.decretos.show',[
-            'decreto' => $decreto]);
+        return view('menu.decretosm.show', ['decretom' => $decretom]);
     }
 
     /**
@@ -62,13 +58,9 @@ class DecretosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Decretos $decreto)
+    public function edit(Decretosm $decretom)
     {
-
-        
-        return view('menu.decretos.edit',[
-
-        'decreto' => $decreto]);
+        return view('menu.decretosm.edit', ['decretom' => $decretom]);
     }
 
     /**
@@ -94,14 +86,14 @@ class DecretosController extends Controller
         //
     }
 
-    public function pdf(Decretos $decreto)
+    public function pdf(Decretosm $decretom)
     {
         $diac = Carbon::now('America/La_Paz')->isoFormat('DD');
         $mesc = Carbon::now('America/La_Paz')->isoFormat('MMMM');
         $anoc = Carbon::now('America/La_Paz')->isoFormat('Y');
 
         $parroquias = Parroquia::all();
-       $pdf = PDF::loadView('menu.decretos.print', ['decreto' => $decreto, 'parroquia' => $parroquias, 'diac' => $diac, 'mesc' => $mesc, 'anoc' => $anoc ]);
+       $pdf = PDF::loadView('menu.decretosm.print', ['decretom' => $decretom, 'parroquia' => $parroquias, 'diac' => $diac, 'mesc' => $mesc, 'anoc' => $anoc ]);
         $pdf->setPaper('letter', 'portrait');
         return $pdf->stream(); 
 
