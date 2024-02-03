@@ -11,7 +11,7 @@
     <title>Impresión</title>
     
 </head>
-@foreach ($parroquia as $parroquia )
+@foreach ($parroquia as $parroquia  )
 <body style="border-top: 6px double {{$parroquia->color_borde}};
 border-right: 6px double {{$parroquia->color_borde}};
 border-left: 6px double {{$parroquia->color_borde}};
@@ -22,14 +22,15 @@ min-height: 100%;">
     style="
     margin-left:2%;
     margin-right:2%;">
+    
         <h1 class=" text-uppercase text-center fw-bold fs-5">{{$parroquia->parroquia}}</h1>
         <h2 class="text-sm-center text-uppercase fw-bold  fs-6">{{ $parroquia->diocesis}}</h2>
 
         <p>
-            <img class="rounded-circle" src="{{ global_asset('storage/img/' . $parroquia->logo) }}" alt="{{'Logo de la Parroquia'}}" width="100px" height="100px">
+            <img class="rounded-circle" src="{{ public_path('storage/img/' . $parroquia->logo) }}" alt="{{'Logo de la Parroquia'}}" width="100px" height="100px">
         </p>
         
-        <h2 class=" text-center text-uppercase font-bold mb-4 fs-6">Certificado de No Bautizado</h2>
+        <h2 class=" text-center text-uppercase font-bold mb-4 fs-6">Certficado de No Bautizado</h2>
 
         <div class="fs-6 mb-2">
             <p> Quien Suscribe:
@@ -40,7 +41,7 @@ min-height: 100%;">
 
         <p class="text-base text-center text-uppercase fw-bold">**** {{ $noBautizado->nombre }} ****</p>
     
-        <p>Que nació el día <span class="text-decoration-underline ">&nbsp;&nbsp;{{ $dian }}&nbsp;&nbsp;</span> del mes de <span class="text-decoration-underline text-capitalize">
+        <p>Que nació el día <span class="text-decoration-underline">&nbsp;&nbsp;{{ $dian }}&nbsp;&nbsp;</span> del mes de <span class="text-decoration-underline text-capitalize">
             &nbsp;&nbsp;{{$mesn}}&nbsp;&nbsp;</span>
         del año
         <span class="text-decoration-underline text-uppercase">
@@ -93,42 +94,39 @@ min-height: 100%;">
        <p class="linea">No más información debajo de esta línea</p>
        </div>
 
-        <p style="margin-top: 30%;">El presente documento se expide a petición de la parte interesada en
-       {{$parroquia->ciudad}}</span>,
-            {{$parroquia->provincia}}</span>,
-            a los 
-            <span class="text-decoration-underline fw-bold">&nbsp;&nbsp;{{$diac}}&nbsp;&nbsp;</span>
-            dias del Mes de 
-            <span class="text-decoration-underline fw-bold text-capitalize">&nbsp;&nbsp;{{$mesc}}&nbsp;&nbsp;</span>
-            del Año 
-            <span class="text-decoration-underline fw-bold">&nbsp;&nbsp;{{$anoc}}&nbsp;&nbsp;</span>.
-        </p>
+       
 
-       
-    <div style="margin-top: 20%;
-    margin-bottom:5%;
-     text-align: center;">
-        
-            <p style="text-decoration: overline; text-transform:uppercase; color:black" >
-            
-                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;Párroco o Vicario Parroquial&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
-            </p>
-       
-    </div> 
       
     @endforeach
 
     <footer style="position: fixed; 
-bottom: 0px; 
-left: 0px; 
-right: 0px;
-height: 50px;
-font-size: 10px;
-" class="text-center">
+    bottom: 87px; 
+    left: 10px; 
+    right: 0px;
+    height: 87px;
+    font-size: 12px;
+    " class="text-center">
+
+<span class="text-start" style="font-size: 14px">
+<p style="margin-bottom: 10%;" >El presente documento se expide a petición de la parte interesada en
+    <span>{{$parroquia->ciudad}}</span>,
+    <span>{{$parroquia->provincia}}</span>,
+    a los 
+    <span class="text-decoration-underline fw-bold">&nbsp;&nbsp;{{$diac}}&nbsp;&nbsp;</span>
+    dias del Mes de 
+    <span class="text-decoration-underline fw-bold text-capitalize">&nbsp;&nbsp;{{$mesc}}&nbsp;&nbsp;</span>
+    del Año 
+    <span class="text-decoration-underline fw-bold">&nbsp;&nbsp;{{$anoc}}&nbsp;&nbsp;</span>.
+    </p>
+</span>
+
+    <p style="text-decoration: overline; text-transform:uppercase; color: black; font-size:14px; margin-bottom: 15px">
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;Párroco o Vicario Parroquial&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+    </p>
     <p>{{$parroquia->calle. ', ' . $parroquia->ciudad.', 
-        República Dominicana'}} <br> 
-        <span class="d-flex justify-content-center">
-        RNC.: {{$parroquia->rnc}}, Tel.: {{$parroquia->telefonop}}, Correo.: {{$parroquia->correo}}</span></p>
+    República Dominicana'}} <br> 
+    <span class="d-flex justify-content-center">
+    RNC.: {{$parroquia->rnc}}, Tel.: {{$parroquia->telefonop}}, Correo.: {{$parroquia->correo}}</span></p>
 </footer>
 </div>
 

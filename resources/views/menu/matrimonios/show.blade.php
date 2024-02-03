@@ -93,11 +93,7 @@
                                 <p class="font-bold text-sm uppercase text-gray-800 my-3">No. de Transcripción:
                                     <span class="normal-case font-normal">{{ $matrimonio->no_transcripcion}}</span>
                                 </p>
-                            
                             </div>
-                            <p class="font-bold text-sm uppercase text-gray-800 my-3">Notas al Margen:
-                                <span class="normal-case font-normal">{{ $matrimonio->notas}}</span>
-                            </p>
                            
                     <div class="flex flex-col md:flex-row items-stretch gap-3  mt-5 md:mt-0">
                         <a href="{{ route('menu.matrimonios.print', $matrimonio->id)}}" class="bg-slate-800 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center " target="_blank">
@@ -106,6 +102,10 @@
     
                         <a href="{{ route('menu.matrimonios.edit', $matrimonio->id)}}" class="bg-blue-800 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center ">
                             Editar
+                        </a>
+
+                        <a href="{{ route('menu.matrimonios.decreto', $matrimonio->id)}}" class="bg-teal-500 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center ">
+                            Decreto
                         </a>
                     </div>
                 </div>
