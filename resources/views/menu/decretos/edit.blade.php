@@ -15,7 +15,7 @@
           </div>
         @endif
             
-            <livewire:editar-decretos
+            <livewire:editar-decreto
             :decreto="$decreto"/>
         </div>
     </div>
