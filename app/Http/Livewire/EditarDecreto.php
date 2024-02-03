@@ -6,7 +6,7 @@ use App\Models\Bautismos;
 use App\Models\Decretos;
 use Livewire\Component;
 
-class EditarDecretos extends Component
+class EditarDecreto extends Component
 {
     public $bautismo_id;
     public $decreto_id;
@@ -127,6 +127,6 @@ class EditarDecretos extends Component
 
     public function render()
     {
-        return view('livewire.editar-decretos');
+        return view('livewire.editar-decreto');
     }
 }
