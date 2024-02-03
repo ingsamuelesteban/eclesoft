@@ -112,6 +112,10 @@ class BautismoController extends Controller
         return view('menu.bautismos.show', ['bautismo'=> $bautismo]);
     }
 
+    public function decreto(Bautismos $bautismo)
+    {
+        return view('menu.bautismos.decreto', ['bautismo'=> $bautismo]);
+    }
     
 
    
