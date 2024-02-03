@@ -20,7 +20,7 @@ tasks:
     - artisan:route:cache
     - artisan:view:cache
     - artisan:event:cache
-    - artisan:tenants:migrate
+    - artisan:migrate
     - npm:install
     - build
     - deploy:publish
