@@ -27,7 +27,7 @@ min-height: 100%;">
         <h2 class="text-sm-center text-uppercase fw-bold  fs-6">{{ $parroquia->diocesis}}</h2>
 
         <p>
-            <img class="rounded-circle" src="{{ public_path('storage/img/' . $parroquia->logo) }}" alt="{{'Logo de la Parroquia'}}" width="100px" height="100px">
+            <img class="rounded-circle" src="{{ global_asset('storage/img/' . $parroquia->logo) }}" alt="{{'Logo de la Parroquia'}}" width="100px" height="100px">
         </p>
         
         <h2 class=" text-center text-uppercase font-bold mb-4 fs-6">solicitud de corrección de acta de bautismo</h2>
