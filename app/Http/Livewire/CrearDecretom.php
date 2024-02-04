@@ -134,7 +134,9 @@ class CrearDecretom extends Component
             'cedula_padrino' =>$datos['cedula_padrino'],
             'cedula_padrino_civil' =>$datos['cedula_padrino_civil'],
         ]);
-        return redirect()->route('menu.decretos.index');
+
+        session()->flash('mensaje', 'El Decreto se guardó Correctamente');
+        return redirect()->route('menu.decretosm.index');
     }
 
     public function render()
