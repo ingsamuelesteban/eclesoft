@@ -80,7 +80,7 @@ min-height: 100%;">
         @if ($decreto->fecha_nacimiento_civil)
         <tr>
             <th style="width: 30%; border-collapse:collapse; border: 1px solid black" class="text-uppercase">fecha de nacimiento</th>
-            @if($decreto->fecha_nacimiento=='11/11/1111')
+            @if(Carbon\Carbon::parse($decreto->fecha_nacimiento)->isoFormat('L')=='11/11/1111')
             <td style=" border-collapse:collapse; border: 1px solid black" class="text-uppercase">--/--/----</td>
             @else<td style=" border-collapse:collapse; border: 1px solid black" class="text-uppercase">{{Carbon\Carbon::parse($decreto->fecha_nacimiento)->isoFormat('L')}}</td>
             @endif

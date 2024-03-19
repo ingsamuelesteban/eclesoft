@@ -71,7 +71,7 @@ min-height: 100%;">
                 @if ($decretom->fecha_nacimiento_esposa_civil)
                 <tr>
                     <th style="width: 30%; border-collapse:collapse; border: 1px solid  black; font-size:14px" class="uppercase">Fecha de Nacimiento de la Esposa</th>
-                    @if($decretom->fecha_nacimiento_esposa=='11/11/1111')
+                    @if(Carbon\Carbon::parse($decretom->fecha_nacimiento_esposa)->isoFormat('L')=='11/11/1111')
                     <td style=" border-collapse:collapse; border: 1px solid  black; font-size:14px" class="uppercase">--/--/----</td>
                     @else
                     <td style=" border-collapse:collapse; border: 1px solid  black; font-size:14px" class="uppercase">
@@ -104,7 +104,7 @@ min-height: 100%;">
                 @if ($decretom->fecha_nacimiento_esposo_civil)
                 <tr>
                     <th style="width: 30%; border-collapse:collapse; border: 1px solid  black; font-size:14px" class="uppercase">Fecha de Nacimiento del Esposo</th>
-                    @if($decretom->fecha_nacimiento_esposo=='11/11/1111')
+                    @if(Carbon\Carbon::parse($decretom->fecha_nacimiento_esposo)->isoFormat('L')=='11/11/1111')
                     <td style=" border-collapse:collapse; border: 1px solid  black; font-size:14px" class="uppercase">--/--/----</td>
                     @else
                     <td style=" border-collapse:collapse; border: 1px solid  black; font-size:14px" class="uppercase">
