@@ -71,8 +71,12 @@ min-height: 100%;">
                 @if ($decretom->fecha_nacimiento_esposa_civil)
                 <tr>
                     <th style="width: 30%; border-collapse:collapse; border: 1px solid  black; font-size:14px" class="uppercase">Fecha de Nacimiento de la Esposa</th>
-                    <td style=" border-collapse:collapse; border: 1px solid  black; font-size:14px" class="uppercase">{@if($decretom->fecha_nacimiento_esposa=='11/11/1111')
-                        --/--/---- @else{Carbon\Carbon::parse($decretom->fecha_nacimiento_esposa)->isoFormat('L')}}</td>
+                    @if($decretom->fecha_nacimiento_esposa=='11/11/1111')
+                    <td style=" border-collapse:collapse; border: 1px solid  black; font-size:14px" class="uppercase">--/--/----</td>
+                    @else
+                    <td style=" border-collapse:collapse; border: 1px solid  black; font-size:14px" class="uppercase">
+                    {{Carbon\Carbon::parse($decretom->fecha_nacimiento_esposa)->isoFormat('L')}}</td>
+                    @endif
                     <td  style=" border-collapse:collapse; border: 1px solid  black; font-size:14px" class="uppercase">{{Carbon\Carbon::parse($decretom->fecha_nacimiento_esposa_civil)->isoFormat('L')}}</td>
                 </tr> 
                 @endif
@@ -100,8 +104,12 @@ min-height: 100%;">
                 @if ($decretom->fecha_nacimiento_esposo_civil)
                 <tr>
                     <th style="width: 30%; border-collapse:collapse; border: 1px solid  black; font-size:14px" class="uppercase">Fecha de Nacimiento del Esposo</th>
-                    <td style=" border-collapse:collapse; border: 1px solid  black; font-size:14px" class="uppercase">@if($decretom->fecha_nacimiento_esposo=='11/11/1111')
-                        --/--/---- @else{{Carbon\Carbon::parse($decretom->fecha_nacimiento_esposo)->isoFormat('L')}}</td>
+                    @if($decretom->fecha_nacimiento_esposo=='11/11/1111')
+                    <td style=" border-collapse:collapse; border: 1px solid  black; font-size:14px" class="uppercase">--/--/----</td>
+                    @else
+                    <td style=" border-collapse:collapse; border: 1px solid  black; font-size:14px" class="uppercase">
+                    {{Carbon\Carbon::parse($decretom->fecha_nacimiento_esposo)->isoFormat('L')}}</td>
+                    @endif
                     <td  style=" border-collapse:collapse; border: 1px solid  black; font-size:14px" class="uppercase">{{Carbon\Carbon::parse($decretom->fecha_nacimiento_esposo_civil)->isoFormat('L')}}</td>
                 </tr> 
                 @endif
