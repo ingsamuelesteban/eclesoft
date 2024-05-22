@@ -18,15 +18,21 @@
 
     </head>
     <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
+        @if (Auth::user()->departamento ==1)
+        @include('layouts.navigation')
+        @endif
+      
+        <!-- Page Heading -->
+        <header class="bg-white shadow">
+        
+            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
 
-            <!-- Page Heading -->
-            <header class="bg-white shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    {{ $header }}
-                </div>
-            </header>
+                {{ $header }}
+            </div>
+        </header>
+        @if (Auth::user()->departamento ==2)
+        @include('layouts.navigationobispado')
+        @endif
 
             <!-- Page Content -->
             <main>

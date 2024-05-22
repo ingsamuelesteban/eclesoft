@@ -29,6 +29,9 @@ use App\Http\Controllers\DecretosController;
 use App\Http\Controllers\DecretosmController;
 use App\Http\Controllers\MatrimonioController;
 use App\Http\Controllers\NoBautizadoController;
+use App\Http\Controllers\ConfirmacionControlller;
+use App\Http\Controllers\DiocesisController;
+use App\Http\Controllers\ParroquiasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -116,6 +119,16 @@ Route::middleware('auth')->group(function () {
     Route::get('/bautismos/{bautismo}/print', [BautismoController::class, 'pdf'] )->middleware(['auth', 'verified'])->name('menu.bautismos.print');
     Route::get('/bautismos/{bautismo}/decreto', [BautismoController::class, 'decreto'] )->middleware(['auth', 'verified'])->name('menu.bautismos.decreto');
 
+
+       //Rutas Confirmacion
+    
+       Route::get('/confirmacion/create', [ConfirmacionControlller::class, 'create'] )->middleware(['auth', 'verified'])->name('menu.confirmacion.create');
+       Route::get('/confirmacion/index', [BautismoController::class, 'index'])->middleware(['auth', 'verified'])->name('menu.confirmacion.index');
+       Route::get('/confirmacion/{bautismo}/edit', [BautismoController::class, 'edit'] )->middleware(['auth', 'verified'])->name('menu.confirmacion.edit');
+       Route::get('/confirmacion/{bautismo}', [BautismoController::class, 'show'] )->middleware(['auth', 'verified'])->name('menu.confirmacion.show');
+       Route::get('/confirmacion/{bautismo}/print', [BautismoController::class, 'pdf'] )->middleware(['auth', 'verified'])->name('menu.confirmacion.print');
+       Route::get('/confirmacion/{bautismo}/decreto', [BautismoController::class, 'decreto'] )->middleware(['auth', 'verified'])->name('menu.confirmacion.decreto');
+   
     //Rutas matrimonio 
     
     Route::get('/matrimonios/create', [MatrimonioController::class, 'create'] )->middleware(['auth', 'verified'])->name('menu.matrimonios.create');
@@ -130,6 +143,17 @@ Route::middleware('auth')->group(function () {
     Route::get('/comunidades/create',[ComunidadesController::class, 'create'])->middleware(['auth', 'verified'])->name('menu.comunidades.create');
     Route::get('/comunidades/index', [ComunidadesController::class, 'index'])->middleware(['auth', 'verified'])->name('menu.comunidades.index');
     
+
+        //Rutas Parroquias
+    
+        Route::get('/parroquias/create',[ParroquiasController::class, 'create'])->middleware(['auth', 'verified'])->name('menu.parroquias.create');
+        Route::get('/parroquias/index', [ComunidadesController::class, 'index'])->middleware(['auth', 'verified'])->name('menu.parroquias.index');
+        
+        //Rutas Diocesis
+        
+        Route::get('/diocesis/create',[DiocesisController::class, 'create'])->middleware(['auth', 'verified'])->name('menu.diocesis.create');
+        Route::get('/diocesis/index', [DiocesisController::class, 'index'])->middleware(['auth', 'verified'])->name('menu.diocesis.index');
+        
     //Rutas Certificaciones
 
     Route::get('/certificaciones/index', [CertificacionesController::class, 'index'])->middleware(['auth', 'verified'])->name('menu.certificaciones.index');
