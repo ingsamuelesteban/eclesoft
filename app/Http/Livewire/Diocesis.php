@@ -52,9 +52,11 @@ class Diocesis extends Component
             'nombre'=>$datos['nombre'],
             'obispo'=>$datos['obispo'],
             'titulo'=>$datos['titulo'],
+
             'canciller'=>$datos['canciller'],
             'vicario_general'=>$datos['vicario_general'],
             'firma'=>$datos['canciller'],
+
             'calle'=>$datos['calle'],
             'ciudad'=>$datos['ciudad'],
             'provincia'=>$datos['provincia'],

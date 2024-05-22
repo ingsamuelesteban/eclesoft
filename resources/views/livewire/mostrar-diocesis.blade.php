@@ -16,6 +16,10 @@
                 <p class="text-sm text-gray-600 font-bold">Canciller: {{ $diocesi->canciller}}</p>
                 <p class="text-sm text-gray-600 font-bold">Vicario General: {{ $diocesi->vicario_general}}</p>
                 <p class="text-sm text-gray-600 font-bold">Firma Actual: {{ $diocesi->firma}}</p>
+
+                <p class="text-sm text-gray-600 font-bold">Canciller: {{ $diocesi->canciller}}</p>
+                <p class="text-sm text-gray-600 font-bold">Vicario General: {{ $diocesi->vicario_general}}</p>
+
                 <p class="text-sm text-gray-600 font-bold">Telefono: {{ $diocesi->telefono}}</p>
                 <p class="text-sm text-gray-600 font-bold">RNC: {{ $diocesi->rnc}}</p>
                 <p class="text-sm text-gray-600 font-bold">Correo: {{ $diocesi->correo}}</p>
