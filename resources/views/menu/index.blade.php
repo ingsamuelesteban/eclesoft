@@ -26,7 +26,8 @@
         @if (Auth::user()->departamento ==2)
             @forelse ($diocesis as $diocesi)
 
-            <h2 class="font-semibold text-xl text-gray-700 leading-tight text-center uppercase">{{$parroquia->parroquia}}</h2>
+            <h2 class="font-semibold text-xl text-gray-700 leading-tight text-center uppercase">{{$diocesi->nombre}}</h2>
+
             
             <div class="my-5 w-56 flex content-center">
                     <img src="{{ global_asset('storage/img/' .  $diocesi->logo)}}" alt="Logo de la Diócesis">

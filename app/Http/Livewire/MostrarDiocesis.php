@@ -11,6 +11,7 @@ class MostrarDiocesis extends Component
     {
         $diocesis = Diocesi::all();
 
+
         return view('livewire.mostrar-diocesis', ['diocesis' => $diocesis]);
     }
 }

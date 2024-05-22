@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Diocesi;
-use App\Models\Parroquia;
 use Illuminate\Http\Request;
 
-class MenuController extends Controller
+class FooController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +13,7 @@ class MenuController extends Controller
      */
     public function index()
     {
-        $parroquia = Parroquia::all();
-        $diocesis = Diocesi::all();
-        return view('menu.index', [
-            'parroquia' => $parroquia, 'diocesis' => $diocesis
-        ]);
+        return view('menu.bautismos.index');
     }
 
     /**
@@ -29,7 +23,7 @@ class MenuController extends Controller
      */
     public function create()
     {
-        return view('menu.create');
+        //
     }
 
     /**
