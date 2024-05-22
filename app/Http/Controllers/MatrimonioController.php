@@ -108,5 +108,10 @@ class MatrimonioController extends Controller
         
     }
 
+    public function decreto(Matrimonios $matrimonio)
+    {
+        return view('menu.matrimonios.decreto', ['matrimonio'=> $matrimonio]);
+    }
+
     
 }

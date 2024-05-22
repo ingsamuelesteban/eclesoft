@@ -3,7 +3,7 @@
 
     <div class="max-w-7xl mx-auto">
         <form wire:submit.prevent="leerDatosFormulario">
-            <div class="md:grid md:grid-cols-3 gap-5">
+            <div class="md:grid md:grid-cols-4 gap-5">
                 <div class="mb-5">
                     <label 
                         class="block mb-1 text-sm text-gray-700 uppercase font-bold "
@@ -15,28 +15,41 @@
                         placeholder="Buscar por nombre"
                         class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full"
                         wire:model="nombre"
+                        autofocus
                     />
                 </div>
 
                 <div class="mb-5">
-                    <label class="block mb-1 text-sm text-gray-700 uppercase font-bold" for="cedula_madre">Cedula Madre</label>
+                    <label class="block mb-1 text-sm text-gray-700 uppercase font-bold" for="nombre_padre">Nombre del Padre</label>
                     <input 
-                        id="cedula_madre"
-                        type="text"
-                        placeholder="Cedula sin guiones"
-                        class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full"
-                        wire:model="cedulaMadre"
-                    />
-                </div>
-
-                <div class="mb-5">
-                    <label class="block mb-1 text-sm text-gray-700 uppercase font-bold" for="cedula_padre">Cedula del Padre</label>
-                    <input 
-                    id="cedula_padre"
+                    id="nombre_padre"
                     type="text"
-                    placeholder="Cedula sin guiones"
+                    placeholder="Nombre Completo o Parcial"
                     class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full"
-                    wire:model="cedulaPadre"
+                    wire:model="nombrePadre"
+                />
+                </div>
+
+                <div class="mb-5">
+                    <label class="block mb-1 text-sm text-gray-700 uppercase font-bold" for="nombre_madre">Nombre Madre</label>
+                    <input 
+                        id="nombre_madre"
+                        type="text"
+                        placeholder="Nombre Completo o Parcial"
+                        class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full"
+                        wire:model="nombreMadre"
+                    />
+                </div>
+
+
+
+                <div class="mb-5">
+                    <label class="block mb-1 text-sm text-gray-700 uppercase font-bold" for="fecha_nacimiento">Fecha de Nacimiento</label>
+                    <input 
+                    id="fecha_nacimiento"
+                    type="date"
+                    class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full"
+                    wire:model="fechaNacimiento"
                 />
                 </div>
             </div>

@@ -4,9 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Models\Bautismos;
 use Livewire\Component;
-use Illuminate\Support\Facades\DB;
 use Livewire\WithPagination;
-
 
 class MostrarBautismos extends Component
 {
@@ -14,14 +12,16 @@ class MostrarBautismos extends Component
   use WithPagination;
  
     public $nombre;
-    public $cedulaMadre;
-    public $cedulaPadre;
+    public $nombreMadre;
+    public $nombrePadre;
+    public $fechaNacimiento;
 
-  public function buscar($nombre, $cedulaMadre, $cedulaPadre)
+  public function buscar($nombre, $nombreMadre, $nombrePadre, $fechaNacimiento)
   {
     $this->nombre = $nombre;
-    $this->cedulaMadre = $cedulaMadre;
-    $this->cedulaPadre = $cedulaPadre;
+    $this->nombreMadre = $nombreMadre;
+    $this->nombrePadre = $nombrePadre;
+    $this->fechaNacimiento = $fechaNacimiento;
   
   }
 
@@ -35,19 +35,19 @@ class MostrarBautismos extends Component
 
     public function render()
     {
-
-   
-    
         $bautismos = Bautismos::when($this->nombre, function($query) {
           $query->where('nombre', 'LIKE', "%" . $this->nombre . "%");
         })
-        ->when($this->cedulaMadre, function($query) {
-          $query->where('cedula_madre', $this->cedulaMadre);
+        ->when($this->nombreMadre, function($query) {
+          $query->where('nombre_madre', 'LIKE', "%" . $this->nombreMadre . "%");
         })
-        ->when($this->cedulaPadre, function($query) {
-          $query->where('cedula_padre', $this->cedulaPadre);
-        })->orderBy('nombre')->paginate(1)
-        ;
+        ->when($this->nombrePadre, function($query) {
+          $query->where('nombre_padre', 'LIKE', "%" . $this->nombrePadre . "%");
+        })
+        ->when($this->fechaNacimiento, function($query) {
+          $query->where('fecha_nacimiento', $this->fechaNacimiento);
+        })
+        ->orderBy('fecha_celebracion')->paginate(10);
 
         return view('livewire.mostrar-bautismos', [
           'bautismos' => $bautismos 

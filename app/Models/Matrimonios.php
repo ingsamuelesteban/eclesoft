@@ -26,6 +26,8 @@ class Matrimonios extends Model
         'fecha_transcripcion',
         'no_libro',
         'folio',
-        'no_transcripcion'
+        'no_transcripcion',
+        'notas'
+
 ];
 }

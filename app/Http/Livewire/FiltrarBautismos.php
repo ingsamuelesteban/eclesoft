@@ -7,12 +7,13 @@ use Livewire\Component;
 class FiltrarBautismos extends Component
 {
     public $nombre;
-    public $cedulaMadre;
-    public $cedulaPadre;
+    public $nombreMadre;
+    public $nombrePadre;
+    public $fechaNacimiento;
 
     public function leerDatosFormulario()
     {
-        $this->emit('criteriosBusqueda', $this->nombre, $this->cedulaMadre, $this->cedulaPadre );
+        $this->emit('criteriosBusqueda', $this->nombre, $this->nombreMadre, $this->nombrePadre, $this->fechaNacimiento);
     }
 
     public function render()

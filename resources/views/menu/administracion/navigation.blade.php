@@ -16,15 +16,6 @@
                         {{ __('Crear Usuario') }}
                     </x-nav-link>
                  </div>
-                    
-               
-                <!-- Navigation Links -->
-               
-                
-        
-
-                
-
            
             <!-- Hamburger -->
             <div class="-mr-2 flex items-center sm:hidden">

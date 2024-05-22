@@ -143,7 +143,7 @@
                         <a href="{{ route('menu.bautismos.edit', $bautismo->id)}}" class="bg-blue-800 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center ">
                             Editar
                         </a>
-                        
+
                         <a href="{{ route('menu.bautismos.decreto', $bautismo->id)}}" class="bg-teal-500 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center ">
                             Decreto
                         </a>

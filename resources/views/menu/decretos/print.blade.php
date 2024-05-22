@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
 
-    <title>Impresión</title>
+    <title>Impresión Decreto</title>
     
 </head>
 @foreach ($parroquia as $parroquia  )
@@ -27,13 +27,22 @@ min-height: 100%;">
         <h2 class="text-sm-center text-uppercase fw-bold  fs-6">{{ $parroquia->diocesis}}</h2>
 
         <p>
-            <img class="rounded-circle" src="{{ public_path('storage/img/' . $parroquia->logo) }}" alt="{{'Logo de la Parroquia'}}" width="100px" height="100px">
+            <img class="rounded-circle" src="{{ global_asset('storage/img/' . $parroquia->logo) }}" alt="{{'Logo de la Parroquia'}}" width="100px" height="100px">
         </p>
         
         <h2 class=" text-center text-uppercase font-bold mb-4 fs-6">solicitud de corrección de acta de bautismo</h2>
 
         <div class="fs-6 mb-2">
-            <p> Por medio de este oficio solicitamos tenga a bien conceder DECRETO DE CORRECCIÓN a favor del interesado, debido a los errores que contiene su ACTA DE BAUTISMO con relación a su DOCUMENTO CIVIL. </p>
+            <p> Su Excelencia, por medio de este oficio solicitamos tenga a bien conceder DECRETO DE CORRECCIÓN a favor @if ($decreto->genero==1)
+                del bautizado
+            @else
+                de la bautizada
+            @endif 
+           @if ($decreto->nombre_civil)
+           <span style="text-transform: uppercase; font-weight:bold"> {{$decreto->nombre_civil}} </span>
+           @else
+              <span style="text-transform:uppercase; font-weight:bold"> {{$decreto->nombre}}</span>
+           @endif , debido a los errores que contiene su ACTA DE BAUTISMO  con relación a su DOCUMENTO CIVIL. </p>
         </div>
 
         <p class="text-base">Los errores a los que hacemos referencia son:</p>
@@ -71,7 +80,10 @@ min-height: 100%;">
         @if ($decreto->fecha_nacimiento_civil)
         <tr>
             <th style="width: 30%; border-collapse:collapse; border: 1px solid black" class="text-uppercase">fecha de nacimiento</th>
-            <td style=" border-collapse:collapse; border: 1px solid black" class="text-uppercase">{{Carbon\Carbon::parse($decreto->fecha_nacimiento)->isoFormat('L')}}</td>
+            @if(Carbon\Carbon::parse($decreto->fecha_nacimiento)->isoFormat('L')=='11/11/1111')
+            <td style=" border-collapse:collapse; border: 1px solid black" class="text-uppercase">--/--/----</td>
+            @else<td style=" border-collapse:collapse; border: 1px solid black" class="text-uppercase">{{Carbon\Carbon::parse($decreto->fecha_nacimiento)->isoFormat('L')}}</td>
+            @endif
             <td  style=" border-collapse:collapse; border: 1px solid black" class="text-uppercase">{{Carbon\Carbon::parse($decreto->fecha_nacimiento_civil)->isoFormat('L')}}</td>
         </tr> 
     @endif
@@ -152,42 +164,38 @@ min-height: 100%;">
        <p class="linea">No más información debajo de esta línea</p>
        </div>
 
-        <p style="margin-top: 20%;">El presente documento se expide a petición de la parte interesada en
-       {{$parroquia->ciudad}}</span>,
-            {{$parroquia->provincia}}</span>,
-            a los 
-            <span class="text-decoration-underline fw-bold">&nbsp;&nbsp;{{$diac}}&nbsp;&nbsp;</span>
-            dias del Mes de 
-            <span class="text-decoration-underline fw-bold text-capitalize">&nbsp;&nbsp;{{$mesc}}&nbsp;&nbsp;</span>
-            del Año 
-            <span class="text-decoration-underline fw-bold">&nbsp;&nbsp;{{$anoc}}&nbsp;&nbsp;</span>.
-        </p>
 
-       
-    <div style="margin-top: 15%;
-    margin-bottom:5%;
-     text-align: center;">
-        
-            <p style="text-decoration: overline; text-transform:uppercase; color:black" >
-            
-                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;Párroco o Vicario Parroquial&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
-            </p>
-       
-    </div> 
       
     @endforeach
 
     <footer style="position: fixed; 
-bottom: 0px; 
-left: 0px; 
-right: 0px;
-height: 50px;
-font-size: 10px;
-" class="text-center">
+    bottom: 87px; 
+    left: 10px; 
+    right: 0px;
+    height: 87px;
+    font-size: 12px;
+    " class="text-center">
+
+<span class="text-start" style="font-size: 14px">
+<p style="margin-bottom: 10%;" >El presente documento se expide a petición de la parte interesada en
+    <span>{{$parroquia->ciudad}}</span>,
+    <span>{{$parroquia->provincia}}</span>,
+    a los 
+    <span class="text-decoration-underline fw-bold">&nbsp;&nbsp;{{$diac}}&nbsp;&nbsp;</span>
+    dias del Mes de 
+    <span class="text-decoration-underline fw-bold text-capitalize">&nbsp;&nbsp;{{$mesc}}&nbsp;&nbsp;</span>
+    del Año 
+    <span class="text-decoration-underline fw-bold">&nbsp;&nbsp;{{$anoc}}&nbsp;&nbsp;</span>.
+    </p>
+</span>
+
+    <p style="text-decoration: overline; text-transform:uppercase; color: black; font-size:14px; margin-bottom: 15px">
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;Párroco o Vicario Parroquial&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+    </p>
     <p>{{$parroquia->calle. ', ' . $parroquia->ciudad.', 
-        República Dominicana'}} <br> 
-        <span class="d-flex justify-content-center">
-        RNC.: {{$parroquia->rnc}}, Tel.: {{$parroquia->telefonop}}, Correo.: {{$parroquia->correo}}</span></p>
+    República Dominicana'}} <br> 
+    <span class="d-flex justify-content-center">
+    RNC.: {{$parroquia->rnc}}, Tel.: {{$parroquia->telefonop}}, Correo.: {{$parroquia->correo}}</span></p>
 </footer>
 </div>
 

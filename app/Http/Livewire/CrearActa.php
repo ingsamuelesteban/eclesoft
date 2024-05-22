@@ -4,7 +4,6 @@ namespace App\Http\Livewire;
 
 use App\Models\Bautismos;
 use App\Models\Comunidades;
-use App\Models\Parroquia;
 use App\Models\User;
 use App\Models\Users;
 use App\Providers\RouteServiceProvider;
@@ -119,7 +118,7 @@ class CrearActa extends Component
     {
         //Consultar BD para autopoblar select
 
-      //  $comunidades = DB::table('comunidades')->get(['nombre_comunidad', 'ubicacion']);
+       
     
        
         

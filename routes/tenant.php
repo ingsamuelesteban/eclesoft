@@ -26,8 +26,12 @@ use App\Http\Controllers\BautismoController;
 use App\Http\Controllers\CertificacionesController;
 use App\Http\Controllers\ComunidadesController;
 use App\Http\Controllers\DecretosController;
+use App\Http\Controllers\DecretosmController;
 use App\Http\Controllers\MatrimonioController;
 use App\Http\Controllers\NoBautizadoController;
+use App\Http\Controllers\ConfirmacionControlller;
+use App\Http\Controllers\DiocesisController;
+use App\Http\Controllers\ParroquiasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -115,6 +119,16 @@ Route::middleware('auth')->group(function () {
     Route::get('/bautismos/{bautismo}/print', [BautismoController::class, 'pdf'] )->middleware(['auth', 'verified'])->name('menu.bautismos.print');
     Route::get('/bautismos/{bautismo}/decreto', [BautismoController::class, 'decreto'] )->middleware(['auth', 'verified'])->name('menu.bautismos.decreto');
 
+
+       //Rutas Confirmacion
+    
+       Route::get('/confirmacion/create', [ConfirmacionControlller::class, 'create'] )->middleware(['auth', 'verified'])->name('menu.confirmacion.create');
+       Route::get('/confirmacion/index', [BautismoController::class, 'index'])->middleware(['auth', 'verified'])->name('menu.confirmacion.index');
+       Route::get('/confirmacion/{bautismo}/edit', [BautismoController::class, 'edit'] )->middleware(['auth', 'verified'])->name('menu.confirmacion.edit');
+       Route::get('/confirmacion/{bautismo}', [BautismoController::class, 'show'] )->middleware(['auth', 'verified'])->name('menu.confirmacion.show');
+       Route::get('/confirmacion/{bautismo}/print', [BautismoController::class, 'pdf'] )->middleware(['auth', 'verified'])->name('menu.confirmacion.print');
+       Route::get('/confirmacion/{bautismo}/decreto', [BautismoController::class, 'decreto'] )->middleware(['auth', 'verified'])->name('menu.confirmacion.decreto');
+   
     //Rutas matrimonio 
     
     Route::get('/matrimonios/create', [MatrimonioController::class, 'create'] )->middleware(['auth', 'verified'])->name('menu.matrimonios.create');
@@ -122,12 +136,24 @@ Route::middleware('auth')->group(function () {
     Route::get('/matrimonios/{matrimonio}/edit', [MatrimonioController::class, 'edit'] )->middleware(['auth', 'verified'])->name('menu.matrimonios.edit');
     Route::get('/matrimonios/{matrimonio}', [MatrimonioController::class, 'show'] )->middleware(['auth', 'verified'])->name('menu.matrimonios.show');
     Route::get('/matrimonios/{matrimonio}/print', [MatrimonioController::class, 'pdf'] )->middleware(['auth', 'verified'])->name('menu.matrimonios.print');
-   
+    Route::get('/matrimonios/{matrimonio}/decreto', [MatrimonioController::class, 'decreto'] )->middleware(['auth', 'verified'])->name('menu.matrimonios.decreto');
+
     //Rutas Comunidades 
     
     Route::get('/comunidades/create',[ComunidadesController::class, 'create'])->middleware(['auth', 'verified'])->name('menu.comunidades.create');
     Route::get('/comunidades/index', [ComunidadesController::class, 'index'])->middleware(['auth', 'verified'])->name('menu.comunidades.index');
     
+
+        //Rutas Parroquias
+    
+        Route::get('/parroquias/create',[ParroquiasController::class, 'create'])->middleware(['auth', 'verified'])->name('menu.parroquias.create');
+        Route::get('/parroquias/index', [ComunidadesController::class, 'index'])->middleware(['auth', 'verified'])->name('menu.parroquias.index');
+        
+        //Rutas Diocesis
+        
+        Route::get('/diocesis/create',[DiocesisController::class, 'create'])->middleware(['auth', 'verified'])->name('menu.diocesis.create');
+        Route::get('/diocesis/index', [DiocesisController::class, 'index'])->middleware(['auth', 'verified'])->name('menu.diocesis.index');
+        
     //Rutas Certificaciones
 
     Route::get('/certificaciones/index', [CertificacionesController::class, 'index'])->middleware(['auth', 'verified'])->name('menu.certificaciones.index');
@@ -148,11 +174,18 @@ Route::middleware('auth')->group(function () {
     Route::get('/administracion/register', [AdministracionController::class, 'register'])->middleware(['auth', 'verified']
     )->name('menu.administracion.registrar');
 
-    //Rutas Decreto
+     //Rutas Decreto
     Route::get('/decretos/index', [DecretosController::class, 'index'])->middleware(['auth', 'verified'])->name('menu.decretos.index');
     Route::get('/decretos/{decreto}', [DecretosController::class, 'show'] )->middleware(['auth', 'verified'])->name('menu.decretos.show');
     Route::get('/decretos/{decreto}/edit', [DecretosController::class, 'edit'] )->middleware(['auth', 'verified'])->name('menu.decretos.edit');
     Route::get('/decretos/{decreto}/print', [DecretosController::class, 'pdf'] )->middleware(['auth', 'verified'])->name('menu.decretos.print');
+
+     //Rutas Decreto de Matrimonio
+     Route::get('/decretosm/index', [DecretosmController::class, 'index'])->middleware(['auth', 'verified'])->name('menu.decretosm.index');
+     Route::get('/decretosm/{decretom}', [DecretosmController::class, 'show'] )->middleware(['auth', 'verified'])->name('menu.decretosm.show');
+     Route::get('/decretosm/{decretom}/edit', [DecretosmController::class, 'edit'] )->middleware(['auth', 'verified'])->name('menu.decretosm.edit');
+     Route::get('/decretosm/{decretom}/print', [DecretosmController::class, 'pdf'] )->middleware(['auth', 'verified'])->name('menu.decretosm.print');
+ 
 
     require __DIR__.'/auth.php';
 

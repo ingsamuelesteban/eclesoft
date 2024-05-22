@@ -4,7 +4,7 @@
 
     <div class="grid grid-cols-2">
         <div>
-            <x-input-label for="diocesis" :value="__('diócesis')" />
+            <x-input-label for="diocesis" :value="__('diósecis')" />
 
             <x-text-input id="diocesis" class="block mt-1 w-full" type="text" 
             wire:model="diocesis" 
@@ -54,7 +54,6 @@
             <livewire:mostrar-alertas :message="$message" />
         @enderror
         </div>
-
         <div>
             <x-input-label for="rnc" :value="__('rnc')" />
 
@@ -68,7 +67,7 @@
 
     </div>
 
-    <div class="grid grid-cols-3">
+    <div class="grid grid-cols-4">
         <div>
             <x-input-label for="calle" :value="__('Calle y No.')" />
 
@@ -100,6 +99,17 @@
             wire:model="provincia" 
             :value="old('provincia')" placeholder="Ej. San Cristobal" />
             @error('provincia')
+            <livewire:mostrar-alertas :message="$message" />
+        @enderror
+        </div>
+
+        <div>
+            <x-input-label for="circunscripcion" :value="__('circunscripcion')" />
+
+            <x-text-input id="circunscripcion" class="block mt-1 w-full" type="text" 
+            wire:model="circunscripcion" 
+            :value="old('circunscripcion')" placeholder="Ej. 1ra Circunscripción de Baní" />
+            @error('circunscripcion')
             <livewire:mostrar-alertas :message="$message" />
         @enderror
         </div>
@@ -139,7 +149,7 @@
 
         </div>
 
-        <div class="grid grid-cols-2">
+<div class="grid grid-cols-2">
 
         <div>
                 <x-input-label for="correo" :value="__('correo')" />
@@ -174,6 +184,7 @@
 
 
         </div>
+
         <div class="flex justify-start space-x-3">
             <x-input-label for="color_borde" :value="__('Color del Borde')" />
             <x-text-input id="color_borde" type="color" wire:model="color_borde" />

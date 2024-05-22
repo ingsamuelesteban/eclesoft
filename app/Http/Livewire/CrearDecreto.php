@@ -99,6 +99,8 @@ class CrearDecreto extends Component
             'nombre_madrina_civil'=> $datos['nombre_madrina_civil'],
             'nombre_padrino_civil'=> $datos['nombre_padrino_civil'],
         ]);
+
+        session()->flash('mensaje', 'El Decreto se guardó Correctamente');
         return redirect()->route('menu.decretos.index');
     }
 

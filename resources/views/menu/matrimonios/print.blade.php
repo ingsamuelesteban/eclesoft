@@ -123,39 +123,34 @@ min-height: 100%;">
        <p class="linea">No más información debajo de esta linea</p>
        </div>
 
-        <p style="margin-top: 10%;">El presente documento se expide a petición de la parte interesada en
-            <span>{{$parroquia->ciudad}}</span>,
-            <span>{{$parroquia->provincia}}</span>,
-            a los 
-            <span class="text-decoration-underline fw-bold">&nbsp;&nbsp;{{$diac}}&nbsp;&nbsp;</span>
-            dias del Mes de 
-            <span class="text-decoration-underline fw-bold text-capitalize">&nbsp;&nbsp;{{$mesc}}&nbsp;&nbsp;</span>
-            del Año 
-            <span class="text-decoration-underline fw-bold">&nbsp;&nbsp;{{$anoc}}&nbsp;&nbsp;</span>.
-        </p>
-
-       
-    <div style="margin-top: 10%;
-    margin-bottom:5%;
-     text-align: center;">
-        
-            <p style="text-decoration: overline; text-transform:uppercase; color:black" >
-            
-                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;Párroco o Vicario Parroquial&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
-            </p>
-       
-    </div> 
       
     @endforeach
 
     <footer style="position: fixed; 
-bottom: 0px; 
-left: 0px; 
-right: 0px;
-height: 50px;
-font-size: 10px;
-" class="text-center">
- <p>{{$parroquia->calle. ', ' . $parroquia->ciudad.', 
+    bottom: 87px; 
+    left: 10px; 
+    right: 0px;
+    height: 87px;
+    font-size: 12px;
+    " class="text-center">
+
+<span class="text-start" style="font-size: 14px">
+<p style="margin-bottom: 10%;" >El presente documento se expide a petición de la parte interesada en
+    <span>{{$parroquia->ciudad}}</span>,
+    <span>{{$parroquia->provincia}}</span>,
+    a los 
+    <span class="text-decoration-underline fw-bold">&nbsp;&nbsp;{{$diac}}&nbsp;&nbsp;</span>
+    dias del Mes de 
+    <span class="text-decoration-underline fw-bold text-capitalize">&nbsp;&nbsp;{{$mesc}}&nbsp;&nbsp;</span>
+    del Año 
+    <span class="text-decoration-underline fw-bold">&nbsp;&nbsp;{{$anoc}}&nbsp;&nbsp;</span>.
+    </p>
+</span>
+
+    <p style="text-decoration: overline; text-transform:uppercase; color: black; font-size:14px; margin-bottom: 15px">
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;Párroco o Vicario Parroquial&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+    </p>
+    <p>{{$parroquia->calle. ', ' . $parroquia->ciudad.', 
     República Dominicana'}} <br> 
     <span class="d-flex justify-content-center">
     RNC.: {{$parroquia->rnc}}, Tel.: {{$parroquia->telefonop}}, Correo.: {{$parroquia->correo}}</span></p>

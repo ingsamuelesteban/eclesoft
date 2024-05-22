@@ -103,6 +103,10 @@
                         <a href="{{ route('menu.matrimonios.edit', $matrimonio->id)}}" class="bg-blue-800 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center ">
                             Editar
                         </a>
+
+                        <a href="{{ route('menu.matrimonios.decreto', $matrimonio->id)}}" class="bg-teal-500 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center ">
+                            Decreto
+                        </a>
                     </div>
                 </div>
             </div>

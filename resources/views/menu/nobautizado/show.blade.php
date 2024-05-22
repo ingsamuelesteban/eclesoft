@@ -8,8 +8,7 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg " >
                 <div class="p-10">
                     <div class="mb-5">
                         <h3 class="font-bold text-3xl text-gray-800 my-3 text-center">
@@ -135,10 +134,7 @@
                             </div>
                         </div>
                     </div>
-
-                   
-
-
+                    
                     <div class="flex flex-col md:flex-row items-stretch gap-3  mt-5 md:mt-0">
                         <a href="{{ route('menu.nobautizado.print', $noBautizado->id)}}" class="bg-slate-800 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center " target="_blank">
                             Imprimir

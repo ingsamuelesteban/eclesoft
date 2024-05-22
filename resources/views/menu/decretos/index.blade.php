@@ -15,8 +15,7 @@
           </div>
         @endif
             
-            <livewire:mostrar-decretos
-            />
+            <livewire:mostrar-decretos/>
         </div>
     </div>
 </x-app-layout>
