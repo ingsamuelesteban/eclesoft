@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Diocesi;
 use App\Models\Parroquia;
 use Illuminate\Http\Request;
 
@@ -15,8 +16,9 @@ class MenuController extends Controller
     public function index()
     {
         $parroquia = Parroquia::all();
+        $diocesis = Diocesi::all();
         return view('menu.index', [
-            'parroquia' => $parroquia
+            'parroquia' => $parroquia, 'diocesis' => $diocesis
         ]);
     }
 

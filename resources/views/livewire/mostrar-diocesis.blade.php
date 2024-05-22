@@ -6,8 +6,16 @@
                     {{ $diocesi->nombre}}
                 </a>
                 <p class="text-sm text-gray-600 font-bold">Obispo: {{ $diocesi->obispo}}</p>
+                @if ($diocesi->titulo==1)
+                <p class="text-sm text-gray-600 font-bold">Título: Obispo Titular</p>   
+                @elseif ($diocesi->titulo==2)
+                <p class="text-sm text-gray-600 font-bold">Título: Administrador Apostólico</p>   
+                @else
+                <p class="text-sm text-gray-600 font-bold">Título: Administrador Diocesano</p> 
+                @endif
                 <p class="text-sm text-gray-600 font-bold">Canciller: {{ $diocesi->canciller}}</p>
                 <p class="text-sm text-gray-600 font-bold">Vicario General: {{ $diocesi->vicario_general}}</p>
+                <p class="text-sm text-gray-600 font-bold">Firma Actual: {{ $diocesi->firma}}</p>
                 <p class="text-sm text-gray-600 font-bold">Telefono: {{ $diocesi->telefono}}</p>
                 <p class="text-sm text-gray-600 font-bold">RNC: {{ $diocesi->rnc}}</p>
                 <p class="text-sm text-gray-600 font-bold">Correo: {{ $diocesi->correo}}</p>

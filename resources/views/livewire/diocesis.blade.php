@@ -1,4 +1,4 @@
-<form class="md:w-full space-y-5" wire:submit.prevent='crearnombre'>
+<form class="md:w-full space-y-5" wire:submit.prevent='crearDiocesis'>
 
     <h2 class="block text-md text-gray-700 font-bold uppercase mb-2 text-center">Configure su Diócesis</h2>
 
