@@ -15,7 +15,7 @@
       @endif
       <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
         <div class="p-6 bg-white border-b border-gray-200">
-        @if (Auth::user()->departamento ==2)
+        @if (Auth::user()->departamento ==1)
         <h1 class="font-semibold text-xl text-gray-800 leading-tight text-center mb-5">OBISPADO</h1>   
         @else
         <h1 class="font-semibold text-xl text-gray-800 leading-tight text-center mb-5">Oficina Parroquial</h1>  
@@ -23,7 +23,7 @@
    
 
     <div class="flex flex-col md:flex-col items-center">
-        @if (Auth::user()->departamento ==2)
+        @if (Auth::user()->departamento ==1)
             @forelse ($diocesis as $diocesi)
 
             <h2 class="font-semibold text-xl text-gray-700 leading-tight text-center uppercase">{{$diocesi->nombre}}</h2>
