@@ -18,7 +18,7 @@
 
     </head>
     <body class="font-sans antialiased">
-        @if (Auth::user()->departamento ==1)
+        @if (Auth::user()->departamento ==2)
         @include('layouts.navigation')
         @endif
       
@@ -30,7 +30,7 @@
                 {{ $header }}
             </div>
         </header>
-        @if (Auth::user()->departamento ==2)
+        @if (Auth::user()->departamento ==1)
         @include('layouts.navigationobispado')
         @endif
 
