@@ -13,6 +13,7 @@
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
         "livewire/livewire": "^2.10",
+        "luecano/numero-a-letras": "^3.0",
         "nesbot/carbon": "^2.65",
         "stancl/tenancy": "^3.6"
     },

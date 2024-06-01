@@ -21,8 +21,10 @@ class ActaConfirmacion extends Component
     public $nombre; 
     public $apellidos;
     public $edad; 
+    public $sexo; 
     public $nombre_madre;
     public $nombre_padre;  
+    public $sexo_padrinos;
     public $padrinos;
     public $notas;
 
@@ -37,8 +39,10 @@ class ActaConfirmacion extends Component
         'nombre'=>'', 
         'apellidos'=>'',
         'edad'=>'', 
+        'sexo'=>'', 
         'nombre_madre'=>'',
         'nombre_padre'=>'',  
+        'sexo_padrinos'=>'',
         'padrinos'=>'',
         'notas'=>'',
     ];
@@ -59,8 +63,10 @@ class ActaConfirmacion extends Component
                     'nombre'=>$datos['nombre'], 
                     'apellidos'=>$datos['apellidos'],
                     'edad'=>$datos['edad'], 
+                    'sexo'=>$datos['sexo'], 
                     'nombre_madre'=>$datos['nombre_madre'],
                     'nombre_padre'=>$datos['nombre_padre'],  
+                    'sexo_padrinos'=>$datos['sexo_padrinos'],
                     'padrinos'=>$datos['padrinos'],
                     'notas'=>$datos['notas'],
 

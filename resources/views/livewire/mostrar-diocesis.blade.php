@@ -13,7 +13,7 @@
                 @else
                 <p class="text-sm text-gray-600 font-bold">Título: Administrador Diocesano</p> 
                 @endif
-                <p class="text-sm text-gray-600 font-bold">Canciller: {{ $diocesi->canciller}}</p>
+                <p class="text-sm text-gray-600 font-bold">Canciller: {{$diocesi->canciller}}</p>
                 <p class="text-sm text-gray-600 font-bold">Vicario General: {{ $diocesi->vicario_general}}</p>
                 <p class="text-sm text-gray-600 font-bold">Firma Actual: {{ $diocesi->firma}}</p>
 
@@ -32,7 +32,7 @@
             <div class="flex flex-col md:flex-row items-stretch gap-3  mt-5 md:mt-0">
                
 
-                <a href="{{ route('menu.administracion.edit', $diocesi->id)}}" class="bg-blue-800 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center ">
+                <a href="{{ route('menu.diocesis.edit', $diocesi->id)}}" class="bg-blue-800 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center ">
                     Editar
                 </a>
 

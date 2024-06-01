@@ -20,6 +20,6 @@ class Parroquiaz extends Model
     ];
 
     public function Confirmacion(){
-        return $this->belongsTo(Confirmacion::class);
+        return $this->hasOne(Confirmacion::class);
     }
 }

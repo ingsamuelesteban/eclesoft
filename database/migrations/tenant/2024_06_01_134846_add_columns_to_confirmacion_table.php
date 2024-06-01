@@ -13,9 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('no_bautizados', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::table('confirmacions', function (Blueprint $table) {
+            $table->string('sexo_padrinos')->nullable();
         });
     }
 
@@ -26,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('no_bautizados');
+        Schema::table('confirmacions', function (Blueprint $table) {
+            //
+        });
     }
 };
