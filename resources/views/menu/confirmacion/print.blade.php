@@ -129,7 +129,7 @@
     " class="text-center">
 
 <span class="text-start" style="font-size: 14px">
-<p style="margin-bottom: 10%;" >Certificación expedida a petición de la parte interesada en
+<p style="margin-bottom: 5%;" >Certificación expedida a petición de la parte interesada en
     <span>{{$diocesi->ciudad}}</span>,
     <span>{{$diocesi->provincia}}</span>,
     a los 
