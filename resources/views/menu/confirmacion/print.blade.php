@@ -62,7 +62,7 @@
         <p>
         Siendo ministro del Sacramento 
         <span class=" text-capitalize">
-             {{$confirmacion->celebrante}}</span>, {{$confirmacion->titulo}} de esta diócesis.
+             {{$confirmacion->celebrante}}</span>.
         </p>
         <p>
             Siendo su {{$confirmacion->sexo_padrinos}}: {{$confirmacion->padrinos}}.
