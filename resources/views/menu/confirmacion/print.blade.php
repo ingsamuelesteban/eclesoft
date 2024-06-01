@@ -137,12 +137,12 @@
 </span>
 
     @if ($diocesi->firma == 1)
-    <p style="text-decoration: overline; text-transform:uppercase; color: black; font-size:14px; margin-bottom: 25px; margin-top:2%">
+    <p style=" text-transform:uppercase; color: black; font-size:14px; margin-bottom: 25px; margin-top:2%">
         &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;{{$diocesi->obispo}}&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; <br>
-        <span class="d-flex justify-content-center">{{$diocesi->titulo}}</span>
+        <span class="d-flex justify-content-center">{{$diocesi->titulo}} DE LA {{$diocesi->nombre}}</span>
     </p>  
     @elseif ($diocesi->firma == 2)
-    <p style="text-decoration: overline; text-transform:uppercase; color: black; font-size:14px; margin-bottom: 25px; margin-top:2%">
+    <p style=" text-transform:uppercase; color: black; font-size:14px; margin-bottom: 25px; margin-top:2%">
         &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;{{$diocesi->vicario_general}}&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; <br>
         <span class="d-flex justify-content-center">VICARIO GENERAL DE LA {{$diocesi->nombre}}</span>
     </p>

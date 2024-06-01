@@ -53,8 +53,9 @@ class ConfirmacionController extends Controller
     public function show(Confirmacion $confirmacion)
     {
 
+        $diocesi = Diocesi::where('id',1)->get();
       
-        return view('menu.confirmacion.show',['confirmacion'=>$confirmacion]);
+        return view('menu.confirmacion.show',['confirmacion'=>$confirmacion, 'diocesi'=>$diocesi]);
     }
 
     /**
