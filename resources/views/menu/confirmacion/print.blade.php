@@ -12,7 +12,12 @@
     
 </head>
 @foreach ($diocesis as $diocesi  )
-<body >
+<body style="border-top: 6px double black;
+    border-right: 6px double black;
+    border-left: 6px double black;
+    border-bottom: 6px double black;
+    !important
+    min-height: 100%;">
     <div 
     style="
     margin-left:2%;

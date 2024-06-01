@@ -18,7 +18,7 @@
         @enderror
     </div>
     <x-primary-button class="w-full justify-center">
-        {{ __('Cambiar Firmar') }}
+        {{ __('Cambiar Firma') }}
     </x-primary-button>
     
  </form>
