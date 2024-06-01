@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('parroquias', function (Blueprint $table) {
-            $table->string('color_borde');
+        Schema::table('confirmacions', function (Blueprint $table) {
+            $table->string('sexo')->nullable();
         });
     }
 
@@ -25,8 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('parroquias', function (Blueprint $table) {
-            $table->dropColumn('color_borde');
+        Schema::table('confirmacions', function (Blueprint $table) {
+            //
         });
     }
 };

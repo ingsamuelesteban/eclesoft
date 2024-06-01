@@ -20,13 +20,15 @@ class Confirmacion extends Model
         'nombre', 
         'apellidos',
         'edad', 
+        'sexo', 
         'nombre_madre',
         'nombre_padre',  
+        'sexo_padrinos',
         'padrinos',
         'notas'
 ];
 
-public function Parroquiaz(){
-    return $this->hasOne(Parroquiaz::class);
+public function parroquia(){
+    return $this->belongsTo(Parroquiaz::class);
 }
 }

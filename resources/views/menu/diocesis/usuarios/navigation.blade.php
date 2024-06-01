@@ -3,31 +3,19 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
-               
-
-                <!-- Navigation Links -->
-               
-
+                 <!-- Navigation Links -->
+                    
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('menu.confirmacion.create')" :active="request()->routeIs('menu.confirmacion.create')">
-                        {{ __('Registrar Acta') }}
-                    </x-nav-link>
-                </div>
-
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('menu.confirmacion.index')" :active="request()->routeIs('menu.confirmacion.index', 'menu.confirmacion.edit',  'menu.confirmacion.show')">
-                        {{ __('Buscar Acta') }}
+                    <x-nav-link :href="route('menu.diocesis.usuarios.registrar')" :active="request()->routeIs('menu.diocesis.usuarios.registrar','menu.diocesis.create')"> 
+                         {{ __('Crear Usuario') }}
                     </x-nav-link>
                  </div>
-
-{{--                  <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('menu.decretos.index')" :active="request()->routeIs('menu.decretos.index', 'menu.decretos.edit',  'menu.decretos.show', 'menu.confirmacion.decreto')">
-                        {{ __('Decretos') }}
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('menu.diocesis.usuarios.index')" :active="request()->routeIs('menu.diocesis.usuarios.index','menu.diocesis.usuarios.edit')"> 
+                         {{ __('Buscar Usuarios') }}
                     </x-nav-link>
-                 </div> --}}
-
+                 </div>
            
-
             <!-- Hamburger -->
             <div class="-mr-2 flex items-center sm:hidden">
                 <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
@@ -43,15 +31,10 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('menu.confirmacion.create')" :active="request()->routeIs('menu.confirmacion.create')">
-                {{ __('Registrar Acta') }}
+            <x-responsive-nav-link :href="route('menu.diocesis.usuarios.registrar')" :active="request()->routeIs('menu.diocesis.usuarios.registrar')">
+                {{ __('Crear Usuarios') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('menu.confirmacion.index')" :active="request()->routeIs('menu.confirmacion.index')">
-                {{ __('Buscar Acta') }}
-            </x-responsive-nav-link>
-{{--             <x-responsive-nav-link :href="route('menu.decretos.index')" :active="request()->routeIs('menu.decretos.index', 'menu.decretos.edit',  'menu.decretos.show', 'menu.confirmacion.decreto')">
-                {{ __('Decretos') }}
-            </x-responsive-nav-link> --}}
+
         </div>
 
     </div>

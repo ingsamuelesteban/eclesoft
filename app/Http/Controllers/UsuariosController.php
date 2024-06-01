@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class ConfirmacionControlller extends Controller
+class UsuariosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,7 @@ class ConfirmacionControlller extends Controller
      */
     public function index()
     {
-        //
+        return view('menu.diocesis.usuarios.index');
     }
 
     /**
@@ -23,7 +24,7 @@ class ConfirmacionControlller extends Controller
      */
     public function create()
     {
-        return view ('menu.confirmacion.create');
+        //
     }
 
     /**
@@ -54,9 +55,9 @@ class ConfirmacionControlller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $usuario)
     {
-        //
+        return view('menu.diocesis.usuarios.edit',['usuario'=>$usuario]);
     }
 
     /**

@@ -20,12 +20,11 @@
                 <x-nav-link-parent :href="'#'" :active="request()->routeIs('padron.*')">
                     <x-slot name="name">Archivos Históricos</x-slot>
                     <x-slot name="children">
-                        <a href="#">Item A</a>
+                        <a href="#">Nstra. Sra. de Reglas</a>
                         <span class="separator"></span>
-                        <a href="#">Item B</a>
-                        <a href="#">Item C</a>
+                        <a href="#">San Cristóbal</a>
                         <span class="separator"></span>
-                        <a href="#">Item D</a>
+                        <a href="#">San José de Ocoa</a>
                     </x-slot>
                 </x-nav-link-parent>
                 </div>
@@ -55,7 +54,7 @@
                         <span class="separator"></span>
                         <a href="{{route('menu.parroquias.create')}}">Parroquias</a>
                         <span class="separator"></span>
-                        <a href="#">Usuarios</a>
+                        <a href="{{route('menu.diocesis.usuarios.registrar')}}">Usuarios</a>
                     </x-slot>
                 </x-nav-link-parent>
                 </div>

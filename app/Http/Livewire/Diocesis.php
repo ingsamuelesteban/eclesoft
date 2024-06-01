@@ -38,7 +38,7 @@ class Diocesis extends Component
         'telefono'=>'',
         'rnc'=>'',
         'correo'=>'',
-        'logo'=>'',
+        'logo'=>'image',
     ];
 
     public function crearDiocesis(){

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Diocesi;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class DiocesisController extends Controller
@@ -54,9 +56,9 @@ class DiocesisController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Diocesi $diocesi)
     {
-        //
+        return view('menu.diocesis.edit',['diocesi'=>$diocesi]);
     }
 
     /**
@@ -80,5 +82,12 @@ class DiocesisController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function register()
+    {
+        $this->authorize('create', User::class);
+        
+        return view('menu.diocesis.usuarios.registrar');
     }
 }

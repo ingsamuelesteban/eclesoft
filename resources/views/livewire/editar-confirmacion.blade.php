@@ -1,5 +1,5 @@
 
-<form class="md:w-full space-y-5" wire:submit.prevent='crearConfirmacion'>
+<form class="md:w-full space-y-5" wire:submit.prevent='editarConfirmacion'>
     <h2 class="block text-md text-gray-700 font-bold uppercase mb-2 text-center mt-2">Datos del libro de Confirmación</h2>
 
     <div class="grid grid-cols-3">
@@ -179,7 +179,6 @@
             <x-input-label for="padrinos" :value="__('Datos de los padrinos')" />
 
         </div>
-
         <div class="grid grid-cols-2" >
 
             <div>

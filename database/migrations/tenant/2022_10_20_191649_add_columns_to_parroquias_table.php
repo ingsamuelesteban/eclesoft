@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('telefonop');
             $table->string('parroco');
             $table->string('vicario');
+            $table->string('rnc');
+            $table->string('correo');
         });
     }
 

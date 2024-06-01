@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('fecha_celebracion')->nullable(); 
             $table->string('nombre')->nullable(); 
             $table->string('apellidos')->nullable();
-            $table->string('edad')->nullable(); 
+            $table->string('edad')->nullable();  
             $table->string('nombre_madre')->nullable();
             $table->string('nombre_padre')->nullable();  
             $table->string('padrinos')->nullable();

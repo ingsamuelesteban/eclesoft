@@ -13,7 +13,7 @@ class ParroquiasController extends Controller
      */
     public function index()
     {
-        //
+        return view('menu.parroquias.index');
     }
 
     /**
