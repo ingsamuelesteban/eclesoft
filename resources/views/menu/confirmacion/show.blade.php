@@ -72,6 +72,15 @@
                                 <span class="normal-case font-normal">{{ $confirmacion->notas}}</span>
                             </p>
                         </div>
+                        
+                        @foreach ($diocesi as $diocesi )
+                        
+                        @endforeach
+                        <div class="md:flex md:justify-center p-5">
+                            <livewire:show-confirmacion
+                            :diocesi="$diocesi"
+                            :confirmacion="$confirmacion"/>
+                        </div>
                     </div>
 
                    

@@ -156,6 +156,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/diocesis/create',[DiocesisController::class, 'create'])->middleware(['auth', 'verified'])->name('menu.diocesis.create');
         Route::get('/diocesis/index', [DiocesisController::class, 'index'])->middleware(['auth', 'verified'])->name('menu.diocesis.index');
         Route::get('/diocesis/{diocesi}/edit', [DiocesisController::class, 'edit'] )->middleware(['auth', 'verified'])->name('menu.diocesis.edit');
+        Route::get('/firma/{diocesi}/update', [DiocesisController::class, 'update'] )->middleware(['auth', 'verified'])->name('menu.firma.edit');
     
         
        //Rutas Usuarios Obispado (los de la parroquia se manejan por las rutas de breeze)
