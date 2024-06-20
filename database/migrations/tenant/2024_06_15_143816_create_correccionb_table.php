@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('documento')->nullable();
             $table->string('titular_documento')->nullable();
             $table->string('referencias_documento')->nullable();
-            $table->string('notas', length: 2000)->nullable();
+            $table->string('notas', length: 5000)->nullable();
         });
     }
 
