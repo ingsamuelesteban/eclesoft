@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Confirmacion;
+use App\Models\Correccionb;
 use App\Models\Diocesi;
-use App\Models\Parroquiaz;
+use App\Models\Documentcb;
+use App\Models\Parroquia;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Luecano\NumeroALetras\NumeroALetras;
 
-class ConfirmacionController extends Controller
+class CorreccionesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,7 +19,20 @@ class ConfirmacionController extends Controller
      */
     public function index()
     {
-        return view('menu.confirmacion.index');
+
+     
+        $parroquia = Parroquia::all();
+        $diocesis = Diocesi::all();
+        return view('menu.correcciones.index',['parroquia' => $parroquia, 'diocesis' => $diocesis]);
+    }
+
+    public function bautismos()
+    {
+        return view('menu.correcciones.bautismo.create');
+    }
+
+    public function bautismosIndex(){
+        return view('menu.correcciones.bautismo.index');
     }
 
     /**
@@ -29,7 +42,6 @@ class ConfirmacionController extends Controller
      */
     public function create()
     {
-        return view('menu.confirmacion.create');
     }
 
     /**
@@ -49,12 +61,13 @@ class ConfirmacionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Confirmacion $confirmacion)
+    public function bautismosShow(Correccionb $correccionb)
     {
-
+        //dd($correccionb->id);
         $diocesi = Diocesi::where('id',1)->get();
-      
-        return view('menu.confirmacion.show',['confirmacion'=>$confirmacion, 'diocesi'=>$diocesi]);
+        
+        $documentos = Documentcb::where('correccionb_id', $correccionb->id)->get();
+        return view('menu.correcciones.bautismo.show', ['correccionb'=>$correccionb, 'documentos'=>$documentos, 'diocesi'=>$diocesi]);
     }
 
     /**
@@ -63,9 +76,9 @@ class ConfirmacionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Confirmacion $confirmacion)
+    public function bautismosEdit(Correccionb $correccionb)
     {
-        return view('menu.confirmacion.edit',['confirmacion'=>$confirmacion]);
+        return view('menu.correcciones.bautismo.edit',['correccionb'=>$correccionb]);
     }
 
     /**
@@ -91,23 +104,20 @@ class ConfirmacionController extends Controller
         //
     }
 
-    public function pdf(Confirmacion $confirmacion)
+    public function bautismosPrint(Correccionb $correccionb)
     {
-        $dia = Carbon::parse($confirmacion->fecha_celebracion)->format('d');
-        $mes = Carbon::parse($confirmacion->fecha_celebracion)->isoFormat('MMMM');
-        $ano = Carbon::parse($confirmacion->fecha_celebracion)->isoFormat('Y');
+
+      
+        $documentos = Documentcb::where('correccionb_id', $correccionb->id)->get(); 
         $diac = Carbon::now('America/La_Paz')->isoFormat('DD');
         $mesc = Carbon::now('America/La_Paz')->isoFormat('MMMM');
         $anoc = Carbon::now('America/La_Paz')->isoFormat('Y');
 
         $diocesis = Diocesi::all();
-        $pdf = PDF::loadView('menu.confirmacion.print', ['confirmacion' => $confirmacion, 'diocesis' => $diocesis, 'diac' => $diac, 'mesc' => $mesc, 'anoc'=>$anoc, 'dia' => $dia, 'mes' => $mes, 'ano' => $ano]);
+       
+
+         $pdf = PDF::loadView('menu.correcciones.bautismo.print', ['correccionb' => $correccionb, 'diocesis' => $diocesis, 'diac' => $diac, 'mesc' => $mesc, 'anoc'=>$anoc, 'documentos'=>$documentos]);
         $pdf->setPaper('letter', 'portrait');
-        return $pdf->stream();
-
-      // return view('menu.bautismos.print',['bautismo' => $bautismo, 'parroquia' => $parroquias, 'dian' => $dian, 'mesn' => $mesn, 'anon' => $anon, 'diab' => $diab, 'mesb' => $mesb, 'anob' => $añob, 'diac' => $diac, 'mesc' => $mesc, 'anoc' => $anoc]);
-        
+        return $pdf->stream(); 
     }
-
-   
 }

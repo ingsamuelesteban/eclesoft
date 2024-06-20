@@ -31,6 +31,7 @@ use App\Http\Controllers\DecretosmController;
 use App\Http\Controllers\MatrimonioController;
 use App\Http\Controllers\NoBautizadoController;
 use App\Http\Controllers\ConfirmacionControlller;
+use App\Http\Controllers\CorreccionesController;
 use App\Http\Controllers\DiocesisController;
 use App\Http\Controllers\ParroquiasController;
 use App\Http\Controllers\UsuariosController;
@@ -196,6 +197,18 @@ Route::middleware('auth')->group(function () {
      Route::get('/decretosm/{decretom}', [DecretosmController::class, 'show'] )->middleware(['auth', 'verified'])->name('menu.decretosm.show');
      Route::get('/decretosm/{decretom}/edit', [DecretosmController::class, 'edit'] )->middleware(['auth', 'verified'])->name('menu.decretosm.edit');
      Route::get('/decretosm/{decretom}/print', [DecretosmController::class, 'pdf'] )->middleware(['auth', 'verified'])->name('menu.decretosm.print');
+ 
+     //Rutas Menu de Correciones 
+     Route::get('/correcciones/index', [CorreccionesController::class, 'index'])->middleware(['auth', 'verified'])->name('menu.correcciones.index');
+
+     //Rutas Correciones de Bautismo
+
+    Route::get('/correccionesb/index',[CorreccionesController::class, 'bautismosIndex'])->middleware(['auth', 'verified'])->name('menu.correccionesb.index');
+    Route::get('/correccionesb/create',[CorreccionesController::class, 'bautismos'])->middleware(['auth', 'verified'])->name('menu.correccionesb.create');
+    Route::get('/correccionesb/{correccionb}/edit', [correccionesController::class, 'bautismosEdit'] )->middleware(['auth', 'verified'])->name('menu.correccionesb.edit');
+    Route::get('/correccionesb/{correccionb}', [CorreccionesController::class, 'bautismosShow'] )->middleware(['auth', 'verified'])->name('menu.correccionesb.show');
+    Route::get('/correccionesb/{correccionb}/print', [correccionesController::class, 'bautismosPrint'] )->middleware(['auth', 'verified'])->name('menu.correccionesb.print');
+     
  
 
     require __DIR__.'/auth.php';
