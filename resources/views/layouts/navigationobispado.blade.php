@@ -1,4 +1,5 @@
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+    @csrf
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -36,7 +37,7 @@
                         <span class="separator"></span>
                         <a href="{{route('menu.confirmacion.create')}}">Confirmación</a>
                         <span class="separator"></span>
-                        <a href="#">Decretos</a>
+                        <a href="{{route('menu.correcciones.index')}}">Decretos</a>
                         <span class="separator"></span>
                         <a href="#">Exoneraciones</a>
                         <span class="separator"></span>

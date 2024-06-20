@@ -18,6 +18,7 @@
 
     </head>
     <body class="font-sans antialiased">
+        @csrf
         @if (Auth::user()->departamento ==2)
         @include('layouts.navigation')
         @endif
