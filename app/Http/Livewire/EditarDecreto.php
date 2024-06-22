@@ -14,6 +14,11 @@ class EditarDecreto extends Component
     public $genero;
     public $fecha_nacimiento;
     public $lugar_nacimiento;
+    public $folio_nacimiento;
+    public $libro_nacimiento;
+    public $acta_nacimiento;
+    public $ano_nacimiento;
+    public $circunscripcion_nacimiento;
     public $nombre_madre;
     public $cedula_madre;
     public $nombre_padre;
@@ -24,6 +29,11 @@ class EditarDecreto extends Component
     public $genero_civil;
     public $fecha_nacimiento_civil;
     public $lugar_nacimiento_civil;
+    public $folio_nacimiento_civil;
+    public $libro_nacimiento_civil;
+    public $acta_nacimiento_civil;
+    public $ano_nacimiento_civil;
+    public $circunscripcion_nacimiento_civil;
     public $nombre_madre_civil;
     public $cedula_madre_civil;
     public $nombre_padre_civil;
@@ -45,6 +55,16 @@ class EditarDecreto extends Component
         'fecha_nacimiento_civil' => '',
         'lugar_nacimiento' => '',
         'lugar_nacimiento_civil' => '',
+        'libro_nacimiento' => '',
+        'libro_nacimiento_civil' => '',
+        'folio_nacimiento' => '',
+        'folio_nacimiento_civil' => '',
+        'acta_nacimiento' => '',
+        'acta_nacimiento_civil' => '',
+        'ano_nacimiento' => '',
+        'ano_nacimiento_civil' => '',
+        'circunscripcion_nacimiento' => '',
+        'circunscripcion_nacimiento_civil' => '',
         'nombre_madre' => '',
         'nombre_madre_civil' => '',
         'cedula_madre' => '',
@@ -71,6 +91,16 @@ class EditarDecreto extends Component
         $this->fecha_nacimiento_civil = $decreto->fecha_nacimiento_civil;
         $this->lugar_nacimiento = $decreto->lugar_nacimiento;
         $this->lugar_nacimiento_civil = $decreto->lugar_nacimiento_civil;
+        $this->libro_nacimiento = $decreto->libro_nacimiento;
+        $this->libro_nacimiento_civil = $decreto->libro_nacimiento_civil;
+        $this->folio_nacimiento = $decreto->folio_nacimiento;
+        $this->folio_nacimiento_civil = $decreto->folio_nacimiento_civil;
+        $this->acta_nacimiento = $decreto->acta_nacimiento;
+        $this->acta_nacimiento_civil = $decreto->acta_nacimiento_civil;
+        $this->ano_nacimiento = $decreto->ano_nacimiento;
+        $this->ano_nacimiento_civil = $decreto->ano_nacimiento_civil;
+        $this->circunscripcion_nacimiento = $decreto->circunscripcion_nacimiento;
+        $this->circunscripcion_nacimiento_civil = $decreto->circunscripcion_nacimiento_civil;
         $this->nombre_madre = $decreto->nombre_madre;
         $this->nombre_madre_civil = $decreto->nombre_madre_civil;
         $this->cedula_madre = $decreto->cedula_madre;
@@ -98,6 +128,16 @@ class EditarDecreto extends Component
         $decreto->fecha_nacimiento = $datos['fecha_nacimiento'];
         $decreto->nombre_madre = $datos['nombre_madre'];
         $decreto->lugar_nacimiento = $datos['lugar_nacimiento'];
+        $decreto->libro_nacimiento = $datos['libro_nacimiento'];
+        $decreto->libro_nacimiento_civil = $datos['libro_nacimiento_civil'];
+        $decreto->folio_nacimiento = $datos['folio_nacimiento'];
+        $decreto->folio_nacimiento_civil = $datos['folio_nacimiento_civil'];
+        $decreto->acta_nacimiento = $datos['acta_nacimiento'];
+        $decreto->acta_nacimiento_civil = $datos['acta_nacimiento_civil'];
+        $decreto->ano_nacimiento = $datos['ano_nacimiento'];
+        $decreto->ano_nacimiento_civil =$datos['ano_nacimiento_civil'];
+        $decreto->circunscripcion_nacimiento = $datos['circunscripcion_nacimiento'];
+        $decreto->circunscripcion_nacimiento_civil =$datos ['circunscripcion_nacimiento_civil'];
         $decreto->nombre_padre = $datos['nombre_padre'];
         $decreto->cedula_madre = $datos['cedula_madre'];
         $decreto->nombre_madrina = $datos['nombre_madrina'];

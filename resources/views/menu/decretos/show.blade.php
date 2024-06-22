@@ -55,6 +55,41 @@
                                 <td  style=" border-collapse:collapse; border: 1px solid black" class="uppercase">{{Carbon\Carbon::parse($decreto->fecha_nacimiento_civil)->isoFormat('L')}}</td>
                             </tr> 
                         @endif
+                        @if ($decreto->libro_nacimiento_civil)
+                        <tr>
+                            <th style="width: 30%; border-collapse:collapse; border: 1px solid black" class="uppercase">No. Libro Nacimiento</th>
+                            <td style=" border-collapse:collapse; border: 1px solid black">{{ $decreto->libro_nacimiento}}</td>
+                            <td style=" border-collapse:collapse; border: 1px solid black" class="uppercase">{{$decreto->libro_nacimiento_civil}}</td>
+                        </tr> 
+                    @endif
+                        @if ($decreto->folio_nacimiento_civil)
+                        <tr>
+                            <th style="width: 30%; border-collapse:collapse; border: 1px solid black" class="uppercase">Folio Libro Nacimiento</th>
+                            <td style=" border-collapse:collapse; border: 1px solid black">{{ $decreto->folio_nacimiento}}</td>
+                            <td style=" border-collapse:collapse; border: 1px solid black" class="uppercase">{{$decreto->folio_nacimiento_civil}}</td>
+                        </tr> 
+                    @endif
+                        @if ($decreto->acta_nacimiento_civil)
+                        <tr>
+                            <th style="width: 30%; border-collapse:collapse; border: 1px solid black" class="uppercase">No. Acta Nacimiento</th>
+                            <td style=" border-collapse:collapse; border: 1px solid black">{{ $decreto->acta_nacimiento}}</td>
+                            <td style=" border-collapse:collapse; border: 1px solid black" class="uppercase">{{$decreto->acta_nacimiento_civil}}</td>
+                        </tr> 
+                    @endif
+                        @if ($decreto->ano_nacimiento_civil)
+                        <tr>
+                            <th style="width: 30%; border-collapse:collapse; border: 1px solid black" class="uppercase">Año de Nacimiento</th>
+                            <td style=" border-collapse:collapse; border: 1px solid black">{{ $decreto->ano_nacimiento}}</td>
+                            <td style=" border-collapse:collapse; border: 1px solid black" class="uppercase">{{$decreto->ano_nacimiento_civil}}</td>
+                        </tr> 
+                    @endif
+                        @if ($decreto->circunscripcion_nacimiento_civil)
+                        <tr>
+                            <th style="width: 30%; border-collapse:collapse; border: 1px solid black" class="uppercase">Circunscripción Nacimiento</th>
+                            <td style=" border-collapse:collapse; border: 1px solid black">{{ $decreto->circunscripcion_nacimiento}}</td>
+                            <td style=" border-collapse:collapse; border: 1px solid black" class="uppercase">{{$decreto->circunscripcion_nacimiento_civil}}</td>
+                        </tr> 
+                    @endif
                         @if ($decreto->nombre_madre_civil)
                         <tr>
                             <th style="width: 30%; border-collapse:collapse; border: 1px solid black" class="uppercase">Nombre de la Madre</th>
