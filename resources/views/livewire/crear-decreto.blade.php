@@ -2,7 +2,7 @@
 
     <h2 class="block text-md text-gray-700 font-bold uppercase  text-center mt-2">solicitud de decreto</h2>
 
-    <p class="text-center">Favor solo completar los datos que desea corregir.</p>
+    <p class="text-center block text-sm text-red-500 font-bold uppercase mb-2">Favor solo completar los datos que desea corregir.</p>
 
 
     <h2 class="block text-md text-gray-700 font-bold uppercase mb-2 text-center">datos del bautizado</h2>
@@ -122,6 +122,113 @@
 
 </div>
 
+<h2 class="block text-md text-gray-700 font-bold uppercase mb-2 text-center">datos del libro de nacimiento</h2>
+
+<div class="grid grid-cols-2">
+    <div>
+        <x-input-label for="libro_nacimiento" :value="__('No. del Libro')" />
+
+        <x-text-input id="libro_nacimiento" class="block mt-1 w-full" type="text" wire:model="libro_nacimiento" :value="old('libro_nacimiento')" placeholder="Ej. 00176"/>
+
+        @error('libro_nacimiento')
+            <livewire:mostrar-alertas :message="$message" />
+        @enderror
+    </div>
+
+    <div>
+        <x-input-label for="libro_nacimiento_civil" :value="__('No. del Libro')" />
+
+        <x-text-input id="libro_nacimiento_civil" class="block mt-1 w-full" type="text" wire:model="libro_nacimiento_civil" :value="old('libro_nacimiento_civil')" placeholder="Ej. 00176"/>
+
+        @error('libro_nacimiento_civil')
+            <livewire:mostrar-alertas :message="$message" />
+        @enderror
+    </div>
+</div>
+<div class="grid grid-cols-2">
+    <div>
+        <x-input-label for="folio_nacimiento" :value="__('Folio')" />
+
+        <x-text-input id="folio_nacimiento" class="block mt-1 w-full" type="text" wire:model="folio_nacimiento" :value="old('folio_nacimiento')" placeholder="Ej. 00176" />
+
+        @error('folio_nacimiento')
+            <livewire:mostrar-alertas :message="$message" />
+        @enderror
+    </div>
+
+    <div>
+        <x-input-label for="folio_nacimiento_civil" :value="__('Folio')" />
+
+        <x-text-input id="folio_nacimiento_civil" class="block mt-1 w-full" type="text" wire:model="folio_nacimiento_civil" :value="old('folio_nacimiento_civil')" placeholder="Ej. 00176"/>
+
+        @error('folio_nacimiento_civil')
+            <livewire:mostrar-alertas :message="$message" />
+        @enderror
+    </div>
+</div>
+<div class="grid grid-cols-2">
+    <div>
+        <x-input-label for="acta_nacimiento" :value="__('No. de Acta')" />
+
+        <x-text-input id="acta_nacimiento" class="block mt-1 w-full" type="text" wire:model="acta_nacimiento" :value="old('acta_nacimiento')" placeholder="Ej. 00176"/>
+
+        @error('acta_nacimiento')
+            <livewire:mostrar-alertas :message="$message" />
+        @enderror
+    </div>
+
+    <div>
+        <x-input-label for="acta_nacimiento_civil" :value="__('No de Acta')" />
+
+        <x-text-input id="acta_nacimiento_civil" class="block mt-1 w-full" type="text" wire:model="acta_nacimiento_civil" :value="old('acta_nacimiento_civil')" placeholder="Ej. 00176" />
+
+        @error('acta_nacimiento_civil')
+            <livewire:mostrar-alertas :message="$message" />
+        @enderror
+    </div>
+</div>
+<div class="grid grid-cols-2">
+    <div>
+        <x-input-label for="ano_nacimiento" :value="__('Año')" />
+
+        <x-text-input id="ano_nacimiento" class="block mt-1 w-full" type="text" wire:model="ano_nacimiento" :value="old('ano_nacimiento')" placeholder="Ej. 2020"/>
+
+        @error('ano_nacimiento')
+            <livewire:mostrar-alertas :message="$message" />
+        @enderror
+    </div>
+
+    <div>
+        <x-input-label for="ano_nacimiento_civil" :value="__('Año')" />
+
+        <x-text-input id="ano_nacimiento_civil" class="block mt-1 w-full" type="text" wire:model="ano_nacimiento_civil" :value="old('ano_nacimiento_civil')" placeholder="Ej. 2020" />
+
+        @error('ano_nacimiento_civil')
+            <livewire:mostrar-alertas :message="$message" />
+        @enderror
+    </div>
+</div>
+<div class="grid grid-cols-2">
+    <div>
+        <x-input-label for="circunscripcion_nacimiento" :value="__('Circunscripción')" />
+
+        <x-text-input id="circunscripcion_nacimiento" class="block mt-1 w-full" type="text" wire:model="circunscripcion_nacimiento" :value="old('circunscripcion_nacimiento')" placeholder="Ej. Primera"/>
+
+        @error('circunscripcion_nacimiento')
+            <livewire:mostrar-alertas :message="$message" />
+        @enderror
+    </div>
+
+    <div>
+        <x-input-label for="circunscripcion_nacimiento_civil" :value="__('Circunscripción')" />
+
+        <x-text-input id="circunscripcion_nacimiento_civil" class="block mt-1 w-full" type="text" wire:model="circunscripcion_nacimiento_civil" :value="old('circunscripcion_nacimiento_civil')" placeholder="Ej. Primera" />
+
+        @error('circunscripcion_nacimiento_civil')
+            <livewire:mostrar-alertas :message="$message" />
+        @enderror
+    </div>
+</div>
 <h2 class="block text-md text-gray-700 font-bold uppercase mb-2 text-center">datos de los padres</h2>
 
     <div class="grid grid-cols-2">

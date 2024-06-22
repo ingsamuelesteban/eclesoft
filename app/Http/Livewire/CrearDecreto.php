@@ -13,6 +13,11 @@ class CrearDecreto extends Component
     public $genero;
     public $fecha_nacimiento;
     public $lugar_nacimiento;
+    public $folio_nacimiento;
+    public $libro_nacimiento;
+    public $acta_nacimiento;
+    public $ano_nacimiento;
+    public $circunscripcion_nacimiento;
     public $nombre_madre;
     public $cedula_madre;
     public $nombre_padre;
@@ -23,6 +28,11 @@ class CrearDecreto extends Component
     public $genero_civil;
     public $fecha_nacimiento_civil;
     public $lugar_nacimiento_civil;
+    public $folio_nacimiento_civil;
+    public $libro_nacimiento_civil;
+    public $acta_nacimiento_civil;
+    public $ano_nacimiento_civil;
+    public $circunscripcion_nacimiento_civil;
     public $nombre_madre_civil;
     public $cedula_madre_civil;
     public $nombre_padre_civil;
@@ -42,6 +52,16 @@ class CrearDecreto extends Component
         'fecha_nacimiento_civil' => '',
         'lugar_nacimiento' => '',
         'lugar_nacimiento_civil' => '',
+        'libro_nacimiento' => '',
+        'libro_nacimiento_civil' => '',
+        'folio_nacimiento' => '',
+        'folio_nacimiento_civil' => '',
+        'acta_nacimiento' => '',
+        'acta_nacimiento_civil' => '',
+        'ano_nacimiento' => '',
+        'ano_nacimiento_civil' => '',
+        'circunscripcion_nacimiento' => '',
+        'circunscripcion_nacimiento_civil' => '',
         'nombre_madre' => '',
         'nombre_madre_civil' => '',
         'cedula_madre' => '',
@@ -63,6 +83,11 @@ class CrearDecreto extends Component
         $this->genero = $bautismo->genero;
         $this->fecha_nacimiento = $bautismo->fecha_nacimiento;
         $this->lugar_nacimiento = $bautismo->lugar_nacimiento;
+        $this->libro_nacimiento = $bautismo->no_libro;
+        $this->folio_nacimiento = $bautismo->folio;
+        $this->acta_nacimiento = $bautismo->no_declaracion;
+        $this->ano_nacimiento = $bautismo->año;
+        $this->circunscripcion_nacimiento = $bautismo->circunscripcion;
         $this->nombre_madre = $bautismo->nombre_madre;
         $this->cedula_madre = $bautismo->cedula_madre;
         $this->nombre_padre = $bautismo->nombre_padre;
@@ -82,6 +107,16 @@ class CrearDecreto extends Component
             'genero'=> $datos['genero'],
             'fecha_nacimiento'=> $datos['fecha_nacimiento'],
             'lugar_nacimiento'=> $datos['lugar_nacimiento'],
+            'libro_nacimiento' => $datos['libro_nacimiento'],
+            'libro_nacimiento_civil' => $datos['libro_nacimiento_civil'],
+            'folio_nacimiento' => $datos['folio_nacimiento'],
+            'folio_nacimiento_civil' => $datos['folio_nacimiento_civil'],
+            'acta_nacimiento' => $datos['acta_nacimiento'],
+            'acta_nacimiento_civil' => $datos['acta_nacimiento_civil'],
+            'ano_nacimiento' => $datos['ano_nacimiento'],
+            'ano_nacimiento_civil' =>$datos['ano_nacimiento_civil'],
+            'circunscripcion_nacimiento' => $datos['circunscripcion_nacimiento'],
+            'circunscripcion_nacimiento_civil' =>$datos ['circunscripcion_nacimiento_civil'],
             'nombre_madre'=> $datos['nombre_madre'],
             'cedula_madre'=> $datos['cedula_madre'],
             'nombre_padre'=> $datos['nombre_padre'],
