@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::table('parroquias', function (Blueprint $table) {
             $table->string('circunscripcion');
+             $table->string('color_borde');
         });
     }
 
