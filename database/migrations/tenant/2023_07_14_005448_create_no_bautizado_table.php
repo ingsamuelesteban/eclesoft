@@ -16,6 +16,18 @@ return new class extends Migration
         Schema::create('no_bautizados', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('nombre');
+            $table->string('genero');
+            $table->string('fecha_nacimiento');
+            $table->string('nombre_padre');
+            $table->string('cedula_padre');
+            $table->string('nombre_madre');
+            $table->string('cedula_madre');
+            $table->string('hospital')->nullable();
+            $table->string('escuela')->nullable();
+            $table->string('docmadre')->nullable();
+            $table->string('docpadre')->nullable();
+            $table->string('notas')->nullable();
         });
     }
 
