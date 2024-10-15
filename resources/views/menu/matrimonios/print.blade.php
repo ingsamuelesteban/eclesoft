@@ -30,7 +30,7 @@ min-height: 100%;">
             <img class="rounded-circle" src="{{ global_asset('storage/img/' . $parroquia->logo) }}" alt="{{'Logo de la Parroquia'}}" width="100px" height="100px">
         </p>
         
-        <h2 class=" text-center text-uppercase fw-bold mb-4 fs-6">Certficado de Matrimonio</h2>
+        <h2 class=" text-center text-uppercase fw-bold mb-4 fs-6">Certificado de Matrimonio</h2>
 
         <div class="fs-6 mb-2">
             <p> Quien Suscribe:
