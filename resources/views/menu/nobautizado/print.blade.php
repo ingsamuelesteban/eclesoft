@@ -41,11 +41,21 @@ min-height: 100%;">
 
         <p class="text-base text-center text-uppercase fw-bold">**** {{ $noBautizado->nombre }} ****</p>
     
-        <p>Que nació el día <span class="text-decoration-underline">&nbsp;&nbsp;{{ $dian }}&nbsp;&nbsp;</span> del mes de <span class="text-decoration-underline text-capitalize">
-            &nbsp;&nbsp;{{$mesn}}&nbsp;&nbsp;</span>
+        @if ($fechan == '11/11/1111')
+
+        <p>Que nació en <span class="text-decoration-underline text-uppercase ">&nbsp;&nbsp;{{$bautismo->lugar_nacimiento}}&nbsp;&nbsp;</span> 
+            el día <span class="text-decoration-underline">&nbsp;&nbsp;--&nbsp;&nbsp;</span> del mes de <span class="text-decoration-underline text-capitalize">
+        &nbsp;&nbsp;--&nbsp;&nbsp;</span>
         del año
-        <span class="text-decoration-underline text-uppercase">
-            &nbsp;&nbsp;{{$anon}}&nbsp;&nbsp;</span>
+        <span class="text-decoration-underline text-uppercase">&nbsp;&nbsp;
+            ----&nbsp;&nbsp;</span>
+        @else
+        <p>Que nació en <span class="text-decoration-underline text-uppercase ">&nbsp;&nbsp;{{$bautismo->lugar_nacimiento}}&nbsp;&nbsp;</span> 
+            el día <span class="text-decoration-underline">&nbsp;&nbsp;{{ $dian }}&nbsp;&nbsp;</span> del mes de <span class="text-decoration-underline text-capitalize">
+        &nbsp;&nbsp;{{$mesn}}&nbsp;&nbsp;</span>
+        del año<span class="text-decoration-underline text-uppercase">&nbsp;&nbsp;
+            {{$anon}}&nbsp;&nbsp;</span>
+        @endif
         @if ($noBautizado->genero==1)
            hijo 
         @else
