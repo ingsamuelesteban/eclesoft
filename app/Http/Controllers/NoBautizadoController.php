@@ -91,12 +91,13 @@ class NoBautizadoController extends Controller
         $dian = Carbon::parse($noBautizado->fecha_nacimiento)->format('d');
         $mesn = Carbon::parse($noBautizado->fecha_nacimiento)->isoFormat('MMMM');
         $anon = Carbon::parse($noBautizado->fecha_nacimiento)->isoFormat('Y');
+        $fechan = Carbon::parse($noBautizado->fecha_nacimiento)->isoFormat('L');
         $diac = Carbon::now('America/La_Paz')->isoFormat('DD');
         $mesc = Carbon::now('America/La_Paz')->isoFormat('MMMM');
         $anoc = Carbon::now('America/La_Paz')->isoFormat('Y');
 
         $parroquias = Parroquia::all();
-        $pdf = PDF::loadView('menu.nobautizado.print', ['noBautizado' => $noBautizado, 'parroquia' => $parroquias, 'diac' => $diac, 'mesc' => $mesc, 'anoc'=>$anoc, 'dian' => $dian, 'mesn' => $mesn, 'anon' => $anon ]);
+        $pdf = PDF::loadView('menu.nobautizado.print', ['noBautizado' => $noBautizado, 'parroquia' => $parroquias, 'diac' => $diac, 'mesc' => $mesc, 'anoc'=>$anoc, 'dian' => $dian, 'mesn' => $mesn, 'anon' => $anon, 'fechan' => $fechan ]);
         $pdf->setPaper('letter', 'portrait');
         return $pdf->stream();
 
