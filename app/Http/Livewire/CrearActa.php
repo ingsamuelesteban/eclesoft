@@ -7,6 +7,7 @@ use App\Models\Comunidades;
 use App\Models\User;
 use App\Models\Users;
 use App\Providers\RouteServiceProvider;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 
@@ -121,9 +122,9 @@ class CrearActa extends Component
        
     
        
+        $fechaActual = Carbon::now('America/La_Paz')->locale('ja')->isoFormat('L');
         
-
-        return view('livewire.crear-acta');
+        return view('livewire.crear-acta',['fechaActual'=>$fechaActual]);
         
 
     }

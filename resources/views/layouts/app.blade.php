@@ -12,12 +12,14 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <script src="https://kit.fontawesome.com/5d6c6f447a.js" crossorigin="anonymous"></script>
 
         @livewireStyles
         @stack('styles')
 
     </head>
     <body class="font-sans antialiased">
+        
         @csrf
         @if (Auth::user()->departamento ==2)
         @include('layouts.navigation')
@@ -29,14 +31,17 @@
             <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
 
                 {{ $header }}
+                
             </div>
         </header>
         @if (Auth::user()->departamento ==1)
         @include('layouts.navigationobispado')
         @endif
+        
 
             <!-- Page Content -->
             <main>
+                
                 {{ $slot }}
             </main>
 

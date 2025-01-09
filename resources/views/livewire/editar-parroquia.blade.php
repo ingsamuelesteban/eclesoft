@@ -194,9 +194,39 @@
 
             </div>
         </div>
-        <div class="flex justify-start space-x-3">
-            <x-input-label for="color_borde" :value="__('Color del Borde')" />
-            <x-text-input id="color_borde" type="color" wire:model="color_borde" />
+        <div class="grid grid-cols-2">
+            <div>
+                <x-input-label for="color_borde" :value="__('Color del Borde')" />
+                <x-text-input id="color_borde" type="color" wire:model="color_borde" />
+            </div>
+            <div>
+                <x-input-label for="logo_obispado" :value="__('Logo Obispado')" />
+
+            
+                <x-text-input id="logo_obispado" class="block mt-1 w-full" type="file" 
+                wire:model="logo_obispado_nuevo" 
+                accept="image/*"/>
+    
+                <div class="my-5 w-52">
+                    <x-input-label  :value="__('Logo Obispado Actual')" />
+    
+                    <img src="{{ global_asset('storage/img/' . $logo_obispado) }}" alt="{{ 'Logo Obispado Actual ' }}">
+                </div>
+    
+                <div class="my-5 w-52">
+                    @if ($logo_obispado_nuevo)
+                    Logo Obispado Nuevo:
+                    <img src="{{ $logo_obispado_nuevo->temporaryUrl() }}" >
+                        
+                    @endif
+    
+    
+                </div>
+    
+                @error('logo_obispado_nuevo')
+                    <livewire:mostrar-alertas :message="$message" />
+                @enderror 
+            </div>
         
         </div>
 

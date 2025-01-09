@@ -8,27 +8,21 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::table('parroquias', function (Blueprint $table) {
-            $table->string('rnc');
-            $table->string('correo');
+            $table->string('logo_obispado');
         });
     }
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::table('parroquias', function (Blueprint $table) {
-            $table->dropColumn('rnc');
-            $table->dropColumn('correo');
+            //
         });
     }
 };
