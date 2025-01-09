@@ -30,8 +30,8 @@
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('menu.comunidades.create')" :active="request()->routeIs('menu.comunidades.create')">
-                        {{ __('Comunidades') }}
+                    <x-nav-link :href="route('menu.estadisticas.index')" :active="request()->routeIs('menu.estadisticas.index')">
+                        {{ __('Estadísticas') }}
                     </x-nav-link>
                 </div>
 
@@ -104,8 +104,8 @@
             <x-responsive-nav-link :href="route('menu.matrimonios.create')" :active="request()->routeIs('menu.matrimonios.create', 'menu.matrimonios.index', 'menu.matrimonios.show', 'menu.matrimonios.edit', 'menu.matrimonios.decreto',  'menu.decretosm.index', 'menu.decretosm.edit',  'menu.decretosm.show')">
                 {{ __('Matrimonios') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('menu.comunidades.create')" :active="request()->routeIs('menu.comunidades.create')">
-                {{ __('Comunidades') }}
+            <x-responsive-nav-link :href="route('menu.estadisticas.index')" :active="request()->routeIs('menu.estadisticas.index')">
+                {{ __('Estadísticas') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('menu.certificaciones.index')" :active="request()->routeIs('menu.certificaciones.index', 'menu.nobautizado.create', 'menu.nobautizado.index', 'menu.nobautizado.edit',  'menu.nobautizado.show')">
                 {{ __('Certificaciones') }}

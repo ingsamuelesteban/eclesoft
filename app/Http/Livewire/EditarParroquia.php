@@ -23,6 +23,8 @@ class EditarParroquia extends Component
     public $parroquia_id;
     public $logo;
     public $logo_nuevo;
+    public $logo_obispado;
+    public $logo_obispado_nuevo;
     public $color_borde;
 
     use WithFileUploads;
@@ -42,6 +44,7 @@ class EditarParroquia extends Component
         'circunscripcion' => 'required|string',
         'correo' => 'required|string',
         'logo_nuevo' => 'nullable|image|max:1024',
+        'logo_obispado_nuevo' => 'nullable|image|max:1024',
         'color_borde' => '',
     ];
 
@@ -61,6 +64,7 @@ class EditarParroquia extends Component
         $this->circunscripcion = $parroquia->circunscripcion;
         $this->correo = $parroquia->correo;
         $this->logo = $parroquia->logo;
+        $this->logo_obispado = $parroquia->logo_obispado;
         $this->color_borde = $parroquia->color_borde;
     }
 
@@ -72,6 +76,10 @@ class EditarParroquia extends Component
         if($this->logo_nuevo) {
             $logo = $this->logo_nuevo->store('public/img');
             $datos['logo'] = str_replace('public/img/', '', $logo);
+        }
+        if($this->logo_obispado_nuevo) {
+            $logo_obispado = $this->logo_obispado_nuevo->store('public/img');
+            $datos['logo_obispado'] = str_replace('public/img/', '', $logo_obispado);
         }
 
         //Encontrar La parroquia.
@@ -93,6 +101,7 @@ class EditarParroquia extends Component
         $parroquia->circunscripcion=$datos['circunscripcion'];
         $parroquia->correo=$datos['correo'];
         $parroquia->logo = $datos['logo'] ?? $parroquia->logo;
+        $parroquia->logo_obispado = $datos['logo_obispado'] ?? $parroquia->logo_obispado;
         $parroquia->color_borde= $datos['color_borde'];
 
         //Guardar

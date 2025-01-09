@@ -20,6 +20,7 @@ class Parroquia extends Component
     public $provincia;
     public $correo;
     public $logo;
+    public $logo_obispado;
     public $circunscripcion;
     public $color_borde;
 
@@ -39,6 +40,7 @@ class Parroquia extends Component
         'circunscripcion' => 'required|string',
         'correo'=>'required|string',
         'logo' => 'required|image|max:1024',
+        'logo_obispado' => 'required|image|max:1024',
         'color_borde' => '',
     ];
 
@@ -46,8 +48,10 @@ class Parroquia extends Component
         $datos = $this->validate();
 
         // Almacenar imagen 
-       $logo = $this->logo->store('public/img');
+        $logo = $this->logo->store('public/img');
         $nombre_logo = str_replace('public/img/', '', $logo);
+        $logo_obispado = $this->logo_obispado->store('public/img');
+        $nombre_logo_obispado = str_replace('public/img/', '', $logo_obispado);
 
         ModelsParroquia::create([
             'diocesis'=>$datos['diocesis'],
@@ -63,6 +67,7 @@ class Parroquia extends Component
             'circunscripcion'=>$datos['circunscripcion'],
             'correo'=>$datos['correo'],
             'logo'=> $nombre_logo,
+            'logo'=> $nombre_logo_obispado,
             'color_borde' => $datos['color_borde'],
 
         ]);

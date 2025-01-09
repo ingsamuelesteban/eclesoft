@@ -33,6 +33,7 @@ use App\Http\Controllers\NoBautizadoController;
 use App\Http\Controllers\ConfirmacionControlller;
 use App\Http\Controllers\CorreccionesController;
 use App\Http\Controllers\DiocesisController;
+use App\Http\Controllers\EstadisticasController;
 use App\Http\Controllers\ParroquiasController;
 use App\Http\Controllers\UsuariosController;
 
@@ -209,7 +210,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/correccionesb/{correccionb}', [CorreccionesController::class, 'bautismosShow'] )->middleware(['auth', 'verified'])->name('menu.correccionesb.show');
     Route::get('/correccionesb/{correccionb}/print', [correccionesController::class, 'bautismosPrint'] )->middleware(['auth', 'verified'])->name('menu.correccionesb.print');
      
- 
+    //Rutas Estadisticas 
+    Route::get('/estadisticas/index',[EstadisticasController::class, 'index'])->middleware('auth','verified')->name('menu.estadisticas.index');
+    Route::get('/estadisticas/{anoCelebracion}/print', [EstadisticasController::class, 'pdf'] )->middleware(['auth', 'verified'])->name('menu.estadisticas.print');
+     
 
     require __DIR__.'/auth.php';
 

@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bautismos;
 use App\Models\Diocesi;
+use App\Models\Matrimonios;
 use App\Models\Parroquia;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MenuController extends Controller
 {
@@ -17,8 +21,11 @@ class MenuController extends Controller
     {
         $parroquia = Parroquia::all();
         $diocesis = Diocesi::all();
+        $anoActual = Carbon::now()->isoFormat('Y');
+        $bautismosDelAno = Bautismos::whereYear('fecha_celebracion',$anoActual )->count();
+        $matrimoniosDelAno = Matrimonios::whereYear('fecha_celebracion',$anoActual )->count();
         return view('menu.index', [
-            'parroquia' => $parroquia, 'diocesis' => $diocesis
+            'parroquia' => $parroquia, 'diocesis' => $diocesis, 'bautismosDelAno' => $bautismosDelAno, 'matrimoniosDelAno' => $matrimoniosDelAno
         ]);
     }
 
