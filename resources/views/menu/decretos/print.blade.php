@@ -115,6 +115,7 @@ min-height: 100%;">
         <td style=" border-collapse:collapse; border: 1px solid black" class="uppercase">{{$decreto->ano_nacimiento_civil}}</td>
     </tr> 
 @endif
+
     @if ($decreto->circunscripcion_nacimiento_civil)
     <tr>
         <th style="width: 30%; border-collapse:collapse; border: 1px solid black" class="uppercase">Circunscripción Nacimiento</th>
@@ -122,6 +123,13 @@ min-height: 100%;">
         <td style=" border-collapse:collapse; border: 1px solid black" class="uppercase">{{$decreto->circunscripcion_nacimiento_civil}}</td>
     </tr> 
 @endif
+@if ($decreto->lugar_nacimiento_civil)
+                            <tr>
+                                <th style="width: 30%; border-collapse:collapse; border: 1px solid black" class="uppercase">Lugar de Nacimiento</th>
+                                <td style=" border-collapse:collapse; border: 1px solid black" class="uppercase">{{$decreto->lugar_nacimiento}}</td>
+                                <td  style=" border-collapse:collapse; border: 1px solid black" class="uppercase">{{$decreto->lugar_nacimiento_civil}}</td>
+                            </tr> 
+    @endif
     @if ($decreto->nombre_madre_civil)
     <tr>
         <th style="width: 30%; border-collapse:collapse; border: 1px solid black" class="text-uppercase">Nombre de la Madre</th>

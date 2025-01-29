@@ -55,6 +55,7 @@
                                 <td  style=" border-collapse:collapse; border: 1px solid black" class="uppercase">{{Carbon\Carbon::parse($decreto->fecha_nacimiento_civil)->isoFormat('L')}}</td>
                             </tr> 
                         @endif
+                            
                         @if ($decreto->libro_nacimiento_civil)
                         <tr>
                             <th style="width: 30%; border-collapse:collapse; border: 1px solid black" class="uppercase">No. Libro Nacimiento</th>
@@ -90,6 +91,13 @@
                             <td style=" border-collapse:collapse; border: 1px solid black" class="uppercase">{{$decreto->circunscripcion_nacimiento_civil}}</td>
                         </tr> 
                     @endif
+                    @if ($decreto->lugar_nacimiento_civil)
+                            <tr>
+                                <th style="width: 30%; border-collapse:collapse; border: 1px solid black" class="uppercase">lugar de nacimiento</th>
+                                <td style=" border-collapse:collapse; border: 1px solid black" class="uppercase">{{$decreto->lugar_nacimiento}}</td>
+                                <td  style=" border-collapse:collapse; border: 1px solid black" class="uppercase">{{$decreto->lugar_nacimiento_civil}}</td>
+                            </tr> 
+                        @endif
                         @if ($decreto->nombre_madre_civil)
                         <tr>
                             <th style="width: 30%; border-collapse:collapse; border: 1px solid black" class="uppercase">Nombre de la Madre</th>
