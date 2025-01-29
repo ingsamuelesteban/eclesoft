@@ -11,8 +11,8 @@
             :value="old('libro_bautismo')" placeholder="No. Libro" autofocus/>
 
             @error('libro_bautismo')
-            <livewire:mostrar-alertas :message="$message" />
-        @enderror
+                <livewire:mostrar-alertas :message="$message" />
+            @enderror
 
         </div>
 
@@ -35,7 +35,7 @@
             <x-text-input id="no_bautismo" class="block mt-1 w-full" type="text" wire:model="no_bautismo" :value="old('no_bautismo')" placeholder="No. de Acta"/>
 
             @error('no_bautismo')
-            <livewire:mostrar-alertas :message="$message" />
+            <livewire:mostrar-alertas :message="$message"/>
         @enderror
         </div>
     </div>
