@@ -156,9 +156,15 @@ min-height: 100%;">
        <p class="linea">No más información debajo de esta linea</p>
        </div>
 
+       <span class="text-end">
+        <div >
+        
+            <img  src="data:image/png;base64,{{ $codigoQr }}" alt="">
+        </div>
+    </span>
       
     @endforeach
-
+    
     <footer style="position: fixed; 
     bottom: 87px; 
     left: 10px; 

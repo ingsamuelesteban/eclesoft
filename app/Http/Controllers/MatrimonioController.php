@@ -6,9 +6,11 @@ namespace App\Http\Controllers;
 use App\Models\Bautismos;
 use App\Models\Matrimonios;
 use App\Models\Parroquia;
+use App\Models\Impresione;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class MatrimonioController extends Controller
 {
@@ -99,8 +101,11 @@ class MatrimonioController extends Controller
         $fechac = Carbon::parse($matrimonio->fecha_celebracion)->isoFormat('L');
         $fechat = Carbon::parse($matrimonio->fecha_transcripcion)->isoFormat('L');
     
-
-        $pdf = PDF::loadView('menu.matrimonios.print', ['matrimonio' => $matrimonio, 'parroquia' => $parroquias, 'diac' => $diac, 'mesc' => $mesc, 'anoc' => $anoc, 'fechac' => $fechac, 'fechat' => $fechat ]);
+        $impresion = new Impresione();
+        $impresion->matrimonio_id = $matrimonio->id;
+        $impresion->save();
+        $codigoQr = base64_encode(QrCode::format('svg')->size(50)->errorCorrection('H')->generate(route('menu.bautismos.confqr',['impresione' => $impresion->id])));
+        $pdf = PDF::loadView('menu.matrimonios.print', ['matrimonio' => $matrimonio, 'parroquia' => $parroquias, 'diac' => $diac, 'mesc' => $mesc, 'anoc' => $anoc, 'fechac' => $fechac, 'fechat' => $fechat, 'codigoQr' =>$codigoQr ]);
         $pdf->setPaper('letter', 'portrait');
        return $pdf->stream();
 

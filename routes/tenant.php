@@ -36,6 +36,7 @@ use App\Http\Controllers\DiocesisController;
 use App\Http\Controllers\EstadisticasController;
 use App\Http\Controllers\ParroquiasController;
 use App\Http\Controllers\UsuariosController;
+use App\Http\Controllers\ImpresioneController;
 
 /*
 |--------------------------------------------------------------------------
@@ -81,6 +82,10 @@ Route::middleware([
 
     Route::post('reset-password', [NewPasswordController::class, 'store'])
                 ->name('password.update');
+
+    Route::get('/confqr/{impresione}', [ImpresioneController::class, 'show'] )->name('menu.bautismos.confqr');
+
+
 });
 
 Route::middleware('auth')->group(function () {
@@ -107,6 +112,8 @@ Route::middleware('auth')->group(function () {
                 ->name('register');
 
     Route::post('/register', [RegistrerController::class, 'store']);
+
+
 });
     
     //Rutas del Menu 
@@ -213,7 +220,7 @@ Route::middleware('auth')->group(function () {
     //Rutas Estadisticas 
     Route::get('/estadisticas/index',[EstadisticasController::class, 'index'])->middleware('auth','verified')->name('menu.estadisticas.index');
     Route::get('/estadisticas/{anoCelebracion}/print', [EstadisticasController::class, 'pdf'] )->middleware(['auth', 'verified'])->name('menu.estadisticas.print');
-     
+   
 
     require __DIR__.'/auth.php';
 

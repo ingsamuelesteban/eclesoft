@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Bautismos;
 use App\Models\Parroquia;
+use App\Models\Impresione;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Carbon\Carbon;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class BautismoController extends Controller
 {
@@ -50,6 +52,7 @@ class BautismoController extends Controller
     public function pdf(Bautismos $bautismo)
     {
         $parroquias = Parroquia::all();
+
         $dian = Carbon::parse($bautismo->fecha_nacimiento)->format('d');
         $mesn = Carbon::parse($bautismo->fecha_nacimiento)->isoFormat('MMMM');
         $anon = Carbon::parse($bautismo->fecha_nacimiento)->isoFormat('Y');
@@ -61,13 +64,16 @@ class BautismoController extends Controller
         $anoc = Carbon::now('America/La_Paz')->isoFormat('Y');
         $fechac = Carbon::parse($bautismo->fecha_celebracion)->isoFormat('L');
         $fechan = Carbon::parse($bautismo->fecha_nacimiento)->isoFormat('L');
-    
-
-        $pdf = PDF::loadView('menu.bautismos.print', ['bautismo' => $bautismo, 'parroquia' => $parroquias,  'dian' => $dian, 'mesn' => $mesn, 'anon' => $anon, 'diab' => $diab, 'mesb' => $mesb, 'anob' => $añob, 'diac' => $diac, 'mesc' => $mesc, 'anoc' => $anoc, 'fechac' => $fechac, 'fechan' => $fechan ]);
+        
+        $impresion = new Impresione();
+        $impresion->bautismo_id = $bautismo->id;
+        $impresion->save();
+        $codigoQr = base64_encode(QrCode::format('svg')->size(50)->errorCorrection('H')->generate(route('menu.bautismos.confqr',['impresione' => $impresion->id])));
+        $pdf = PDF::loadView('menu.bautismos.print', ['bautismo' => $bautismo, 'parroquia' => $parroquias,  'dian' => $dian, 'mesn' => $mesn, 'anon' => $anon, 'diab' => $diab, 'mesb' => $mesb, 'anob' => $añob, 'diac' => $diac, 'mesc' => $mesc, 'anoc' => $anoc, 'fechac' => $fechac, 'fechan' => $fechan, 'codigoQr' =>$codigoQr ]);
         $pdf->setPaper('letter', 'portrait');
         return $pdf->stream();
 
-      // return view('menu.bautismos.print',['bautismo' => $bautismo, 'parroquia' => $parroquias, 'dian' => $dian, 'mesn' => $mesn, 'anon' => $anon, 'diab' => $diab, 'mesb' => $mesb, 'anob' => $añob, 'diac' => $diac, 'mesc' => $mesc, 'anoc' => $anoc]);
+       //return view('menu.bautismos.print',['bautismo' => $bautismo, 'parroquia' => $parroquias, 'dian' => $dian, 'mesn' => $mesn, 'anon' => $anon, 'diab' => $diab, 'mesb' => $mesb, 'anob' => $añob, 'diac' => $diac, 'mesc' => $mesc, 'anoc' => $anoc, 'fechac' => $fechac, 'fechan' => $fechan]);
         
     }
 
@@ -109,13 +115,15 @@ class BautismoController extends Controller
 
     public function show(Bautismos $bautismo)
     {
+        $bautismo->fecha_nacimientoc = Carbon::parse($bautismo->fecha_nacimiento)->isoFormat('DD-MM-YYYY');
+         
         return view('menu.bautismos.show', ['bautismo'=> $bautismo]);
     }
 
     public function decreto(Bautismos $bautismo)
     {
         return view('menu.bautismos.decreto', ['bautismo'=> $bautismo]);
-    }
+    } 
     
 
    
