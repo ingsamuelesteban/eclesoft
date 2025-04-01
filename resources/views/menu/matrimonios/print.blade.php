@@ -122,7 +122,12 @@ min-height: 100%;">
        <div class="flex text-center">
        <p class="linea">No más información debajo de esta linea</p>
        </div>
-
+       <span class="text-end">
+        <div >
+        
+            <img  src="data:image/png;base64,{{ $codigoQr }}" alt="">
+        </div>
+    </span>
       
     @endforeach
 

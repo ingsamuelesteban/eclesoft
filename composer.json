@@ -15,6 +15,7 @@
         "livewire/livewire": "^2.10",
         "luecano/numero-a-letras": "^3.0",
         "nesbot/carbon": "^2.65",
+        "simplesoftwareio/simple-qrcode": "~4",
         "spatie/browsershot": "^4.0",
         "spatie/laravel-pdf": "^1.5",
         "stancl/tenancy": "^3.6"
