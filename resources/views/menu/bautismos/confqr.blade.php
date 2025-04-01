@@ -8,7 +8,7 @@
             @foreach ($parroquias as $p )
                 {{$p->parroquia}}
             @endforeach
-            <p class="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">Si los datos impresos en su acta no de bautismo coinciden con los datos acontinuación, su acta no tiene valor legal.</p>
+            <p class="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">Si los datos impresos en su acta de bautismo no coinciden con los datos acontinuación, su acta no tiene valor legal.</p>
         </caption>
         <thead class="text-xs text-gray-700 uppercase dark:text-gray-400">
             <tr>
