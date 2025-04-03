@@ -59,7 +59,7 @@
                     Fecha de Bautismo.:
                 </th>
                 <td class="px-6 py-4">
-                    {{\Carbon\Carbon::parse($impresion->bautismo->fecha_bautismo)->isoFormat('DD-MM-YYYY')}}
+                    {{\Carbon\Carbon::parse($impresion->bautismo->fecha_celebracion)->isoFormat('DD-MM-YYYY')}}
                 </td>
             </tr>
             <tr class="border-b border-gray-200 dark:border-gray-700">
