@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('bautismo_id')->nullable()->constrained('bautismos');
             $table->foreignId('matrimonio_id')->nullable()->constrained('matrimonios');
             $table->foreignId('decreto_id')->nullable()->constrained('decretos');
-            $table->foreignId('decretom_id')->nullable()->constrained('decretosms');
+            $table->foreignId('decretom_id')->nullable()->constrained('decretosm');
             $table->boolean('pagada')->default(0);
         });
     }
