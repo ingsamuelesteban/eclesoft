@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('impresiones', function (Blueprint $table) {
+        Schema::create('caja_facturas', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('caja_id')->nullable()->constrained('cajas');
+            $table->foreignId('factura_id')->nullable()->constrained('facturas');
+            $table->decimal('monto', 10, 2)->default(0);
+            $table->integer('estado')->default(1);
             $table->timestamps();
-            $table->foreignId('bautismo_id')->nullable()->constrained('bautismos');
-            $table->foreignId('matrimonio_id')->nullable()->constrained('matrimonios');
-            $table->foreignId('decreto_id')->nullable()->constrained('decretos');
-            $table->boolean('pagada')->default(0);
         });
     }
 
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('impresiones');
+        Schema::dropIfExists('caja_facturas');
     }
 };

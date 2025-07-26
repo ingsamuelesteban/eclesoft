@@ -17,6 +17,18 @@
                 <p class="text-sm text-gray-600 font-bold">Provincia: {{ $parroquia->provincia}}</p>
                 <p class="text-sm text-gray-600 font-bold">Circunscripción: {{ $parroquia->circunscripcion}}</p>
                 <p class="text-sm text-gray-600 font-bold">Color del borde del timbrado: <input type="color" value= {{$parroquia->color_borde}} disabled></p>
+                <p class="text-sm text-gray-600 font-bold">
+                    Facturación: 
+                    <span class="{{ $parroquia->facturacion_activa ? 'text-green-600' : 'text-red-600' }}">
+                        {{ $parroquia->facturacion_activa ? 'Activada' : 'Desactivada' }}
+                    </span>
+                </p>
+                <p class="text-sm text-gray-600 font-bold">
+                    Precio Acta: 
+                    <span class="text-blue-700">
+                        {{ '$' . number_format($parroquia->precio_acta, 2) }}
+                    </span>
+                </p>
             </div> 
 
             <div class="flex flex-col md:flex-row items-stretch gap-3  mt-5 md:mt-0">

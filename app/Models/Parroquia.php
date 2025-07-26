@@ -24,5 +24,9 @@ class Parroquia extends Model
         'logo',
         'circunscripcion',
         'color_borde',
+        'logo_obispado',
+        'firmante_id',
+        'facturacion_activa',
+        'precio_acta',
     ];
 }

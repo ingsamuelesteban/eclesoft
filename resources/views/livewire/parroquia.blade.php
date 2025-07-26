@@ -180,9 +180,7 @@
             @error('logo')
                 <livewire:mostrar-alertas :message="$message" />
             @enderror
-        </div>
-
-
+            </div>
         </div>
 
         <div class="flex justify-start space-x-3">
@@ -191,10 +189,38 @@
         
         </div>
         
+        <div>
+            <x-input-label for="logo_obispado" :value="__('Logo Obispado')" />
 
+            
+            <x-text-input id="logo_obispado" class="block mt-1 w-full" type="file" 
+            wire:model="logo_obispado" />
+
+            <div class="my-5 w-52">
+                @if ($logo_obispado)
+                    Imagen:
+                    <img src="{{ $logo_obispado->temporaryUrl() }}">
+                @endif
+            </div>
+            
+            @error('logo_obispado')
+                <livewire:mostrar-alertas :message="$message" />
+            @enderror
+            </div>
+
+                    
+    <div class="flex items-center mt-4 space-x-3">
+        <label for="facturacion_activa" class="text-sm font-medium text-gray-700">
+            Módulo Facturación
+        </label>
+        <input type="checkbox" id="facturacion_activa" wire:model="facturacion_activa"
+            class="form-checkbox h-5 w-5 text-green-600 border-gray-300 rounded focus:ring-green-500 transition">
+        <input type="text" readonly
+            value="{{ $facturacion_activa ? 'Activado' : 'Desactivado' }}"
+            class="ml-2 px-3 py-1 border border-gray-300 rounded-md bg-gray-50 text-sm text-gray-700 w-28 text-center font-semibold">
+    </div>
         <x-primary-button class="w-full justify-center">
             {{ __('Guardar') }}
         </x-primary-button>
-        
-    
+
  </form>

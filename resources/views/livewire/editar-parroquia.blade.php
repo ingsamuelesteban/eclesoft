@@ -229,7 +229,29 @@
             </div>
         
         </div>
-
+        <div class="grid grid-cols-2 gap-4 items-center mt-4">
+            <div class="flex items-center space-x-3">
+                <x-input-label for="facturacion_activa" >
+                    Módulo Facturación
+                </x-input-label>
+                <input type="checkbox" id="facturacion_activa" wire:model="facturacion_activa"
+                    class="form-checkbox h-5 w-5 text-green-600 border-gray-300 rounded focus:ring-green-500 transition">
+                <input type="text" readonly
+                    value="{{ $facturacion_activa ? 'Activado' : 'Desactivado' }}"
+                    class="ml-2 px-3 py-1 border border-gray-300 rounded-md bg-gray-50 text-sm text-gray-700 w-28 text-center font-semibold">
+            </div>
+            <div>
+                <x-input-label for="precio_acta" >
+                    Precio Acta
+                </x-input-label>
+                <input type="number" step="0.01" id="precio_acta" wire:model="precio_acta"
+                    class="block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-blue-400 text-sm text-gray-700 bg-white"
+                    placeholder="Ej. 150.00">
+                @error('precio_acta')
+                    <livewire:mostrar-alertas :message="$message" />
+                @enderror
+            </div>
+        </div>
         <x-primary-button class="w-full justify-center">
             {{ __('Guardar Cambios') }}
         </x-primary-button>

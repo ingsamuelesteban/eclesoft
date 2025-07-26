@@ -45,4 +45,20 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function caja(){
+        return $this->hasOne(Caja::class)->where('estado',1);
+    }
+    public function Cuadre(){
+        return $this->hasOne(Cuadre::class)->where('estado',1);
+    }
+    public function ClienteMovimiento(){
+        return $this->hasMany(ClienteMovimiento::class);
+    }
+    public function Ventas(){
+        return $this->belongsTo(Venta::class);
+    }
+    public function Tenant(){
+        return $this->hasOne(Tenant::class);
+    }
 }

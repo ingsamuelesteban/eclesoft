@@ -95,7 +95,12 @@ min-height: 100%;">
        </div>
 
        
-
+       <span class="text-end">
+        <div >
+        
+            <img  src="data:image/png;base64,{{ $codigoQr }}" alt="">
+        </div>
+    </span>
       
     @endforeach
 

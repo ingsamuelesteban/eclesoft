@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Parroquia as ModelsParroquia;
+use App\Models\Firmante as ModelsFirmante;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -23,6 +24,11 @@ class Parroquia extends Component
     public $logo_obispado;
     public $circunscripcion;
     public $color_borde;
+    public $firmante_id;
+    public $nombre_firmante;
+    public $titulo_firmante;
+    public $facturacion_activa = false;
+    public $precio_acta;
 
     use WithFileUploads;
 
@@ -42,6 +48,8 @@ class Parroquia extends Component
         'logo' => 'required|image|max:1024',
         'logo_obispado' => 'required|image|max:1024',
         'color_borde' => '',
+        'facturacion_activa' => 'boolean',
+        'precio_acta' => 'required|numeric|min:0',
     ];
 
     public function crearParroquia(){
@@ -53,6 +61,13 @@ class Parroquia extends Component
         $logo_obispado = $this->logo_obispado->store('public/img');
         $nombre_logo_obispado = str_replace('public/img/', '', $logo_obispado);
 
+        ModelsFirmante::create([
+            'nombre'=>$datos['parroco'],
+            'titulo'=>'Párroco',
+
+        ]);
+
+        
         ModelsParroquia::create([
             'diocesis'=>$datos['diocesis'],
             'obispo'=>$datos['obispo'],
@@ -67,8 +82,11 @@ class Parroquia extends Component
             'circunscripcion'=>$datos['circunscripcion'],
             'correo'=>$datos['correo'],
             'logo'=> $nombre_logo,
-            'logo'=> $nombre_logo_obispado,
+            'logo_obispado'=> $nombre_logo_obispado,
             'color_borde' => $datos['color_borde'],
+            'firmante_id'=>'1',
+            'facturacion_activa' => $datos['facturacion_activa'],
+            'precio_acta' => $datos['precio_acta'],
 
         ]);
         //Mensaje 
