@@ -29,7 +29,6 @@ return new class extends Migration
             $table->integer('cinco')->default(0)->nullable();
             $table->integer('uno')->default(0)->nullable();
             $table->decimal('diferencia',10,2)->default(0)->nullable();
-            $table->foreignId('caja_movimientos_id')->nullable()->constrained('caja_movimientos');
             $table->integer('total_efectivo')->default(0)->nullable();
             $table->integer('total_desglose')->default(0)->nullable();
             $table->timestamps();
