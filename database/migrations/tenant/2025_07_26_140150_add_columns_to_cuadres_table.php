@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        if (!Schema::hasColmn ('cuadres', 'caja_factura_id')) {
+        if (!Schema::hasColumn ('cuadres', 'caja_factura_id')) {
             Schema::table('cuadres', function (Blueprint $table) {
                 $table->foreignId('caja_factura_id')->nullable()->constrained('caja_facturas');
             });
