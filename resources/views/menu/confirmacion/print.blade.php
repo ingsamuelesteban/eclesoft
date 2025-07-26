@@ -30,7 +30,7 @@
             <img class="rounded-circle" src="{{ global_asset('storage/img/' . $diocesi->logo) }}" alt="{{'Logo de la diocesi'}}" width="100px" height="100px">
         </p>
         
-        <h2 class=" text-center text-uppercase font-bold mb-4 fs-6">Certficado de Confirmación</h2>
+        <h2 class=" text-center text-uppercase font-bold mb-4 fs-6">Certificado de Confirmación</h2>
 
         <div class="fs-6 mb-2">
 

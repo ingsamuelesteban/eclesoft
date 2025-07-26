@@ -14,8 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('parroquias', function (Blueprint $table) {
-            $table->string('circunscripcion');
-             $table->string('color_borde');
+            $table->string('color_borde');
         });
     }
 
@@ -27,7 +26,7 @@ return new class extends Migration
     public function down()
     {
         Schema::table('parroquias', function (Blueprint $table) {
-            $table->dropColumn('circunscripcion');
+            $table->dropColumn('color_borde');
         });
     }
 };

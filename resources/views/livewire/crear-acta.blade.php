@@ -77,7 +77,7 @@
                 <div>
             <x-input-label for="fecha_celebracion" :value="__('Fecha')" />
     
-            <x-text-input id="fecha_celebracion" class="block mt-1 w-full" type="date" wire:model="fecha_celebracion" :value="old('fecha_celebracion')" />
+            <x-text-input id="fecha_celebracion" class="block mt-1 w-full" type="date" wire:model="fecha_celebracion" :value="old('fecha_celebracion')" min="1111-11-11" />
 
             @error('fecha_celebracion')
             <livewire:mostrar-alertas :message="$message" />
@@ -147,7 +147,7 @@
     <div>
         <x-input-label for="fecha_nacimiento" :value="__('Fecha de Nacimiento')" />
 
-        <x-text-input id="fecha_nacimiento" class="block mt-1 w-full" type="date" wire:model="fecha_nacimiento" :value="old('fecha_nacimiento')" />
+        <x-text-input min="1111-11-11" id="fecha_nacimiento" class="block mt-1 w-full" type="date" wire:model="fecha_nacimiento" :value="old('fecha_nacimiento')" />
 
         @error('fecha_nacimiento')
             <livewire:mostrar-alertas :message="$message" />

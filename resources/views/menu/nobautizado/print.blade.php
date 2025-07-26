@@ -30,7 +30,7 @@ min-height: 100%;">
             <img class="rounded-circle" src="{{ global_asset('storage/img/' . $parroquia->logo) }}" alt="{{'Logo de la Parroquia'}}" width="100px" height="100px">
         </p>
         
-        <h2 class=" text-center text-uppercase font-bold mb-4 fs-6">Certficado de No Bautizado</h2>
+        <h2 class=" text-center text-uppercase font-bold mb-4 fs-6">Certificado de No Bautizado</h2>
 
         <div class="fs-6 mb-2">
             <p> Quien Suscribe:
@@ -41,11 +41,20 @@ min-height: 100%;">
 
         <p class="text-base text-center text-uppercase fw-bold">**** {{ $noBautizado->nombre }} ****</p>
     
+        @if ($fechan == '11/11/1111')
+
+        <p>Que nació el día <span class="text-decoration-underline">&nbsp;&nbsp;--&nbsp;&nbsp;</span> del mes de <span class="text-decoration-underline text-capitalize">
+        &nbsp;&nbsp;--&nbsp;&nbsp;</span>
+        del año
+        <span class="text-decoration-underline text-uppercase">&nbsp;&nbsp;
+            ----&nbsp;&nbsp;</span>
+        @else
         <p>Que nació el día <span class="text-decoration-underline">&nbsp;&nbsp;{{ $dian }}&nbsp;&nbsp;</span> del mes de <span class="text-decoration-underline text-capitalize">
             &nbsp;&nbsp;{{$mesn}}&nbsp;&nbsp;</span>
         del año
         <span class="text-decoration-underline text-uppercase">
             &nbsp;&nbsp;{{$anon}}&nbsp;&nbsp;</span>
+        @endif
         @if ($noBautizado->genero==1)
            hijo 
         @else
