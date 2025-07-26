@@ -35,6 +35,8 @@ class ImpresioneController extends Controller
            return view('menu.bautismos.confqr', ['parroquias'=>$parroquias, 'impresion'=>$impresione]);
         } elseif ($impresione->matrimonio_id!=null) {
             return view('menu.matrimonios.confqr', ['parroquias'=>$parroquias, 'impresion'=>$impresione]);
+        } elseif ($impresione->no_bautizado_id!=null) {
+            return view('menu.nobautizado.confqr', ['parroquias'=>$parroquias, 'impresion'=>$impresione]);
         }
     }
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Bautismos;
 use App\Models\Decretos;
 use App\Models\Parroquia;
+use App\Models\Impresione;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Carbon\Carbon;
@@ -101,7 +102,11 @@ class DecretosController extends Controller
         $anoc = Carbon::now('America/La_Paz')->isoFormat('Y');
 
         $parroquias = Parroquia::all();
-       $pdf = PDF::loadView('menu.decretos.print', ['decreto' => $decreto, 'parroquia' => $parroquias, 'diac' => $diac, 'mesc' => $mesc, 'anoc' => $anoc ]);
+
+        $impresion = new Impresione();
+        $impresion->decreto_id = $decreto->id;
+        $impresion->save();
+        $pdf = PDF::loadView('menu.decretos.print', ['decreto' => $decreto, 'parroquia' => $parroquias, 'diac' => $diac, 'mesc' => $mesc, 'anoc' => $anoc ]);
         $pdf->setPaper('letter', 'portrait');
         return $pdf->stream(); 
 

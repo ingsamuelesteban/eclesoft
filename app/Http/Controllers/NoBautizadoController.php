@@ -7,6 +7,8 @@ use App\Models\Parroquia;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Carbon\Carbon;
+use App\Models\Impresione;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class NoBautizadoController extends Controller
 {
@@ -97,9 +99,16 @@ class NoBautizadoController extends Controller
         $anoc = Carbon::now('America/La_Paz')->isoFormat('Y');
 
         $parroquias = Parroquia::all();
-        $pdf = PDF::loadView('menu.nobautizado.print', ['noBautizado' => $noBautizado, 'parroquia' => $parroquias, 'diac' => $diac, 'mesc' => $mesc, 'anoc'=>$anoc, 'dian' => $dian, 'mesn' => $mesn, 'anon' => $anon, 'fechan' => $fechan ]);
+
+        $impresion = new Impresione();
+        $impresion->no_bautizado_id = $noBautizado->id;
+        $impresion->save();
+        $codigoQr = base64_encode(QrCode::format('svg')->size(50)->errorCorrection('H')->generate(route('menu.bautismos.confqr',['impresione' => $impresion->id])));
+        
+        $pdf = PDF::loadView('menu.nobautizado.print', ['noBautizado' => $noBautizado, 'parroquia' => $parroquias, 'diac' => $diac, 'mesc' => $mesc, 'anoc'=>$anoc, 'dian' => $dian, 'mesn' => $mesn, 'anon' => $anon, 'codigoQr' => $codigoQr]);
         $pdf->setPaper('letter', 'portrait');
         return $pdf->stream();
+        
 
       // return view('menu.bautismos.print',['bautismo' => $bautismo, 'parroquia' => $parroquias, 'dian' => $dian, 'mesn' => $mesn, 'anon' => $anon, 'diab' => $diab, 'mesb' => $mesb, 'anob' => $añob, 'diac' => $diac, 'mesc' => $mesc, 'anoc' => $anoc]);
         

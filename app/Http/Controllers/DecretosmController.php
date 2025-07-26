@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Decretosm;
 use App\Models\Parroquia;
+use App\Models\Impresione;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -93,6 +94,10 @@ class DecretosmController extends Controller
         $anoc = Carbon::now('America/La_Paz')->isoFormat('Y');
 
         $parroquias = Parroquia::all();
+
+        $impresion = new Impresione();
+        $impresion->decretom_id = $decretom->id;
+        $impresion->save();
        $pdf = PDF::loadView('menu.decretosm.print', ['decretom' => $decretom, 'parroquia' => $parroquias, 'diac' => $diac, 'mesc' => $mesc, 'anoc' => $anoc ]);
         $pdf->setPaper('letter', 'portrait');
         return $pdf->stream(); 

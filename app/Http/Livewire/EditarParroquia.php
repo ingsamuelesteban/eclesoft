@@ -26,6 +26,8 @@ class EditarParroquia extends Component
     public $logo_obispado;
     public $logo_obispado_nuevo;
     public $color_borde;
+    public $facturacion_activa = false; // Si la facturación está activa
+    public $precio_acta;
 
     use WithFileUploads;
 
@@ -46,6 +48,8 @@ class EditarParroquia extends Component
         'logo_nuevo' => 'nullable|image|max:1024',
         'logo_obispado_nuevo' => 'nullable|image|max:1024',
         'color_borde' => '',
+        'facturacion_activa' => 'boolean',  
+        'precio_acta' => 'required|numeric|min:0',
     ];
 
     public function mount(Parroquia $parroquia)
@@ -66,6 +70,8 @@ class EditarParroquia extends Component
         $this->logo = $parroquia->logo;
         $this->logo_obispado = $parroquia->logo_obispado;
         $this->color_borde = $parroquia->color_borde;
+        $this->facturacion_activa = (bool) $parroquia->facturacion_activa;
+        $this->precio_acta = $parroquia->precio_acta ?? 0; // Asegurarse de que tenga un valor por defecto
     }
 
     public function editarParroquia()
@@ -103,6 +109,8 @@ class EditarParroquia extends Component
         $parroquia->logo = $datos['logo'] ?? $parroquia->logo;
         $parroquia->logo_obispado = $datos['logo_obispado'] ?? $parroquia->logo_obispado;
         $parroquia->color_borde= $datos['color_borde'];
+        $parroquia->facturacion_activa = $this->facturacion_activa ? 1 : 0; 
+        $parroquia->precio_acta = $datos['precio_acta'] ?? 0; // Asegurarse de que tenga un valor por defecto
 
         //Guardar
         $parroquia->save();

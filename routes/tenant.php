@@ -26,6 +26,7 @@ use App\Http\Controllers\BautismoController;
 use App\Http\Controllers\CertificacionesController;
 use App\Http\Controllers\ComunidadesController;
 use App\Http\Controllers\ConfirmacionController;
+use App\Http\Controllers\CuadreController;
 use App\Http\Controllers\DecretosController;
 use App\Http\Controllers\DecretosmController;
 use App\Http\Controllers\MatrimonioController;
@@ -37,6 +38,9 @@ use App\Http\Controllers\EstadisticasController;
 use App\Http\Controllers\ParroquiasController;
 use App\Http\Controllers\UsuariosController;
 use App\Http\Controllers\ImpresioneController;
+use App\Http\Controllers\FacturacionController;
+use App\Http\Controllers\CajaController;    
+use App\Http\Controllers\FacturaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -222,8 +226,20 @@ Route::middleware('auth')->group(function () {
     Route::get('/estadisticas/{anoCelebracion}/print', [EstadisticasController::class, 'pdf'] )->middleware(['auth', 'verified'])->name('menu.estadisticas.print');
    
 
-    require __DIR__.'/auth.php';
+    //Rutas Facturacion 
+    Route::get('/facturacion/index', [FacturacionController::class, 'index'])->middleware(['auth', 'verified', 'caja.abierta'])->name('menu.facturacion.index');
+    Route::get('/facturacion/imprimir/{id}', [FacturaController::class, 'imprimir'])->middleware(['auth', 'verified'])->name('menu.facturacion.imprimir');
+    //Rutas Caja
+    Route::get('/caja/index', [CajaController::class, 'index'])->middleware(['auth', 'verified'])->name('menu.facturacion.caja.index');
+    Route::get('/caja/facturas/index', [FacturacionController::class, 'facturas'])->middleware(['auth', 'verified'])->name('menu.facturacion.facturas.index');
 
+
+    //Rutas Cuadre
+    Route::get('/cuadre/index', [CuadreController::class, 'index'])->middleware(['auth', 'verified'])->name('menu.facturacion.cuadre.index');
+    require __DIR__.'/auth.php';
+    Route::get('/caja/movimiento/recibo/{id}', [CajaController::class, 'recibo'])->name('caja.movimiento.recibo');
+    Route::get('/caja/cierre/{id}', [CajaController::class, 'cierre'])->name('menu.caja.cierre');
+    Route::get('/cuadre/imprimir/{id}', [CuadreController::class, 'pdf'])->name('cuadre.imprimir');
 });
 
 
