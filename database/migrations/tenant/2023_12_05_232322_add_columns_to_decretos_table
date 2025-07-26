@@ -8,8 +8,10 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     *
+     * @return void
      */
-    public function up(): void
+    public function up()
     {
         Schema::table('decretos', function (Blueprint $table) {
             $table->string('bautismo_id')->nullable();
@@ -33,26 +35,18 @@ return new class extends Migration
             $table->string('cedula_padre_civil')->nullable();
             $table->string('nombre_madrina_civil')->nullable();
             $table->string('nombre_padrino_civil')->nullable();
-            $table->string('libro_nacimiento')->nullable();
-            $table->string('folio_nacimiento')->nullable();
-            $table->string('acta_nacimiento')->nullable();
-            $table->string('ano_nacimiento')->nullable();
-            $table->string('circunscripcion_nacimiento')->nullable();
-            $table->string('libro_nacimiento_civil')->nullable();
-            $table->string('folio_nacimiento_civil')->nullable();
-            $table->string('acta_nacimiento_civil')->nullable();
-            $table->string('ano_nacimiento_civil')->nullable();
-            $table->string('circunscripcion_nacimiento_civil')->nullable();
         });
     }
 
     /**
      * Reverse the migrations.
+     *
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
         Schema::table('decretos', function (Blueprint $table) {
-            //
+            $table->dropColumn(['bautismo_id','nombre', 'genero', 'fecha_nacimiento', 'lugar_nacimiento', 'nombre_madre', 'cedula_madre', 'nombre_padre', 'cedula_padre', 'nombre_madrina', 'nombre_padrino','nombre_civil', 'genero_civil', 'fecha_nacimiento_civil', 'lugar_nacimiento_civil', 'nombre_madre_civil', 'cedula_madre_civil', 'nombre_padre_civil', 'cedula_padre_civil', 'nombre_madrina_civil', 'nombre_padrino_civil']);
         });
     }
 };

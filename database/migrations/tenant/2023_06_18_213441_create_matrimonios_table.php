@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('parroquias', function (Blueprint $table) {
-            $table->string('circunscripcion');
-             $table->string('color_borde');
+        Schema::create('matrimonios', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
         });
     }
 
@@ -26,8 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('parroquias', function (Blueprint $table) {
-            $table->dropColumn('circunscripcion');
-        });
+        Schema::dropIfExists('matrimonios');
     }
 };
