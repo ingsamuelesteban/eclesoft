@@ -105,8 +105,9 @@ class NoBautizadoController extends Controller
         $impresion->save();
         $codigoQr = base64_encode(QrCode::format('svg')->size(50)->errorCorrection('H')->generate(route('menu.bautismos.confqr',['impresione' => $impresion->id])));
         
-        $pdf = PDF::loadView('menu.nobautizado.print', ['noBautizado' => $noBautizado, 'parroquia' => $parroquias, 'diac' => $diac, 'mesc' => $mesc, 'anoc'=>$anoc, 'dian' => $dian, 'mesn' => $mesn, 'anon' => $anon, 'codigoQr' => $codigoQr]);
-        $pdf->setPaper('letter', 'portrait');
+        $pdf = PDF::loadView('menu.nobautizado.print', ['noBautizado' => $noBautizado, 'parroquia' => $parroquias, 'diac' => $diac, 'mesc' => $mesc, 'anoc'=>$anoc, 'dian' => $dian, 'mesn' => $mesn, 'anon' => $anon, 'codigoQr' => $codigoQr, 'fechan' => $fechan])
+            
+            ->setPaper('letter', 'portrait');
         return $pdf->stream();
         
 
