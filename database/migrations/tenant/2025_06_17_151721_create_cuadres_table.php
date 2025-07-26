@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->foreignId('caja_id')->nullable()->constrained('cajas');
             $table->foreignId('user_id')->nullable()->constrained('users');
-            $table->foreignId('caja_factura_id')->nullable()->constrained('caja_facturas');
             $table->decimal('tarjeta',10,2)->default(0)->nullable();
             $table->decimal('cheque',10,2)->default(0)->nullable();
             $table->decimal('transferencia',10,2)->default(0)->nullable();
