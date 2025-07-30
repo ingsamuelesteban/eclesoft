@@ -133,8 +133,15 @@
                             </span>
                             <span>{{ $mov->motivo }}</span>
                         </div>
-                        <div class="{{ $mov->tipo == 2 ? 'text-red-600' : 'text-green-600' }}">
-                            {{ $mov->tipo == 2 ? '-' : '+' }}RD$ {{ number_format($mov->monto, 2) }}
+                        <div class="flex items-center gap-2">
+                            <span class="{{ $mov->tipo == 2 ? 'text-red-600' : 'text-green-600' }}">
+                                {{ $mov->tipo == 2 ? '-' : '+' }}RD$ {{ number_format($mov->monto, 2) }}
+                            </span>
+                            <a href="{{ route('caja.movimiento.recibo', $mov->id) }}" target="_blank" title="Imprimir" class="text-indigo-600 hover:text-indigo-800">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2m-6 0v4m0 0h4m-4 0H8" />
+                                </svg>
+                            </a>
                         </div>
                     </div>
                 @empty
